@@ -1,8 +1,9 @@
 import { BrowserRouter } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
-import { AppRouter } from './providers/router';
+import { Sidebar } from 'widgets/Sidebar';
 import { UseTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
 export const App = () => {
   const { theme } = UseTheme();
@@ -11,7 +12,10 @@ export const App = () => {
     <BrowserRouter>
       <div className={classNames('app', {}, [theme])}>
         <Navbar />
-        <AppRouter />
+        <div className='content-page'>
+          <Sidebar />
+          <AppRouter />
+        </div>
       </div>
     </BrowserRouter>
   );
