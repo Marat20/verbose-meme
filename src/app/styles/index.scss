@@ -1,6 +1,6 @@
-@import './variables/global.scss';
-@import './themes/dark.scss';
-@import './themes/light.scss';
+@import './variables/global';
+@import './themes/dark';
+@import './themes/light';
 
 * {
   margin: 0;
@@ -10,7 +10,6 @@
 
 .app {
   font: var(--font-m);
-
   background-color: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
