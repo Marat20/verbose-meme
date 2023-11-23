@@ -16,12 +16,11 @@ export const Button: FC<ButtonProps> = ({
   children,
   theme,
   ...otherProps
-}) => {
-  return (
-    <button
-      className={classNames(cls.Button, {}, [className, cls[theme]])}
-      {...otherProps}>
-      {children}
-    </button>
-  );
-};
+}) => (
+  <button
+    type='button'
+    className={classNames(cls.Button, {}, [className, cls[theme]])}
+    {...otherProps}>
+    {children}
+  </button>
+);
