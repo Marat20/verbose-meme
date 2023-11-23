@@ -19,7 +19,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
       className={classNames('', {}, [className])}
       onClick={toggle}
     >
-      {t('Перевод')}
+      {t('Translate')}
     </Button>
   );
 };

@@ -1,9 +1,9 @@
 {
-  "Тестовый пример": "Test example",
-  "Перевод": "Translate",
-  "Главная страница": "Main page",
-  "Язык": "English",
+  "Translate": "Translate",
+  "Main page": "Main page",
+  "Language": "English",
   "Toggle": "Toggle",
-  "Страница не найдена": "Page not found"
-
+  "Page not found": "Page not found",
+  "Something went wrong": "Something went wrong",
+  "Reload": "Reload"
 }
