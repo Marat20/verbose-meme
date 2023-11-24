@@ -4,6 +4,7 @@
  */
 
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -22,8 +23,14 @@ const config: Config = {
     'json',
     'node',
   ],
+  modulePaths: ['<rootDir>src'],
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
   rootDir: '../../',
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+  moduleNameMapper: {
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
   // Stop running tests after `n` failures
   // bail: 0,
 
@@ -186,7 +193,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-
 };
 
 export default config;
