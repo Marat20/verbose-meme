@@ -1,15 +1,16 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
+import { ComponentRender } from 'shared/lib/tests/componentRender/componentRender';
 import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { Sidebar } from 'widgets/Sidebar';
 
 describe('Sidebar', () => {
   test('first', () => {
-    renderWithTranslation(<Sidebar />);
+    ComponentRender(<Sidebar />);
     waitFor(() => expect(screen.getByTestId('sidebar')).toBeInTheDocument());
   });
 
   test('second', () => {
-    renderWithTranslation(<Sidebar />);
+    ComponentRender(<Sidebar />);
     waitFor(() => {
       const toggleBtn = screen.getByTestId('sidebar-toggle');
       expect(screen.getByTestId('sidebar')).toBeInTheDocument();
