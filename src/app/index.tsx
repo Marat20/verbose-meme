@@ -5,7 +5,7 @@ import 'shared/config/i18n/i18n';
 import { App } from './App';
 import { ErrorBoundary } from './providers/ErrorBoundary';
 import { ThemeProvider } from './providers/ThemeProvider/ui/ThemeProvider';
-import './styles/index.scss';
+import 'app/styles/index.scss';
 
 const root = createRoot(document.getElementById('root'));
 
