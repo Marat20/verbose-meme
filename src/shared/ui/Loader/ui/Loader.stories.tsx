@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import 'app/styles/index.scss';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Loader } from './ui/Loader';
+import { Loader } from './Loader';
 
 export default {
   title: 'shared/Loader',
