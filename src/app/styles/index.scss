@@ -8,7 +8,8 @@
   box-sizing: border-box;
 }
 
-body {
+.app,
+.app_modal {
   font: var(--font-m);
   color: var(--primary-color);
 }

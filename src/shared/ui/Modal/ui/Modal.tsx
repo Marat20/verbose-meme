@@ -1,3 +1,4 @@
+import { UseTheme } from 'app/providers/ThemeProvider';
 import {
   FC,
   MouseEvent,
@@ -10,7 +11,6 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
-import { UseTheme } from 'app/providers/ThemeProvider';
 
 interface ModalProps {
   className?: string;
@@ -28,7 +28,7 @@ export const Modal: FC<ModalProps> = ({
   const ANIMATION_DELAY = 300;
   const [isClosing, setIsClosing] = useState(false);
 
-  const {theme} = UseTheme()
+  const { theme } = UseTheme();
 
   const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
@@ -49,7 +49,6 @@ export const Modal: FC<ModalProps> = ({
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
-    [cls[theme]]: true
   };
 
   const onKeyDown = useCallback(
@@ -72,7 +71,7 @@ export const Modal: FC<ModalProps> = ({
   }, [isOpen, onKeyDown]);
   return (
     <Portal>
-      <div className={classNames(cls.Modal, mods, [className])}>
+      <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
         <div className={cls.overlay} onClick={closeHandler}>
           <div className={cls.content} onClick={onContentClick}>
             {children}
