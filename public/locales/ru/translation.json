@@ -9,5 +9,8 @@
   "Reload": "Перезагрузить",
   "Login": "Логин",
   "Enter username": "Введите имя пользователя",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "Login form": "Форма авторизации",
+  "Wrong login or password": "Неверный логин или пароль",
+  "Logout": "Выйти"
 }
