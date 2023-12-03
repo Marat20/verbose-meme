@@ -5,7 +5,6 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -53,7 +52,9 @@ export const Navbar = ({ className }: NavbarProps) => {
         onClick={onShowModal}>
         {t('Login')}
       </Button>
-      <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      {isAuthModal && (
+        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+      )}
     </div>
   );
 };
