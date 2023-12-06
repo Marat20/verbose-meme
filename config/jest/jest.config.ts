@@ -11,6 +11,7 @@ const config: Config = {
   // automock: false,
   globals: {
     __IS_DEV__: true,
+    __API__: ''
   },
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['/node_modules/'],

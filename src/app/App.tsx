@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
-import { AppDispatch } from './providers/StoreProvider/config/store';
+import { AppDispatch } from './providers/StoreProvider';
 import { UseTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
 

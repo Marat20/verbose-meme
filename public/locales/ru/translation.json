@@ -1,10 +1,11 @@
 {
   "Translate": "Перевод",
   "Short translate": "Ru",
-  "Main page": "Главная страница",
+  "Main page": "Главная",
   "Language": "Русский",
-  "Toggle": "Toggle",
   "Page not found": "Страница не найдена",
+  "Profile page": "Профиль",
+  "Toggle": "Toggle",
   "Something went wrong": "Что-то пошло не так",
   "Reload": "Перезагрузить",
   "Login": "Логин",
