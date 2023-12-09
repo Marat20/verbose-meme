@@ -8,10 +8,10 @@ import { ErrorBoundary } from './providers/ErrorBoundary';
 import { StoreProvider } from './providers/StoreProvider';
 import { ThemeProvider } from './providers/ThemeProvider/ui/ThemeProvider';
 
-const root = createRoot(document.getElementById('root'));
+const root = createRoot(document.getElementById('root')!);
 
 root.render(
-  <StrictMode>
+  <StrictMode> 
     <BrowserRouter>
       <StoreProvider>
         <ErrorBoundary>

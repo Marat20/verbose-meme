@@ -2,13 +2,14 @@ import { UseTheme } from 'app/providers/ThemeProvider';
 import {
   FC,
   MouseEvent,
+  MutableRefObject,
   ReactNode,
   useCallback,
   useEffect,
   useRef,
   useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -39,7 +40,7 @@ export const Modal: FC<ModalProps> = ({
 
   const { theme } = UseTheme();
 
-  const timeRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
   const closeHandler = useCallback(() => {
     if (onClose) {
@@ -55,7 +56,7 @@ export const Modal: FC<ModalProps> = ({
     e.stopPropagation();
   };
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cls.opened]: isOpen,
     [cls.isClosing]: isClosing,
   };
