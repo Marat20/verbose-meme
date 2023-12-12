@@ -2,6 +2,7 @@
   "Translate": "Translate",
   "Short translate": "En",
   "Main page": "Main",
+  "About us": "About us",
   "Profile page": "Profile",
   "Language": "English",
   "Toggle": "Toggle",
@@ -13,5 +14,7 @@
   "Enter password": "Enter password",
   "Login form": "Login form",
   "Wrong login or password": "Wrong login or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Currency": "Currency",
+  "Country": "Country"
 }

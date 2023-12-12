@@ -1,6 +1,14 @@
 {
-  "profile.Edit": "Редактировать",
-  "profile.Profile": "Профиль",
-  "profile.Last name": "Имя",
-  "profile.First name": "Имя"
+  "Edit": "Редактировать",
+  "Profile": "Профиль",
+  "Last name": "Фамилия",
+  "First name": "Имя",
+  "There was an error loading profile": "Произошла ошибка при загрузке профиля",
+  "Try refreshing the page": "Попробуйте обновить страницу",
+  "Cancel": "Отмена",
+  "Save": "Сохранить",
+  "Age": "Возраст",
+  "City": "Город",
+  "Username": "Имя пользователя",
+  "Avatar": "Аватар"
 }

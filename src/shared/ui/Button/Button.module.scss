@@ -13,12 +13,18 @@
 }
 
 .clearInverted {
-  color: var(--inverted-primary-color)
+  color: var(--inverted-primary-color);
 }
 
 .outline {
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+  background: none;
+}
+
+.outline_red {
+  border: 1px solid var(--red-light);
+  color: var(--red-light);
   background: none;
 }
 

@@ -1,6 +1,14 @@
 {
-  "profile.Edit": "Edit",
-  "profile.Profile": "Profile",
-  "profile.Last name": "First name",
-  "profile.First name": "First name"
+  "Edit": "Edit",
+  "Profile": "Profile",
+  "Last name": "Last name",
+  "First name": "First name",
+  "There was an error loading profile": "There was an error loading profile",
+  "Try refreshing the page": "Try refreshing the page",
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Username": "Username",
+  "Avatar": "Avatar"
 }
