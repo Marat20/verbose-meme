@@ -1,5 +1,8 @@
-import { getProfileReadonly, updateProfileData } from 'entities/Profile';
-import { ProfileActions } from 'entities/Profile/model/slice/profileSlice';
+import {
+  getProfileReadonly,
+  profileActions,
+  updateProfileData,
+} from 'entities/Profile';
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -22,11 +25,11 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   const dispatch = useAppDispatch();
 
   const onEdit = useCallback(() => {
-    dispatch(ProfileActions.setReadonly(false));
+    dispatch(profileActions.setReadonly(false));
   }, [dispatch]);
 
   const onCancelEdit = useCallback(() => {
-    dispatch(ProfileActions.cancelEdit());
+    dispatch(profileActions.cancelEdit());
   }, [dispatch]);
 
   const onSave = useCallback(() => {

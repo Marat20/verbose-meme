@@ -1,12 +1,15 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
 import 'app/styles/index.scss';
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import ProfilePage from './ProfilePage';
 
 export default {
-  title: 'pages/ProfilePage',
+  title: 'entities/ProfilePage',
   component: ProfilePage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -19,8 +22,37 @@ const Template: StoryFn<typeof ProfilePage> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {};
-Primary.decorators = [StoreDecorator({})];
+Primary.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        username: 'Admin',
+        firstname: 'First',
+        lastname: 'Last',
+        age: 28,
+        country: Country.FRANCE,
+        currency: Currency.EUR,
+        avatar: AvatarImg,
+      },
+    },
+  }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  StoreDecorator({
+    profile: {
+      form: {
+        username: 'Admin',
+        firstname: 'First',
+        lastname: 'Last',
+        age: 28,
+        country: Country.FRANCE,
+        currency: Currency.EUR,
+        avatar: AvatarImg,
+      },
+    },
+  }),
+];

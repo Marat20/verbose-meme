@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
+import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import { Avatar } from './Avatar';
-import AvatarImg from './storybook.jpg';
 
 export default {
   title: '/Avatar',
