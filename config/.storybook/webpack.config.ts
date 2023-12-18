@@ -1,7 +1,6 @@
 import path from 'path';
 import webpack, { DefinePlugin, RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
-import { buildSVGLoader } from '../build/loaders/buildSVGLoader';
 import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
@@ -22,7 +21,10 @@ export default ({ config }: { config: webpack.Configuration }) => {
     return rule;
   });
   config.module?.rules?.push(buildCssLoader(true));
-  config.module?.rules?.push(buildSVGLoader());
+  config.module?.rules?.push({
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  });
 
   config.plugins?.push(
     new DefinePlugin({
