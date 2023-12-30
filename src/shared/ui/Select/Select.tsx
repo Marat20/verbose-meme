@@ -22,7 +22,7 @@ export const Select: FC<SelectProps> = memo((props) => {
   const optionList = useMemo(() => {
     return options?.map((opt) => {
       return (
-        <option className={cls.option} key={value} value={opt.value}>
+        <option className={cls.option} key={opt.value} value={opt.value}>
           {opt.content}
         </option>
       );
