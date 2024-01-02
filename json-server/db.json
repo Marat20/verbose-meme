@@ -109,13 +109,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://i.pinimg.com/originals/b0/7f/67/b07f67f9fd776addb7096edbe894ad71.png"
     }
   ],
   "profile": {
