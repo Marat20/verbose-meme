@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { CommentCard } from './CommentCard';
 
 export default {
-  title: 'entities/CommentCard',
+  title: 'entities/Comment/CommentCard',
   component: CommentCard,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,4 +15,18 @@ const Template: StoryFn<typeof CommentCard> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  comment: {
+    id: '1',
+    text: 'hello world',
+    user: {
+      id: '1',
+      username: 'Marat',
+    },
+  },
+};
+
+export const Loading = Template.bind({});
+Loading.args = {
+  isLoading: true,
+};

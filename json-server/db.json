@@ -95,13 +95,31 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": " Привет",
+      "id": "mGR--Hk"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": " YO",
+      "id": "OPMBf4T"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": " asdasd",
+      "id": "5h8Zqbr"
     }
   ],
   "users": [
@@ -120,15 +138,28 @@
       "avatar": "https://i.pinimg.com/originals/b0/7f/67/b07f67f9fd776addb7096edbe894ad71.png"
     }
   ],
-  "profile": {
-    "first": "jgh",
-    "lastname": "asf",
-    "age": 465,
-    "currency": "RUB",
-    "country": "Belarus",
-    "city": "Moscow",
-    "username": "admin213",
-    "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg",
-    "firstname": "Marat"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Marat",
+      "lastname": "Shakirov",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin213",
+      "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg"
+    },
+    {
+      "id": "2",
+      "firstname": "Timur",
+      "lastname": "Shakirov",
+      "age": 12,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin777",
+      "avatar": "https://i.pinimg.com/originals/b0/7f/67/b07f67f9fd776addb7096edbe894ad71.png"
+    }
+  ]
 }

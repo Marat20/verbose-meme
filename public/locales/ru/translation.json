@@ -18,5 +18,7 @@
   "Logout": "Выйти",
   "Currency": "Валюта",
   "Country": "Страна",
-  "No comments": "Без комментариев"
+  "No comments": "Без комментариев",
+  "Enter comment text": "Введите текст комментария",
+  "Send": "Отправить"
 }
