@@ -4,7 +4,7 @@ import AvatarImg from 'shared/assets/tests/storybook.jpg';
 import { Avatar } from './Avatar';
 
 export default {
-  title: '/Avatar',
+  title: 'shared/Avatar',
   component: Avatar,
   argTypes: {
     backgroundColor: { control: 'color' },

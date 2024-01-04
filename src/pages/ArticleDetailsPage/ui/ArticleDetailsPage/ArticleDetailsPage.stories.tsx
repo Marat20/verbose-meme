@@ -1,12 +1,12 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
-import ArticleDetailsPage from './ArticleDetailsPage';
 import { Article } from 'entities/Article';
 import {
-  ArticleType,
   ArticleBlockType,
+  ArticleType,
 } from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
   title: 'pages/ArticleDetailsPage',
@@ -27,6 +27,10 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
+  user: {
+    id: '1',
+    username: 'Marat',
+  },
   type: [ArticleType.IT],
   blocks: [
     {

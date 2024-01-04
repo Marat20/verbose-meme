@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { CurrencySelect } from './CurrencySelect';
 
 export default {
-  title: '/CurrencySelect',
+  title: 'entities/CurrencySelect',
   component: CurrencySelect,
   argTypes: {
     backgroundColor: { control: 'color' },

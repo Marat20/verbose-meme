@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { Select } from './Select';
 
 export default {
-  title: '/Select',
+  title: 'shared/Select',
   component: Select,
   argTypes: {
     backgroundColor: { control: 'color' },

@@ -3,7 +3,7 @@ import 'app/styles/index.scss';
 import { CountrySelect } from './CountrySelect';
 
 export default {
-  title: '/CountrySelect',
+  title: 'entities/CountrySelect',
   component: CountrySelect,
   argTypes: {
     backgroundColor: { control: 'color' },
