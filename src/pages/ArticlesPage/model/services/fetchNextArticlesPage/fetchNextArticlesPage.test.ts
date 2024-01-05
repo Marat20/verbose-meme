@@ -25,6 +25,7 @@ describe('fetchNextArticlesPage.test', () => {
         entities: {},
         isLoading: false,
         hasMore: true,
+        _inited: true,
       },
     });
 
@@ -43,6 +44,7 @@ describe('fetchNextArticlesPage.test', () => {
         entities: {},
         isLoading: false,
         hasMore: false,
+        _inited: true,
       },
     });
 
