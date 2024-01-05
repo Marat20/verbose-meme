@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticlesPage from './ArticlesPage';
 
 export default {
@@ -16,3 +17,8 @@ const Template: StoryFn<typeof ArticlesPage> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [
+  StoreDecorator({
+    articlesPage: {},
+  }),
+];
