@@ -1,6 +1,10 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { ArticleView } from 'entities/Article';
+import {
+  ArticleSortFiels,
+  ArticleType,
+} from 'entities/Article/model/types/article';
 import { testAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
@@ -24,7 +28,12 @@ describe('fetchNextArticlesPage.test', () => {
         ids: [],
         entities: {},
         isLoading: false,
-        hasMore: true,
+        order: 'asc',
+        sort: ArticleSortFiels.CREATED,
+        limit: 9,
+        search: '',
+        hasMore: false,
+        type: ArticleType.ALL,
         _inited: true,
       },
     });
@@ -43,6 +52,11 @@ describe('fetchNextArticlesPage.test', () => {
         ids: [],
         entities: {},
         isLoading: false,
+        order: 'asc',
+        sort: ArticleSortFiels.CREATED,
+        limit: 9,
+        search: '',
+        type: ArticleType.ALL,
         hasMore: false,
         _inited: true,
       },

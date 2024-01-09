@@ -30,8 +30,6 @@ export const Page: FC<PageProps> = memo((props) => {
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    console.log('scrolled');
-
     dispatch(
       uiActions.setScrollPosition({
         position: e.currentTarget.scrollTop,
@@ -56,7 +54,7 @@ export const Page: FC<PageProps> = memo((props) => {
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}>
       {children}
-      <div ref={triggerRef} />
+      {onScollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>
   );
 });
