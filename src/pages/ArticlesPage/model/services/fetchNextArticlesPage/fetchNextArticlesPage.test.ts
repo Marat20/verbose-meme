@@ -40,7 +40,7 @@ describe('fetchNextArticlesPage.test', () => {
 
     await thunk.callThunk();
 
-    expect(thunk.dispatch).toHaveBeenCalledTimes(4);
+    expect(thunk.dispatch).toHaveBeenCalledTimes(2);
     expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
   });
 
