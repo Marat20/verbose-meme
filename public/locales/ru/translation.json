@@ -34,5 +34,8 @@
   "IT": "Айти",
   "Economics": "Экономика",
   "Science": "Наука",
-  "Articles not found": "Статьи не найдены"
+  "Articles not found": "Статьи не найдены",
+  "Create new article": "Создать новую статью",
+  "Edit article with id": "Редактирование статьи с id = ",
+  "Create an article": "Создать статью"
 }

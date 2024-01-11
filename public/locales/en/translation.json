@@ -34,5 +34,8 @@
   "IT": "IT",
   "Economics": "Economics",
   "Science": "Science",
-  "Articles not found": "Articles not found"
+  "Articles not found": "Articles not found",
+  "Create new article": "Create new article",
+  "Edit article with id": "Edit article with id = ",
+  "Create an article": "Create an article"
 }
