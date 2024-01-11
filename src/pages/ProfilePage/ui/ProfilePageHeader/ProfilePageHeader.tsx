@@ -25,6 +25,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
   const authData = useSelector(getUserAuthData);
   const profileData = useSelector(getProfileData);
 
+  // TODO поменять на другой метод
   const canEdit = authData?.id === profileData?.id;
 
   const readonly = useSelector(getProfileReadonly);

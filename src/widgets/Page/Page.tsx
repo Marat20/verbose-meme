@@ -17,7 +17,7 @@ interface PageProps {
 }
 
 export const Page: FC<PageProps> = memo((props) => {
-  const { children, className = '', onScollEnd } = props;
+  const { children, className, onScollEnd } = props;
 
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();

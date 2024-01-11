@@ -15,7 +15,7 @@ interface CommentCardProps {
 }
 
 export const CommentCard: FC<CommentCardProps> = memo((props) => {
-  const { comment, isLoading, className = '' } = props;
+  const { comment, isLoading, className } = props;
 
   if (isLoading) {
     return (

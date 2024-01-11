@@ -1,5 +1,4 @@
 import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
@@ -13,8 +12,7 @@ interface ArticleListItemSkeletonProps {
 
 export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
   (props) => {
-    const { view, className = '' } = props;
-    const { t } = useTranslation();
+    const { view, className } = props;
 
     if (view === ArticleView.BIG) {
       return (

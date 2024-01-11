@@ -31,7 +31,7 @@ interface ArticlesPageFilterProps {
 }
 
 export const ArticlesPageFilter: FC<ArticlesPageFilterProps> = memo((props) => {
-  const { className = '' } = props;
+  const { className } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const view = useSelector(getArticlesPageView);
