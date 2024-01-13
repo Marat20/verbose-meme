@@ -51,13 +51,13 @@ export const Page: FC<PageProps> = memo((props) => {
   });
 
   return (
-    <section
+    <main
       id={PAGE_ID}
       onScroll={onScroll}
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}>
       {children}
       {onScollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
-    </section>
+    </main>
   );
 });
