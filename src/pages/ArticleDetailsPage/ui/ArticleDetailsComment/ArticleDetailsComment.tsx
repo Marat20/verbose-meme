@@ -21,7 +21,7 @@ interface ArticleDetailsCommentProps {
 export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
   (props) => {
     const { className, id } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
 
     const comments = useSelector(getArticleComments.selectAll);

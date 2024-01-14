@@ -13,7 +13,7 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = memo(
   (props: ArticleRecommendationsListProps) => {
     const { className } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
 
     const {
       data: articles,
@@ -21,14 +21,14 @@ export const ArticleRecommendationsList = memo(
       error,
     } = useArticleRecommendationsList(3);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
       return null;
     }
 
     return (
       <VStack gap='8' className={classNames('', {}, [className])}>
         <Text size={TextSize.L} title={t('Recommends')} />
-        <ArticleList articles={articles} target='_blank' />
+        <ArticleList virtualized={false} articles={articles} target='_blank' />
       </VStack>
     );
   }
