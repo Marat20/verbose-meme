@@ -1,7 +1,4 @@
-import { ArticleList } from 'entities/Article';
-import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 import { FC, memo, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -11,15 +8,10 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
-import {
-  getArticlesPageIsLoading,
-  getArticlesPageView,
-} from '../../model/selectors/ArticlesPageSelectors';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import {
-  articlesPageReducer,
-  getArticles,
-} from '../../model/slice/articlesPageSlice';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
+import { ArticlesInfiniteList } from '../ArticlesInfiniteList/ArticlesInfiniteList';
 import { ArticlesPageFilter } from '../ArticlesPageFilter/ArticlesPageFilter';
 import cls from './ArticlesPage.module.scss';
 
@@ -34,19 +26,16 @@ const reducers: ReducersList = {
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   const { className } = props;
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
-  const view = useSelector(getArticlesPageView);
 
   const [searchParams] = useSearchParams();
-
-  const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlesPage());
-  }, [dispatch]);
 
   useInitialEffect(() => {
     dispatch(initArticlesPage(searchParams));
   });
+
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlesPage());
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -54,12 +43,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
         onScollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}>
         <ArticlesPageFilter />
-        <ArticleList
-          className={cls.list}
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-        />
+        <ArticlesInfiniteList className={cls.list} />
       </Page>
     </DynamicModuleLoader>
   );
