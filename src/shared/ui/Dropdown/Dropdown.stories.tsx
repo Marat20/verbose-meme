@@ -12,5 +12,6 @@ export default {
 
 const Template: StoryFn<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
+// TODO заполнить сторис
 export const Primary = Template.bind({});
 Primary.args = {};
