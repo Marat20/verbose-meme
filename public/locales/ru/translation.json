@@ -37,5 +37,6 @@
   "Articles not found": "Статьи не найдены",
   "Create new article": "Создать новую статью",
   "Edit article with id": "Редактирование статьи с id = ",
-  "Create an article": "Создать статью"
+  "Create an article": "Создать статью",
+  "You do not have access to this page": "У вас нет доступа к этой странице"
 }

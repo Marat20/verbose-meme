@@ -1,6 +1,7 @@
 {
   "": "",
   "About us": "About us",
+  "Admin": "Admin",
   "Age": "Age",
   "All": "All",
   "All articles": "All articles",
@@ -79,6 +80,7 @@
   "Username": "Username",
   "Views": "Views",
   "Wrong login or password": "Wrong login or password",
+  "You do not have access to this page": "You do not have access to this page",
   "by": "by",
   "there was an error loading profile": "there was an error loading profile",
   "there was an error loading the page": "there was an error loading the page",
