@@ -4,7 +4,7 @@ import { ArticleView } from 'entities/Article';
 import {
   ArticleSortFiels,
   ArticleType,
-} from 'entities/Article/model/types/article';
+} from 'entities/Article/model/consts/consts';
 import { testAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';

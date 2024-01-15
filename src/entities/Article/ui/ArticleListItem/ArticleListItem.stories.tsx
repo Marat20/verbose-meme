@@ -1,6 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
+import { Article } from '../../model/types/article';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
@@ -94,11 +95,11 @@ const article = {
 export const Big = Template.bind({});
 Big.args = {
   view: ArticleView.BIG,
-  article
+  article,
 };
 
 export const Small = Template.bind({});
 Small.args = {
   view: ArticleView.SMALL,
-  article
+  article,
 };

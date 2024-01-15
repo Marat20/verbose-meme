@@ -1,11 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
-import {
-  Article,
-  ArticleBlockType,
-  ArticleType,
-} from 'entities/Article/model/types/article';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ArticleBlockType, ArticleType } from '../../model/consts/consts';
+import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
 
 export default {

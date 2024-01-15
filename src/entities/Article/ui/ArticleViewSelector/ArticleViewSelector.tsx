@@ -1,12 +1,12 @@
-import { ArticleView } from "../../model/types/article";
-import { FC, memo } from "react";
-import { useTranslation } from "react-i18next";
-import ListIcon from "shared/assets/icons/list-24-24.svg";
-import TiledIcon from "shared/assets/icons/tiled-24-24.svg";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
-import { Icon } from "shared/ui/Icon/Icon";
-import cls from "./ArticleViewSelector.module.scss";
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import ListIcon from 'shared/assets/icons/list-24-24.svg';
+import TiledIcon from 'shared/assets/icons/tiled-24-24.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../model/consts/consts';
+import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {
   className?: string;
@@ -27,7 +27,7 @@ const viewType = [
 
 export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
   (props) => {
-    const { view, onViewClick, className = "" } = props;
+    const { view, onViewClick, className = '' } = props;
     const { t } = useTranslation();
 
     const onClick = (newView: ArticleView) => () => {
@@ -41,10 +41,9 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
             <Button
               key={viewType.view}
               theme={ButtonTheme.CLEAR}
-              onClick={onClick(viewType.view)}
-            >
+              onClick={onClick(viewType.view)}>
               <Icon
-                className={classNames("", {
+                className={classNames('', {
                   [cls.notSelected]: viewType.view !== view,
                 })}
                 Svg={viewType.icon}

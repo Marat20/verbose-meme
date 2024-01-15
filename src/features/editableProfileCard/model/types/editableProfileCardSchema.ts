@@ -1,4 +1,5 @@
 import { Profile } from 'entities/Profile';
+import { ValidateProfileError } from '../consts/consts';
 
 export interface ProfileSchema {
   data?: Profile;
@@ -7,12 +8,4 @@ export interface ProfileSchema {
   error?: string;
   readonly?: boolean;
   validateErrors?: ValidateProfileError[];
-}
-
-export enum ValidateProfileError {
-  INCORRENT_USER_DATA = 'INCORRENT_USER_DATA',
-  INCORRENT_AGE = 'INCORRENT_AGE',
-  INCORRENT_COUNTRY = 'INCORRENT_COUNTRY',
-  NO_DATA = 'NO_DATA',
-  SERVER_ERROR = 'SERVER_ERROR',
 }
