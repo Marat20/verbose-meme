@@ -4,7 +4,8 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
 
 export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
-  const babelLoader = buildBabelLoader(options);
+  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+  const tsxCodebabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff|woff2)$/i,
@@ -22,10 +23,18 @@ export const buildLoaders = (options: BuildOptions): RuleSetRule[] => {
 
   const styleLoader = buildCssLoader(options.isDev);
 
-  const tsLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
-  return [fileLoader, svgLoader, babelLoader, tsLoader, styleLoader];
+  // const tsLoader = {
+  //   test: /\.tsx?$/,
+  //   use: 'ts-loader',
+  //   exclude: /node_modules/,
+  // };
+
+  return [
+    fileLoader,
+    svgLoader,
+    codeBabelLoader,
+    tsxCodebabelLoader,
+    // tsLoader,
+    styleLoader,
+  ];
 };

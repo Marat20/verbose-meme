@@ -1,0 +1,19 @@
+{
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "Cancel": "Cancel",
+  "City": "City",
+  "Edit": "Edit",
+  "First name": "First name",
+  "Firstname and lastname required": "Firstname and lastname required",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
+  "Last name": "Last name",
+  "No data": "No data",
+  "Profile": "Profile",
+  "Save": "Save",
+  "Server error": "Server error",
+  "There was an error loading profile": "There was an error loading profile",
+  "Try refreshing the page": "Try refreshing the page",
+  "Username": "Username"
+}
