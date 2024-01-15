@@ -8,10 +8,16 @@ import { ErrorBoundary } from './providers/ErrorBoundary';
 import { StoreProvider } from './providers/StoreProvider';
 import { ThemeProvider } from './providers/ThemeProvider/ui/ThemeProvider';
 
-const root = createRoot(document.getElementById('root')!);
+const container = document.getElementById('root');
+
+if (!container) {
+  throw new Error('Контейнер root не найден');
+}
+
+const root = createRoot(container);
 
 root.render(
-  <StrictMode> 
+  <StrictMode>
     <BrowserRouter>
       <StoreProvider>
         <ErrorBoundary>

@@ -1,5 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import 'app/styles/index.scss';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { EditableProfileCardHeader } from './EditableProfileCardHeader';
 
 export default {
@@ -8,6 +9,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as Meta<typeof EditableProfileCardHeader>;
 
 const Template: StoryFn<typeof EditableProfileCardHeader> = (args) => (

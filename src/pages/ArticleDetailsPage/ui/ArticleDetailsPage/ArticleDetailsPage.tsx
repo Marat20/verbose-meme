@@ -29,14 +29,6 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        {t('Article not found')}
-      </Page>
-    );
-  }
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>

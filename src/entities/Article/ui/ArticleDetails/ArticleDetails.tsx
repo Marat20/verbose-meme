@@ -30,7 +30,7 @@ import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;
-  id: string;
+  id?: string;
 }
 
 const reducers: ReducersList = {
@@ -137,6 +137,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
     <DynamicModuleLoader reducers={reducers}>
       <VStack
         gap='16'
+        max
         className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </VStack>
