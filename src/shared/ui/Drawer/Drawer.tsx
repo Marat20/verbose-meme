@@ -1,7 +1,10 @@
 import { UseTheme } from '@/app/providers/ThemeProvider';
-import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import {
+  AnimationProvider,
+  useAnimationLibs,
+} from '@/shared/lib/components/AnimationProvider';
+import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
 import cls from './Drawer.module.scss';
@@ -16,7 +19,7 @@ interface DrawerProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerContent: FC<DrawerProps> = memo((props) => {
+const DrawerContent: FC<DrawerProps> = memo((props) => {
   const { className, children, isOpen, onClose, lazy } = props;
   const { theme } = UseTheme();
 
@@ -98,7 +101,7 @@ export const DrawerContent: FC<DrawerProps> = memo((props) => {
   );
 });
 
-export const Drawer: FC<DrawerProps> = memo((props) => {
+const DrawerAsync: FC<DrawerProps> = (props) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -106,4 +109,12 @@ export const Drawer: FC<DrawerProps> = memo((props) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
+
+export const Drawer: FC<DrawerProps> = (props) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};
