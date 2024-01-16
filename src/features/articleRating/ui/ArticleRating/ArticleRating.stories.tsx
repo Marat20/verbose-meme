@@ -1,6 +1,6 @@
 import '@/app/styles/index.scss';
 import { Meta, StoryFn } from '@storybook/react';
-import { ArticleRating } from './ArticleRating';
+import ArticleRating from './ArticleRating';
 
 export default {
   title: 'features/ArticleRating',
