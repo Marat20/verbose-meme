@@ -1,7 +1,7 @@
-import { Menu } from '@headlessui/react';
-import { FC, Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
+import { Menu } from '@headlessui/react';
+import { FC, Fragment, ReactNode } from 'react';
 import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -35,7 +35,6 @@ export const Dropdown: FC<DropdownProps> = (props) => {
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
-              key={index}
               disabled={item.disabled}
               className={classNames(
                 cls.item,
@@ -49,14 +48,18 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                key={index}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );
