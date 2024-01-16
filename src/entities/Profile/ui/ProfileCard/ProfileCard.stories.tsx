@@ -1,8 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import AvatarImg from 'shared/assets/tests/storybook.jpg';
+import '@/app/styles/index.scss';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {

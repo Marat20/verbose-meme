@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import { ArticlesPageFilter } from './ArticlesPageFilter';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'pages/ArticlesPageFilter',

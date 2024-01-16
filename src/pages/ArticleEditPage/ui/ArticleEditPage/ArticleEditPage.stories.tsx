@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {

@@ -1,8 +1,8 @@
 import { Dispatch } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { testAsyncThunk } from 'shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { testAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 

@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import 'app/styles/index.scss';
+import '@/app/styles/index.scss';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';

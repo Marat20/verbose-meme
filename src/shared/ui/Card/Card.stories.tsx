@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
-import 'app/styles/index.scss';
-import { Text } from 'shared/ui/Text/Text';
+import '@/app/styles/index.scss';
+import { Text } from '@/shared/ui/Text/Text';
 import { Card } from './Card';
 
 export default {
