@@ -1,7 +1,5 @@
-import { UseTheme } from 'app/providers/ThemeProvider';
 import {
   FC,
-  MouseEvent,
   MutableRefObject,
   ReactNode,
   useCallback,
@@ -10,6 +8,7 @@ import {
   useState,
 } from 'react';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
+import { Overlay } from 'shared/ui/Overlay/Overlay';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -21,13 +20,8 @@ interface ModalProps {
   lazy?: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({
-  className,
-  children,
-  isOpen,
-  onClose,
-  lazy,
-}) => {
+export const Modal: FC<ModalProps> = (props) => {
+  const { className, children, isOpen, onClose, lazy } = props;
   const ANIMATION_DELAY = 300;
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
@@ -37,8 +31,6 @@ export const Modal: FC<ModalProps> = ({
       setIsMounted(true);
     }
   }, [isOpen]);
-
-  const { theme } = UseTheme();
 
   const timeRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
 
@@ -51,10 +43,6 @@ export const Modal: FC<ModalProps> = ({
       }, ANIMATION_DELAY);
     }
   }, [onClose]);
-
-  const onContentClick = (e: MouseEvent) => {
-    e.stopPropagation();
-  };
 
   const mods: Mods = {
     [cls.opened]: isOpen,
@@ -83,14 +71,12 @@ export const Modal: FC<ModalProps> = ({
   if (lazy && !isMounted) {
     return null;
   }
+
   return (
     <Portal>
       <div className={classNames(cls.Modal, mods, [className])}>
-        <div className={cls.overlay} onClick={closeHandler}>
-          <div className={cls.content} onClick={onContentClick}>
-            {children}
-          </div>
-        </div>
+        <Overlay onClick={closeHandler} />
+        <div className={cls.content}>{children}</div>
       </div>
     </Portal>
   );

@@ -48,7 +48,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         </AppLink>
         <HStack gap='16' className={cls.actions}>
           <NotificationButton />
-
           <AvatarDropdown />
         </HStack>
       </header>
