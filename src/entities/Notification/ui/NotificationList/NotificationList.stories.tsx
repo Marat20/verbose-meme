@@ -1,9 +1,9 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { NotificationList } from './NotificationList';
 
 export default {
-  title: 'entities/NotificationList',
+  title: 'entities/Notification/ NotificationList',
   component: NotificationList,
   argTypes: {
     backgroundColor: { control: 'color' },

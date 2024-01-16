@@ -1,4 +1,5 @@
 import '@/app/styles/index.scss';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Meta, StoryFn } from '@storybook/react';
 import ArticleRating from './ArticleRating';
 
@@ -15,4 +16,15 @@ const Template: StoryFn<typeof ArticleRating> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  articleId: '1',
+};
+Primary.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+      },
+    },
+  }),
+];
