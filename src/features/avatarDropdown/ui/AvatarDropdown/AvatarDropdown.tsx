@@ -4,13 +4,13 @@ import {
   isUserManager,
   userActions,
 } from '@/entities/User';
-import { t } from 'i18next';
-import { FC, memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
+import { t } from 'i18next';
+import { FC, memo, useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 interface AvatarDropdownProps {
   className?: string;
