@@ -33,7 +33,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
 
   return (
     <div>
-      {/* <BrowserView>
+      <BrowserView>
         <Popover
           className={classNames(cls.NotificationButton, {}, [className])}
           direction='bottom left'
@@ -41,12 +41,12 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
           <NotificationList className={cls.notifications} />
         </Popover>
       </BrowserView>
-      <MobileView> */}
+      <MobileView>
         {trigger}
         <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
           <NotificationList />
         </Drawer>
-      {/* </MobileView> */}
+      </MobileView>
     </div>
   );
 });
