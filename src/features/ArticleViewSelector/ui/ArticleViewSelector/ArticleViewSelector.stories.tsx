@@ -1,5 +1,5 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { ArticleViewSelector } from './ArticleViewSelector';
 
 export default {
