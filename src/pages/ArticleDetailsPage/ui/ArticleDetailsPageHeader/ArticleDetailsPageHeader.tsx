@@ -2,7 +2,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '@/pages/ArticleDetailsPage/model/selectors/article';
 import { RoutePath } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button } from '@/shared/ui/Button/Button';
+import { Button } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';

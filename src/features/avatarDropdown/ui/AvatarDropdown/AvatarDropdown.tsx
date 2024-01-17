@@ -6,7 +6,7 @@ import {
 } from '@/entities/User';
 import { RoutePath } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import { t } from 'i18next';
 import { FC, memo, useCallback } from 'react';
