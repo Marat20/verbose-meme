@@ -4,7 +4,7 @@ import {
   isUserManager,
   userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/route';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
@@ -43,13 +43,13 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
           ? [
               {
                 content: t('Admin'),
-                href: RoutePath.admin_panel,
+                href: getRouteAdmin(),
               },
             ]
           : []),
         {
           content: t('Profile'),
-          href: RoutePath.profile + authData.id,
+          href: getRouteProfile(authData.id),
         },
         {
           content: t('Logout'),

@@ -1,4 +1,4 @@
-import { RoutePath } from '@/shared/const/route';
+import { getRouteProfile } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -17,6 +17,10 @@ interface CommentCardProps {
 
 export const CommentCard: FC<CommentCardProps> = memo((props) => {
   const { comment, isLoading, className } = props;
+
+  if (!comment) {
+    return null;
+  }
 
   if (isLoading) {
     return (
@@ -38,9 +42,7 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
       gap='8'
       max
       className={classNames(cls.CommentCard, {}, [className])}>
-      <AppLink
-        to={`${RoutePath.profile}${comment?.user?.id}`}
-        className={cls.header}>
+      <AppLink to={getRouteProfile(comment?.user?.id)} className={cls.header}>
         {comment?.user?.avatar ? (
           <Avatar size={30} src={comment?.user?.avatar} />
         ) : null}
