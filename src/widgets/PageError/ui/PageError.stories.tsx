@@ -1,7 +1,7 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { Meta, StoryFn } from '@storybook/react';
 import { PageError } from './PageError';
 
 export default {
@@ -21,4 +21,3 @@ export const Dark = Template.bind({});
 Dark.args = {};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
- 

@@ -1,8 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
-import { Modal } from './Modal';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from '@/app/providers/ThemeProvider';
+import { Theme } from '@/shared/const/theme';
+import { Meta, StoryFn } from '@storybook/react';
+import { Modal } from './Modal';
 
 export default {
   title: 'shared/Modal',
@@ -32,4 +32,4 @@ Dark.args = {
   perspiciatis esse. Magni, perspiciatis saepe.`,
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

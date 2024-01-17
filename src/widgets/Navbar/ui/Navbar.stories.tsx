@@ -1,8 +1,8 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemeProvider';
 import '@/app/styles/index.scss';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/theme';
+import { Meta, StoryFn } from '@storybook/react';
 import { Navbar } from './Navbar';
 
 export default {
@@ -26,4 +26,4 @@ Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const AuthUser = Template.bind({});
 AuthUser.args = {};
-AuthUser.decorators = [StoreDecorator({ user: { authData: { } } })];
+AuthUser.decorators = [StoreDecorator({ user: { authData: {} } })];

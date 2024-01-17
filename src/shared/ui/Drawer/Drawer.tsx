@@ -1,9 +1,9 @@
-import { UseTheme } from '@/app/providers/ThemeProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   AnimationProvider,
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { Overlay } from '../Overlay/Overlay';
 import { Portal } from '../Portal/Portal';
@@ -21,7 +21,7 @@ const height = window.innerHeight - 100;
 
 const DrawerContent: FC<DrawerProps> = memo((props) => {
   const { className, children, isOpen, onClose, lazy } = props;
-  const { theme } = UseTheme();
+  const { theme } = useTheme();
 
   const { Gesture, Spring } = useAnimationLibs();
 
