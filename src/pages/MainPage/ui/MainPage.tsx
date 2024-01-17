@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 const MainPage = () => {
   const { t } = useTranslation();
-  return <Page>{t('Main')}</Page>;
+  return <Page data-testid='MainPage'>{t('Main')}</Page>;
 };
 
 export default MainPage;
