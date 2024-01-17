@@ -1,4 +1,5 @@
 import '@/app/styles/index.scss';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Meta, StoryFn } from '@storybook/react';
 import { NotificationItem } from './NotificationItem';
 
@@ -8,6 +9,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as Meta<typeof NotificationItem>;
 
 const Template: StoryFn<typeof NotificationItem> = (args) => (
@@ -15,4 +17,10 @@ const Template: StoryFn<typeof NotificationItem> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  item: {
+    id: '1',
+    title: 'Title',
+    description: 'Some description',
+  },
+};

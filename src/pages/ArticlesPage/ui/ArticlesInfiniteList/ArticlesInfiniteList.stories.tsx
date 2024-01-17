@@ -1,6 +1,7 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { ArticlesInfiniteList } from './ArticlesInfiniteList';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 export default {
   title: 'pages/ArticlesInfiniteList',
@@ -8,6 +9,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as Meta<typeof ArticlesInfiniteList>;
 
 const Template: StoryFn<typeof ArticlesInfiniteList> = (args) => (

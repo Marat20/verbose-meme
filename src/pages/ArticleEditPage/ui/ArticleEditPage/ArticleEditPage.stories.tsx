@@ -1,5 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Meta, StoryFn } from '@storybook/react';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
@@ -8,6 +9,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [StoreDecorator({})],
 } as Meta<typeof ArticleEditPage>;
 
 const Template: StoryFn<typeof ArticleEditPage> = (args) => (
