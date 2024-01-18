@@ -31,6 +31,7 @@ describe('Отдельная статья', () => {
   });
 
   it('Оставить оценку', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetails.title');
     cy.getByTestId('RatingCard').should('exist');
     cy.getByTestId('AddCommentForm').scrollIntoView();
