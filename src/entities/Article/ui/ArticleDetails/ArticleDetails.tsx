@@ -1,6 +1,3 @@
-import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -15,6 +12,9 @@ import { Icon } from '@/shared/ui/Icon';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { ArticleBlockType } from '../../model/consts/consts';
 import {
   getArticleDetailsData,
@@ -109,7 +109,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         <HStack justify='center' max className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
-        <VStack gap='4'>
+        <VStack gap='4' max data-testid='ArticleDetails.title'>
           <Text
             size={TextSize.L}
             className={cls.title}

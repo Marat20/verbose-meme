@@ -1,5 +1,5 @@
-import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, memo } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+import { DetailedHTMLProps, FC, HTMLAttributes, ReactNode, memo } from 'react';
 import cls from './Flex.module.scss';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
@@ -56,6 +56,7 @@ export const Flex: FC<FlexProps> = memo((props) => {
     justify = 'start',
     align = 'center',
     direction = 'row',
+    ...otherProps
   } = props;
 
   const classes = [
@@ -70,5 +71,9 @@ export const Flex: FC<FlexProps> = memo((props) => {
     [cls.max]: max,
   };
 
-  return <div className={classNames(cls.Flex, mods, classes)}>{children}</div>;
+  return (
+    <div className={classNames(cls.Flex, mods, classes)} {...otherProps}>
+      {children}
+    </div>
+  );
 });

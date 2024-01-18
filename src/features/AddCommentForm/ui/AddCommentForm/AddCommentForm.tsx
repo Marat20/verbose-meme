@@ -1,6 +1,3 @@
-import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -10,6 +7,9 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Button } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
 import { HStack } from '@/shared/ui/Stack';
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
 import {
   addCommentFormActions,
@@ -47,16 +47,20 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <HStack
+        data-testid='AddCommentForm'
         justify='between'
         max
         className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input
+          data-testid='AddCommentForm.Input'
           className={cls.input}
           value={text}
           onChange={onCommentTextChange}
           placeholder={t('Enter comment text')}
         />
-        <Button onClick={onSendHandler}>{t('Send')}</Button>
+        <Button data-testid='AddCommentForm.Button' onClick={onSendHandler}>
+          {t('Send')}
+        </Button>
       </HStack>
     </DynamicModuleLoader>
   );

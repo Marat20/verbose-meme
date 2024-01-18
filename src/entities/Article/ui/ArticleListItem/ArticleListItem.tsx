@@ -43,6 +43,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
 
     return (
       <div
+        data-testid='ArticleListItem'
         className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.header}>
@@ -58,7 +59,6 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
             className={cls.img}
             alt={article.title}
           />
-          {/* <img src={article.img} className={cls.img} alt={article.title} /> */}
           {textBlock && (
             <ArticleTextBlockComponent
               block={textBlock}
@@ -78,6 +78,7 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
 
   return (
     <AppLink
+      data-testid='ArticleListItem'
       target={target}
       to={getRouteArticleDetails(article.id)}
       className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
