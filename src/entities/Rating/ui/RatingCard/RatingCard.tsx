@@ -63,7 +63,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     <>
       <Text title={feedbackTitle} />
       <Input
-        data-testid='RatingCard.Input'
+        data-testid="RatingCard.Input"
         value={feedback}
         onChange={setFeedback}
         placeholder={t('Your feedback')}
@@ -73,10 +73,13 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
 
   return (
     <Card
-      data-testid='RatingCard'
+      data-testid="RatingCard"
       fullWidth
       className={classNames('', {}, [className])}>
-      <VStack align='center' gap='8' max>
+      <VStack
+        align="center"
+        gap="8"
+        max>
         <Text title={starsCount ? t('Thanks for rating') : title} />
         <StarRating
           selectedStars={starsCount}
@@ -84,17 +87,26 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
           onSelect={onSelectStars}
         />
         <BrowserView>
-          <Modal isOpen={isModalOpen} lazy>
-            <VStack max gap='32'>
+          <Modal
+            isOpen={isModalOpen}
+            lazy>
+            <VStack
+              max
+              gap="32">
               {modalContent}
-              <HStack gap='16' justify='end' max>
+              <HStack
+                gap="16"
+                justify="end"
+                max>
                 <Button
-                  data-testid='RatingCard.Close'
+                  data-testid="RatingCard.Close"
                   onClick={cancelHandle}
                   theme={ButtonTheme.OUTLINE_RED}>
                   {t('Close')}
                 </Button>
-                <Button data-testid='RatingCard.Send' onClick={acceptHandle}>
+                <Button
+                  data-testid="RatingCard.Send"
+                  onClick={acceptHandle}>
                   {t('Send')}
                 </Button>
               </HStack>
@@ -102,10 +114,16 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
           </Modal>
         </BrowserView>
         <MobileView>
-          <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
-            <VStack gap='32'>
+          <Drawer
+            isOpen={isModalOpen}
+            lazy
+            onClose={cancelHandle}>
+            <VStack gap="32">
               {modalContent}
-              <Button fullWidth onClick={acceptHandle} size={ButtonSize.L}>
+              <Button
+                fullWidth
+                onClick={acceptHandle}
+                size={ButtonSize.L}>
                 {t('Send')}
               </Button>
             </VStack>

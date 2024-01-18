@@ -15,5 +15,10 @@ const Template: StoryFn<typeof Card> = (args) => <Card {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  children: <Text title='Title' text='text text text' />,
+  children: (
+    <Text
+      title="Title"
+      text="text text text"
+    />
+  ),
 };

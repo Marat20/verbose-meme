@@ -37,7 +37,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
   return (
     <Dropdown
       className={classNames('', {}, [className])}
-      direction='bottom left'
+      direction="bottom left"
       items={[
         ...(isAdminPanelAvailable
           ? [
@@ -56,7 +56,13 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
           onClick: onLogout,
         },
       ]}
-      trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
+      trigger={
+        <Avatar
+          fallbackInverted
+          size={30}
+          src={authData.avatar}
+        />
+      }
     />
   );
 });

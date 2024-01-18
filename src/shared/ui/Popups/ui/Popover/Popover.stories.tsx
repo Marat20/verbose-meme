@@ -13,6 +13,4 @@ export default {
 const Template: StoryFn<typeof Popover> = (args) => <Popover {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {
-  
-};
+Primary.args = {};

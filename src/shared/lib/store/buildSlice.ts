@@ -10,7 +10,7 @@ import { useAppDispatch } from '../hooks/useAppDispatch/useAppDispatch';
 export const buildSlice = <
   State,
   CaseReducers extends SliceCaseReducers<State>,
-  Name extends string = string
+  Name extends string = string,
 >(
   options: CreateSliceOptions<State, CaseReducers, Name>
 ) => {
@@ -20,7 +20,9 @@ export const buildSlice = <
     const dispatch = useAppDispatch();
 
     // @ts-ignore
-    return useMemo(() => bindActionCreators(slice.actions, dispatch),
+    return useMemo(
+      // @ts-ignore
+      () => bindActionCreators(slice.actions, dispatch),
       [dispatch]
     );
   };

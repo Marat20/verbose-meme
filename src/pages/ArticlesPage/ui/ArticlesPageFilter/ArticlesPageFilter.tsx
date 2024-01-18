@@ -96,7 +96,10 @@ export const ArticlesPageFilter: FC<ArticlesPageFilterProps> = memo((props) => {
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticleViewSelector
+          view={view}
+          onViewClick={onChangeView}
+        />
       </div>
       <Card className={cls.search}>
         <Input

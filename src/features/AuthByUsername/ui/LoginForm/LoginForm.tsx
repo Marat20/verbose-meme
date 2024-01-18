@@ -61,11 +61,14 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Login form')} />
         {error && (
-          <Text text={t('Wrong login or password')} theme={TextTheme.ERROR} />
+          <Text
+            text={t('Wrong login or password')}
+            theme={TextTheme.ERROR}
+          />
         )}
         <Input
           placeholder={t('Enter username')}
-          type='text'
+          type="text"
           className={cls.input}
           autoFocus
           onChange={onChangeUsername}
@@ -73,7 +76,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
         />
         <Input
           placeholder={t('Enter password')}
-          type='text'
+          type="text"
           className={cls.input}
           onChange={onChangePassword}
           value={password}

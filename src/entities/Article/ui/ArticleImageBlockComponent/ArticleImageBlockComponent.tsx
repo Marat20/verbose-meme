@@ -16,8 +16,17 @@ export const ArticleImageBlockComponent: FC<ArticleImageBlockComponentProps> =
     return (
       <div
         className={classNames(cls.ArticleImageBlockComponent, {}, [className])}>
-        <img src={block.src} alt={block.title} className={cls.img} />
-        {block.title && <Text text={block.title} align={TextAlign.CENTER} />}
+        <img
+          src={block.src}
+          alt={block.title}
+          className={cls.img}
+        />
+        {block.title && (
+          <Text
+            text={block.title}
+            align={TextAlign.CENTER}
+          />
+        )}
       </div>
     );
   });

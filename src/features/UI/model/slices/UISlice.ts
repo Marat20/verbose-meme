@@ -13,7 +13,7 @@ export const uiSlice = createSlice({
       state,
       action: PayloadAction<{ path: string; position: number }>
     ) => {
-      state.scroll[action.payload.path] = action.payload.position ;
+      state.scroll[action.payload.path] = action.payload.position;
     },
   },
 });

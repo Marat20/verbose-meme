@@ -59,7 +59,12 @@ export const Page: FC<PageProps> = memo((props) => {
       data-testid={props['data-testid'] ?? 'Page'}
       className={classNames(cls.Page, {}, [className])}>
       {children}
-      {onScollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
+      {onScollEnd ? (
+        <div
+          className={cls.trigger}
+          ref={triggerRef}
+        />
+      ) : null}
     </main>
   );
 });

@@ -40,7 +40,7 @@ export const ListBox: FC<ListBoxProps> = (props) => {
   const optionsClasses = [mapDirectionClass[direction]];
 
   return (
-    <HStack gap='4'>
+    <HStack gap="4">
       {label && <span>{label + '>'}</span>}
       <HListBox
         disabled={readonly}

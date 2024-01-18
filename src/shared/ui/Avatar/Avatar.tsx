@@ -32,7 +32,13 @@ export const Avatar: FC<AvatarProps> = (props) => {
       Svg={UserIcon}
     />
   );
-  const fallback = <Skeleton width={size} height={size} border='50%' />;
+  const fallback = (
+    <Skeleton
+      width={size}
+      height={size}
+      border="50%"
+    />
+  );
 
   return (
     <AppImage

@@ -9,8 +9,8 @@ describe('Пользователь заходит на страницу проф
     });
   });
   afterEach(() => {
-    cy.resetProfile(profileId)
-  })
+    cy.resetProfile(profileId);
+  });
   it('Успешная загрузка профиля', () => {
     cy.getByTestId('ProfileCard.firstname').should('have.value', 'Marat');
   });

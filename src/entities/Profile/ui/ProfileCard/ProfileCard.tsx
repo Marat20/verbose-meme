@@ -48,7 +48,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (isLoading) {
     return (
       <HStack
-        justify='center'
+        justify="center"
         max
         className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
         <Loader />
@@ -59,7 +59,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (error) {
     return (
       <HStack
-        justify='center'
+        justify="center"
         max
         className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
         <Text
@@ -78,11 +78,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   return (
     <VStack
-      gap='8'
+      gap="8"
       max
       className={classNames(cls.ProfileCard, mods, [className])}>
       {data?.avatar && (
-        <HStack justify='center' max className={cls.avatarWrapper}>
+        <HStack
+          justify="center"
+          max
+          className={cls.avatarWrapper}>
           <Avatar src={data.avatar} />
         </HStack>
       )}
@@ -92,7 +95,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         className={cls.input}
         onChange={onChangeFirstname}
         readonly={readonly}
-        data-testid='ProfileCard.firstname'
+        data-testid="ProfileCard.firstname"
       />
       <Input
         value={data?.lastname}
@@ -100,7 +103,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         className={cls.input}
         onChange={onChangeLastname}
         readonly={readonly}
-        data-testid='ProfileCard.lastname'
+        data-testid="ProfileCard.lastname"
       />
       <Input
         value={data?.age}

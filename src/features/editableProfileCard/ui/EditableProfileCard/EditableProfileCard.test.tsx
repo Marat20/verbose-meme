@@ -40,7 +40,7 @@ const options = {
 
 describe('features/editableProfileCard', () => {
   test('Readonly mode must toggle', () => {
-    ComponentRender(<EditableProfileCard id='1' />, options);
+    ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
         'EditableProfileCardHeader.EditButton'
@@ -53,7 +53,7 @@ describe('features/editableProfileCard', () => {
   });
 
   test('When canceling the values should be reset to zero', () => {
-    ComponentRender(<EditableProfileCard id='1' />, options);
+    ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
         'EditableProfileCardHeader.EditButton'
@@ -82,7 +82,7 @@ describe('features/editableProfileCard', () => {
   });
 
   test('An error should appear', () => {
-    ComponentRender(<EditableProfileCard id='1' />, options);
+    ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
         'EditableProfileCardHeader.EditButton'
@@ -105,7 +105,7 @@ describe('features/editableProfileCard', () => {
   });
 
   test('If there are no validation errors, then a PUT request should go to the server ', () => {
-    ComponentRender(<EditableProfileCard id='1' />, options);
+    ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
         'EditableProfileCardHeader.EditButton'

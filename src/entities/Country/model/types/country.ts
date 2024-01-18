@@ -5,4 +5,3 @@ export enum Country {
   SPAIN = 'Spain',
   OAE = 'OAE',
 }
-

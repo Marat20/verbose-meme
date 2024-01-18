@@ -11,6 +11,7 @@
     "build:prod": "webpack --env mode=production apiUrl=https://verbose-meme-server.vercel.app",
     "build:dev": "webpack --env mode=development",
     "lint:scss": "npx stylelint \"**/*.scss\"",
+    "prettier": "npx prettier --write **/*.{ts,tsx,json}",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "NODE_ENV=development jest --config ./config/jest/jest.config.ts",
     "test:e2e": "cypress open",
@@ -66,6 +67,7 @@
     "copy-webpack-plugin": "^12.0.1",
     "css-loader": "^6.8.1",
     "cypress": "^13.6.3",
+    "eslint-config-prettier": "^9.1.0",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "html-webpack-plugin": "^5.5.3",
@@ -78,6 +80,7 @@
     "lint-staged": "^15.2.0",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "^2.7.6",
+    "prettier": "3.2.4",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.14.0",
     "sass": "^1.69.5",
@@ -121,7 +124,10 @@
     "react-dom": "^18.2.0"
   },
   "ling-staged": {
-    "**/*.{ts,tsx}": "eslint"
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint"
+    ]
   },
   "loki": {
     "configurations": {
