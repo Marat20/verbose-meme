@@ -22,8 +22,7 @@
     "storybook": "storybook dev -p 6006 -c ./config/.storybook",
     "storybook:build": "storybook build -c ./config/.storybook",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js",
-    "postinstall": "rm -rf node_modules/.cache"
+    "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "",
@@ -74,6 +73,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-html-reporters": "^3.1.7",
     "json-server": "^0.17.4",
+    "lint-staged": "^15.2.0",
     "loki": "^0.33.1",
     "mini-css-extract-plugin": "^2.7.6",
     "reg-cli": "^0.17.7",
@@ -112,12 +112,14 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^13.5.0",
     "react-redux": "^8.1.3",
-    "react-router-dom": "^6.19.0",
-    "react-virtualized": "^9.22.5"
+    "react-router-dom": "^6.19.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "ling-staged": {
+    "**/*.{ts,tsx}": "eslint"
   },
   "loki": {
     "configurations": {

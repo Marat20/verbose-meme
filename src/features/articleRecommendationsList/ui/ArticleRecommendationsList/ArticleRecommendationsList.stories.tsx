@@ -21,30 +21,27 @@ const article: Article = {
   img: '',
   createdAt: '',
   views: 123,
-  user: {
-    id: '1',
-    username: 'user',
-  },
+  user: { id: '1', username: '123' },
   blocks: [],
   type: [],
-  title: 'title',
-  subtitle: 'subtitle',
+  title: '123',
+  subtitle: 'asfsa',
 };
-
-// FIXBUGS исправить моковый запрос
 
 export const Normal = Template.bind({});
 Normal.args = {};
+Normal.decorators = [StoreDecorator({})];
 Normal.parameters = {
   mockData: [
     {
-      url: __API__ + '/articles?_limit=3',
+      url: `${__API__}/articles?_limit=3`,
       method: 'GET',
       status: 200,
       response: [
         { ...article, id: '1' },
         { ...article, id: '2' },
         { ...article, id: '3' },
+        { ...article, id: '4' },
       ],
     },
   ],

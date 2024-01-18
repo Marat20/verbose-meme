@@ -9,7 +9,7 @@ import ProfilePage from './ProfilePage';
 import { Theme } from '@/shared/const/theme';
 
 export default {
-  title: 'entities/ProfilePage',
+  title: 'pages/ProfilePage',
   component: ProfilePage,
   argTypes: {
     backgroundColor: { control: 'color' },

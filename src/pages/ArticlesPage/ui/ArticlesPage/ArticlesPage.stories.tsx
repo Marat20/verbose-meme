@@ -1,6 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Meta, StoryFn } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 
 export default {
@@ -19,6 +19,8 @@ export const Primary = Template.bind({});
 Primary.args = {};
 Primary.decorators = [
   StoreDecorator({
-    articlesPage: {},
+    articlesPage: {
+      isLoading: true,
+    },
   }),
 ];
