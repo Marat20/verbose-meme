@@ -39,7 +39,7 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
     (tab: TabItem) => {
       onChangeType(tab.value as ArticleType);
     },
-    [onChangeType]
+    [onChangeType],
   );
 
   return (

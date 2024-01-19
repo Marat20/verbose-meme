@@ -52,7 +52,8 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
   return (
     <div
       data-testid="ArticleList"
-      className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+      className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+    >
       {articles.map((item) => (
         <ArticleListItem
           article={item}

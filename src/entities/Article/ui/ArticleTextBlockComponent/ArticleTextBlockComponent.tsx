@@ -17,7 +17,8 @@ export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> =
 
     return (
       <div
-        className={classNames(cls.ArticleTextBlockComponent, {}, [className])}>
+        className={classNames(cls.ArticleTextBlockComponent, {}, [className])}
+      >
         {block.title && (
           <Text
             title={block.title}

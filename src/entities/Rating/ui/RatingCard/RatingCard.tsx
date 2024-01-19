@@ -46,7 +46,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
         onAccept?.(selectedStarsCount);
       }
     },
-    [hasFeedback, onAccept]
+    [hasFeedback, onAccept],
   );
 
   const acceptHandle = useCallback(() => {
@@ -75,11 +75,13 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     <Card
       data-testid="RatingCard"
       fullWidth
-      className={classNames('', {}, [className])}>
+      className={classNames('', {}, [className])}
+    >
       <VStack
         align="center"
         gap="8"
-        max>
+        max
+      >
         <Text title={starsCount ? t('Thanks for rating') : title} />
         <StarRating
           selectedStars={starsCount}
@@ -89,24 +91,29 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
         <BrowserView>
           <Modal
             isOpen={isModalOpen}
-            lazy>
+            lazy
+          >
             <VStack
               max
-              gap="32">
+              gap="32"
+            >
               {modalContent}
               <HStack
                 gap="16"
                 justify="end"
-                max>
+                max
+              >
                 <Button
                   data-testid="RatingCard.Close"
                   onClick={cancelHandle}
-                  theme={ButtonTheme.OUTLINE_RED}>
+                  theme={ButtonTheme.OUTLINE_RED}
+                >
                   {t('Close')}
                 </Button>
                 <Button
                   data-testid="RatingCard.Send"
-                  onClick={acceptHandle}>
+                  onClick={acceptHandle}
+                >
                   {t('Send')}
                 </Button>
               </HStack>
@@ -117,13 +124,15 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
           <Drawer
             isOpen={isModalOpen}
             lazy
-            onClose={cancelHandle}>
+            onClose={cancelHandle}
+          >
             <VStack gap="32">
               {modalContent}
               <Button
                 fullWidth
                 onClick={acceptHandle}
-                size={ButtonSize.L}>
+                size={ButtonSize.L}
+              >
                 {t('Send')}
               </Button>
             </VStack>

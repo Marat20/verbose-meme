@@ -72,7 +72,7 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
       filterTaps: true,
       bounds: { top: 0 },
       rubberband: true,
-    }
+    },
   );
 
   if (!isOpen) {
@@ -84,16 +84,14 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
   return (
     <Portal>
       <div
-        className={classNames(cls.Drawer, {}, [
-          className,
-          theme,
-          'app_drawer',
-        ])}>
+        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
+      >
         <Overlay onClick={close} />
         <Spring.a.div
           style={{ display, bottom: `calc(-100vh + ${height - 100}px)`, y }}
           {...bind()}
-          className={cls.sheet}>
+          className={cls.sheet}
+        >
           {children}
         </Spring.a.div>
       </div>

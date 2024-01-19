@@ -26,7 +26,7 @@ export const Page: FC<PageProps> = memo((props) => {
   const { pathname } = useLocation();
 
   const scrollPosition = useSelector((state: StateSchema) =>
-    getUISCrollByPath(state, pathname)
+    getUISCrollByPath(state, pathname),
   );
 
   const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -37,7 +37,7 @@ export const Page: FC<PageProps> = memo((props) => {
       uiActions.setScrollPosition({
         position: e.currentTarget.scrollTop,
         path: pathname,
-      })
+      }),
     );
   }, 500);
 
@@ -57,7 +57,8 @@ export const Page: FC<PageProps> = memo((props) => {
       onScroll={onScroll}
       ref={wrapperRef}
       data-testid={props['data-testid'] ?? 'Page'}
-      className={classNames(cls.Page, {}, [className])}>
+      className={classNames(cls.Page, {}, [className])}
+    >
       {children}
       {onScollEnd ? (
         <div

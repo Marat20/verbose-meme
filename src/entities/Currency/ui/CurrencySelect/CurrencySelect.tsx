@@ -25,7 +25,7 @@ export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {
     (value: string) => {
       onChange?.(value as Currency);
     },
-    [onChange]
+    [onChange],
   );
 
   return (

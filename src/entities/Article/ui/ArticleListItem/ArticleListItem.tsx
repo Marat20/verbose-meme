@@ -46,13 +46,14 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
 
   if (view === ArticleView.BIG) {
     let textBlock = article.blocks.find(
-      (block) => block.type === ArticleBlockType.TEXT
+      (block) => block.type === ArticleBlockType.TEXT,
     ) as ArticleTextBlock;
 
     return (
       <div
         data-testid="ArticleListItem"
-        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+      >
         <Card className={cls.card}>
           <div className={cls.header}>
             <Avatar
@@ -93,7 +94,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
           <div className={cls.footer}>
             <AppLink
               target={target}
-              to={getRouteArticleDetails(article.id)}>
+              to={getRouteArticleDetails(article.id)}
+            >
               <Button>{t('Read more')}</Button>
             </AppLink>
             {views}
@@ -108,7 +110,8 @@ export const ArticleListItem: FC<ArticleListItemProps> = memo((props) => {
       data-testid="ArticleListItem"
       target={target}
       to={getRouteArticleDetails(article.id)}
-      className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+      className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+    >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
           <AppImage

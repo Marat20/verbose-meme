@@ -41,7 +41,8 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
             <Button
               key={viewType.view}
               theme={ButtonTheme.CLEAR}
-              onClick={onClick(viewType.view)}>
+              onClick={onClick(viewType.view)}
+            >
               <Icon
                 className={classNames('', {
                   [cls.notSelected]: viewType.view !== view,
@@ -53,5 +54,5 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
         })}
       </div>
     );
-  }
+  },
 );

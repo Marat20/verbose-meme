@@ -29,7 +29,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
           key={item.path}
         />
       )),
-    [collapsed, sidebarItemsList]
+    [collapsed, sidebarItemsList],
   );
 
   return (
@@ -37,7 +37,8 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
         className,
-      ])}>
+      ])}
+    >
       <Button
         className={cls.collapsedBtn}
         theme={ButtonTheme.BACKGROUND_INVERTED}
@@ -45,13 +46,15 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
         size={ButtonSize.L}
         data-testid="sidebar-toggle"
         type="button"
-        onClick={onToggle}>
+        onClick={onToggle}
+      >
         {collapsed ? '>' : '<'}
       </Button>
       <VStack
         role="navigation"
         gap="8"
-        className={cls.items}>
+        className={cls.items}
+      >
         {itemsList}
       </VStack>
       <div className={cls.switchers}>

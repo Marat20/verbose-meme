@@ -6,7 +6,7 @@ describe('Counter', () => {
   test('first', () => {
     ComponentRender(<Counter />, { initialState: { counter: { value: 10 } } });
     waitFor(() =>
-      expect(screen.getByTestId('value-title')).toHaveTextContent('value = 10')
+      expect(screen.getByTestId('value-title')).toHaveTextContent('value = 10'),
     );
   });
 

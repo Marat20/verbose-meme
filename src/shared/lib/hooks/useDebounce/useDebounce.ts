@@ -12,6 +12,6 @@ export function useDebounce(callback: (...args: any[]) => void, delay: number) {
         callback(...args);
       }, delay);
     },
-    [delay, callback]
+    [delay, callback],
   );
 }

@@ -47,7 +47,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     [ValidateProfileError.INCORRENT_AGE]: t('Incorrect age'),
     [ValidateProfileError.INCORRENT_COUNTRY]: t('Incorrect country'),
     [ValidateProfileError.INCORRENT_USER_DATA]: t(
-      'Firstname and lastname required'
+      'Firstname and lastname required',
     ),
     [ValidateProfileError.NO_DATA]: t('No data'),
     [ValidateProfileError.SERVER_ERROR]: t('Server error'),
@@ -63,55 +63,55 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     (value?: string) => {
       dispatch(profileActions.updateProfile({ firstname: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeLastname = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ lastname: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
   const onChangeAge = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ age: Number(value) || 0 }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCity = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ city: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeAvatar = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ avatar: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeUsername = useCallback(
     (value?: string) => {
       dispatch(profileActions.updateProfile({ username: value || '' }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCurrency = useCallback(
     (currency?: Currency) => {
       dispatch(profileActions.updateProfile({ currency }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onChangeCountry = useCallback(
     (country?: Country) => {
       dispatch(profileActions.updateProfile({ country }));
     },
-    [dispatch]
+    [dispatch],
   );
 
   return (
@@ -119,7 +119,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
       <VStack
         gap="8"
         max
-        className={classNames('', {}, [className])}>
+        className={classNames('', {}, [className])}
+      >
         <EditableProfileCardHeader />
         {validateErrors?.length &&
           validateErrors.map((err) => (

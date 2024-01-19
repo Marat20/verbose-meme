@@ -28,7 +28,8 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
         data-testid="CommentCard.Loading"
         gap="8"
         max
-        className={classNames(cls.CommentCard, {}, [className, cls.loading])}>
+        className={classNames(cls.CommentCard, {}, [className, cls.loading])}
+      >
         <div className={cls.header}>
           <Skeleton
             width={30}
@@ -55,10 +56,12 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
       data-testid="CommentCard.Content"
       gap="8"
       max
-      className={classNames(cls.CommentCard, {}, [className])}>
+      className={classNames(cls.CommentCard, {}, [className])}
+    >
       <AppLink
         to={getRouteProfile(comment?.user?.id)}
-        className={cls.header}>
+        className={cls.header}
+      >
         {comment?.user?.avatar ? (
           <Avatar
             size={30}

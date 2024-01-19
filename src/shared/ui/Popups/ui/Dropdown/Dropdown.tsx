@@ -29,7 +29,8 @@ export const Dropdown: FC<DropdownProps> = (props) => {
   return (
     <Menu
       as={'div'}
-      className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
+      className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
+    >
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
         {items.map((item, index) => {
@@ -39,9 +40,10 @@ export const Dropdown: FC<DropdownProps> = (props) => {
               className={classNames(
                 cls.item,
                 { [popupCls.active]: active },
-                []
+                [],
               )}
-              onClick={item.onClick}>
+              onClick={item.onClick}
+            >
               {item.content}
             </button>
           );
@@ -52,7 +54,8 @@ export const Dropdown: FC<DropdownProps> = (props) => {
                 key={index}
                 as={AppLink}
                 to={item.href}
-                disabled={item.disabled}>
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );
@@ -62,7 +65,8 @@ export const Dropdown: FC<DropdownProps> = (props) => {
             <Menu.Item
               key={index}
               as={Fragment}
-              disabled={item.disabled}>
+              disabled={item.disabled}
+            >
               {content}
             </Menu.Item>
           );

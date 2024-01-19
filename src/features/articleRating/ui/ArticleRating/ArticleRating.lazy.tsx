@@ -12,7 +12,8 @@ export const ArticleRatingLazy = (props: ArticleRatingProps) => {
           width={'100%'}
           height={140}
         />
-      }>
+      }
+    >
       <ArticleRatingAsync {...props} />
     </Suspense>
   );

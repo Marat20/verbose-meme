@@ -43,11 +43,11 @@ describe('features/editableProfileCard', () => {
     ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
-        'EditableProfileCardHeader.EditButton'
+        'EditableProfileCardHeader.EditButton',
       );
       await userEvent.click(editBtn);
       expect(
-        screen.getByTestId('EditableProfileCardHeader.CancelButton')
+        screen.getByTestId('EditableProfileCardHeader.CancelButton'),
       ).toBeInTheDocument();
     });
   });
@@ -56,10 +56,10 @@ describe('features/editableProfileCard', () => {
     ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
-        'EditableProfileCardHeader.EditButton'
+        'EditableProfileCardHeader.EditButton',
       );
       const cancelBtn = screen.getByTestId(
-        'EditableProfileCardHeader.CancelButton'
+        'EditableProfileCardHeader.CancelButton',
       );
       const firstnameInput = screen.getByTestId('ProfileCard.firstname');
       const lastnameInput = screen.getByTestId('ProfileCard.lastname');
@@ -85,10 +85,10 @@ describe('features/editableProfileCard', () => {
     ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
-        'EditableProfileCardHeader.EditButton'
+        'EditableProfileCardHeader.EditButton',
       );
       const saveBtn = screen.getByTestId(
-        'EditableProfileCardHeader.SaveButton'
+        'EditableProfileCardHeader.SaveButton',
       );
       const firstnameInput = screen.getByTestId('ProfileCard.firstname');
 
@@ -99,7 +99,7 @@ describe('features/editableProfileCard', () => {
       await userEvent.click(saveBtn);
 
       expect(
-        screen.getByTestId('EditableProfileCardHeader.Error.Paragraph')
+        screen.getByTestId('EditableProfileCardHeader.Error.Paragraph'),
       ).toBeInTheDocument();
     });
   });
@@ -108,10 +108,10 @@ describe('features/editableProfileCard', () => {
     ComponentRender(<EditableProfileCard id="1" />, options);
     waitFor(async () => {
       const editBtn = screen.getByTestId(
-        'EditableProfileCardHeader.EditButton'
+        'EditableProfileCardHeader.EditButton',
       );
       const saveBtn = screen.getByTestId(
-        'EditableProfileCardHeader.SaveButton'
+        'EditableProfileCardHeader.SaveButton',
       );
       const firstnameInput = screen.getByTestId('ProfileCard.firstname');
 

@@ -27,7 +27,7 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
     (value: string) => {
       onChange?.(value as Country);
     },
-    [onChange]
+    [onChange],
   );
 
   return (

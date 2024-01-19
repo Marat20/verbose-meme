@@ -39,13 +39,13 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
     (value: string) => {
       dispatch(loginActions.setPassword(value));
     },
-    [dispatch]
+    [dispatch],
   );
   const onChangeUsername = useCallback(
     (value: string) => {
       dispatch(loginActions.setUsername(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onLoginClick = useCallback(async () => {
@@ -85,7 +85,8 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
           onClick={onLoginClick}
           theme={ButtonTheme.OUTLINE}
           disabled={isLoading}
-          className={cls.loginBtn}>
+          className={cls.loginBtn}
+        >
           {t('Login')}
         </Button>
       </div>

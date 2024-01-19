@@ -47,7 +47,7 @@ export const StarRating: FC<StarRatingProps> = memo((props) => {
             className={classNames(
               cls.starIcon,
               { [cls.selected]: isSelected },
-              [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
+              [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
             )}
             Svg={StarIcon}
             key={starNumber}

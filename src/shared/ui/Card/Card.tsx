@@ -29,7 +29,8 @@ export const Card: FC<CardProps> = memo((props) => {
         className,
         cls[theme],
       ])}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </div>
   );

@@ -25,7 +25,8 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         <option
           className={cls.option}
           key={opt.value}
-          value={opt.value}>
+          value={opt.value}
+        >
           {opt.content}
         </option>
       );
@@ -43,7 +44,8 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
         disabled={readonly}
         value={value}
         className={cls.select}
-        onChange={onChangeHandler}>
+        onChange={onChangeHandler}
+      >
         {optionList}
       </select>
     </div>

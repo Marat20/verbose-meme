@@ -125,7 +125,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         <HStack
           justify="center"
           max
-          className={cls.avatarWrapper}>
+          className={cls.avatarWrapper}
+        >
           <Avatar
             size={200}
             src={article?.img}
@@ -135,7 +136,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         <VStack
           gap="4"
           max
-          data-testid="ArticleDetails.title">
+          data-testid="ArticleDetails.title"
+        >
           <Text
             size={TextSize.L}
             className={cls.title}
@@ -144,7 +146,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
           />
           <HStack
             gap="8"
-            className={cls.articleInfo}>
+            className={cls.articleInfo}
+          >
             <Icon
               className={cls.icon}
               Svg={EyeIcon}
@@ -153,7 +156,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
           </HStack>
           <HStack
             gap="8"
-            className={cls.articleInfo}>
+            className={cls.articleInfo}
+          >
             <Icon
               className={cls.icon}
               Svg={CalendarIcon}
@@ -175,7 +179,8 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
       <VStack
         gap="16"
         max
-        className={classNames(cls.ArticleDetails, {}, [className])}>
+        className={classNames(cls.ArticleDetails, {}, [className])}
+      >
         {content}
       </VStack>
     </DynamicModuleLoader>

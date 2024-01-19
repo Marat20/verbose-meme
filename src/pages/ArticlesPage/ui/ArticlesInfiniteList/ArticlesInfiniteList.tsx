@@ -36,5 +36,5 @@ export const ArticlesInfiniteList: FC<ArticlesInfiniteListProps> = memo(
         articles={articles}
       />
     );
-  }
+  },
 );

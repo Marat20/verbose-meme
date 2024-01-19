@@ -32,7 +32,7 @@ export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
       (text: string) => {
         dispatch(addCommentForArticle(text));
       },
-      [dispatch]
+      [dispatch],
     );
 
     useInitialEffect(() => {
@@ -43,7 +43,8 @@ export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
       <VStack
         gap="16"
         max
-        className={classNames('', {}, [className])}>
+        className={classNames('', {}, [className])}
+      >
         <Text
           size={TextSize.L}
           title={t('Comments')}
@@ -57,5 +58,5 @@ export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
         />
       </VStack>
     );
-  }
+  },
 );

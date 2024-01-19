@@ -8,7 +8,8 @@ const NotFoundPage = () => {
   return (
     <Page
       data-testid="NotFoundPage"
-      className={classNames(cls.NotFoundPage, {}, [])}>
+      className={classNames(cls.NotFoundPage, {}, [])}
+    >
       {t('Page not found')}
     </Page>
   );

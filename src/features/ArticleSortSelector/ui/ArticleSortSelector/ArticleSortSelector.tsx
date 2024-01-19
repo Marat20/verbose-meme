@@ -66,5 +66,5 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
         />
       </div>
     );
-  }
+  },
 );

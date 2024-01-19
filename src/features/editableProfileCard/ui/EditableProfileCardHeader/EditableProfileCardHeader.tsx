@@ -47,7 +47,8 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
       <HStack
         max
         justify="between"
-        className={classNames('', {}, [className])}>
+        className={classNames('', {}, [className])}
+      >
         <Text title={t('Profile')} />
         {canEdit && (
           <>
@@ -55,7 +56,8 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
               <Button
                 data-testid={'EditableProfileCardHeader.EditButton'}
                 theme={ButtonTheme.OUTLINE}
-                onClick={onEdit}>
+                onClick={onEdit}
+              >
                 {t('Edit')}
               </Button>
             ) : (
@@ -63,13 +65,15 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
                 <Button
                   data-testid={'EditableProfileCardHeader.CancelButton'}
                   theme={ButtonTheme.OUTLINE_RED}
-                  onClick={onCancelEdit}>
+                  onClick={onCancelEdit}
+                >
                   {t('Cancel')}
                 </Button>
                 <Button
                   data-testid={'EditableProfileCardHeader.SaveButton'}
                   theme={ButtonTheme.OUTLINE}
-                  onClick={onSave}>
+                  onClick={onSave}
+                >
                   {t('Save')}
                 </Button>
               </HStack>

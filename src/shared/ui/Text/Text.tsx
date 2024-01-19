@@ -58,18 +58,21 @@ export const Text: FC<TextProps> = memo((props) => {
         cls[theme],
         cls[align],
         cls[size],
-      ])}>
+      ])}
+    >
       {title && (
         <HeaderTag
           data-testid={`${dataTestId}.Header`}
-          className={cls.title}>
+          className={cls.title}
+        >
           {title}
         </HeaderTag>
       )}
       {text && (
         <p
           data-testid={`${dataTestId}.Pa ragraph`}
-          className={cls.text}>
+          className={cls.text}
+        >
           {text}
         </p>
       )}

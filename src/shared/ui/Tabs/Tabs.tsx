@@ -24,7 +24,7 @@ export const Tabs: FC<TabsProps> = memo((props) => {
         onTabClick(tab);
       };
     },
-    [onTabClick]
+    [onTabClick],
   );
 
   return (
@@ -35,7 +35,8 @@ export const Tabs: FC<TabsProps> = memo((props) => {
             theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
             className={cls.tab}
             onClick={clickHandle(tab)}
-            key={tab.value}>
+            key={tab.value}
+          >
             {tab.content}
           </Card>
         );

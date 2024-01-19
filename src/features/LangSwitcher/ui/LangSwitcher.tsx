@@ -19,9 +19,10 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
       <Button
         theme={ButtonTheme.CLEAR}
         className={classNames('', {}, [className])}
-        onClick={toggle}>
+        onClick={toggle}
+      >
         {t(short ? 'Short translate' : 'Translate')}
       </Button>
     );
-  }
+  },
 );

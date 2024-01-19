@@ -20,7 +20,8 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
           className={classNames(cls.ArticleListItemSkeleton, {}, [
             className,
             cls[view],
-          ])}>
+          ])}
+        >
           <Card className={cls.card}>
             <div className={cls.header}>
               <Skeleton
@@ -64,7 +65,8 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
         className={classNames(cls.ArticleListItemSkeleton, {}, [
           className,
           cls[view],
-        ])}>
+        ])}
+      >
         <Card className={cls.card}>
           <div className={cls.imageWrapper}>
             <Skeleton
@@ -87,5 +89,5 @@ export const ArticleListItemSkeleton: FC<ArticleListItemSkeletonProps> = memo(
         </Card>
       </div>
     );
-  }
+  },
 );

@@ -40,21 +40,21 @@ const ArticleRating: FC<ArticleRatingProps> = memo((props) => {
         console.log(error);
       }
     },
-    [articleId, rateArticleMutations, userData?.id]
+    [articleId, rateArticleMutations, userData?.id],
   );
 
   const onCancel = useCallback(
     (starsNumber: number) => {
       handleRateArticle(starsNumber);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   const onAccept = useCallback(
     (starsNumber: number, feedback?: string) => {
       handleRateArticle(starsNumber, feedback);
     },
-    [handleRateArticle]
+    [handleRateArticle],
   );
 
   if (isLoading) {

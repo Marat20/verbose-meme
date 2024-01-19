@@ -26,17 +26,20 @@ export const Counter = () => {
       <h1 data-testid="value-title">value = {counterValue}</h1>
       <Button
         data-testid="increment-btn"
-        onClick={handleIncrement}>
+        onClick={handleIncrement}
+      >
         increment
       </Button>
       <Button
         data-testid="add-btn"
-        onClick={handleAdd}>
+        onClick={handleAdd}
+      >
         add 5
       </Button>
       <Button
         data-testid="decrement-btn"
-        onClick={handleDecrement}>
+        onClick={handleDecrement}
+      >
         decrement
       </Button>
     </div>

@@ -74,7 +74,8 @@ export const Flex: FC<FlexProps> = memo((props) => {
   return (
     <div
       className={classNames(cls.Flex, mods, classes)}
-      {...otherProps}>
+      {...otherProps}
+    >
       {children}
     </div>
   );

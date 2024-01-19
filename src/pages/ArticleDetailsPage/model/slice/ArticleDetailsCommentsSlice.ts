@@ -14,7 +14,7 @@ const commentsAdapter = createEntityAdapter({
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
   (state) =>
-    state.articleDetailsPage?.comments || commentsAdapter.getInitialState()
+    state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
 const ArticleDetailsCommentsSlice = createSlice({
@@ -37,7 +37,7 @@ const ArticleDetailsCommentsSlice = createSlice({
         (state, action: PayloadAction<Comment[]>) => {
           state.isLoading = false;
           commentsAdapter.setAll(state, action.payload);
-        }
+        },
       )
       .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
         state.isLoading = false;

@@ -50,7 +50,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       <HStack
         justify="center"
         max
-        className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+        className={classNames(cls.ProfileCard, {}, [className, cls.loading])}
+      >
         <Loader />
       </HStack>
     );
@@ -61,7 +62,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
       <HStack
         justify="center"
         max
-        className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+        className={classNames(cls.ProfileCard, {}, [className, cls.error])}
+      >
         <Text
           align={TextAlign.CENTER}
           theme={TextTheme.ERROR}
@@ -80,12 +82,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     <VStack
       gap="8"
       max
-      className={classNames(cls.ProfileCard, mods, [className])}>
+      className={classNames(cls.ProfileCard, mods, [className])}
+    >
       {data?.avatar && (
         <HStack
           justify="center"
           max
-          className={cls.avatarWrapper}>
+          className={cls.avatarWrapper}
+        >
           <Avatar src={data.avatar} />
         </HStack>
       )}

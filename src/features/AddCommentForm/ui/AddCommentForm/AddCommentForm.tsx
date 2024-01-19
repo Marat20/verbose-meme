@@ -36,7 +36,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
     (value: string) => {
       dispatch(addCommentFormActions.setText(value));
     },
-    [dispatch]
+    [dispatch],
   );
 
   const onSendHandler = useCallback(() => {
@@ -50,7 +50,8 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
         data-testid="AddCommentForm"
         justify="between"
         max
-        className={classNames(cls.AddCommentForm, {}, [className])}>
+        className={classNames(cls.AddCommentForm, {}, [className])}
+      >
         <Input
           data-testid="AddCommentForm.Input"
           className={cls.input}
@@ -60,7 +61,8 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
         />
         <Button
           data-testid="AddCommentForm.Button"
-          onClick={onSendHandler}>
+          onClick={onSendHandler}
+        >
           {t('Send')}
         </Button>
       </HStack>
