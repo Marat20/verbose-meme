@@ -6,10 +6,10 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { getFeatureFlags } from '@/shared/lib/features';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
 import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsComment } from '../ArticleDetailsComment/ArticleDetailsComment';
@@ -26,9 +26,10 @@ const reducers: ReducersList = {
 
 export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   const { className } = props;
-  const { t } = useTranslation('article');
 
   const { id } = useParams<{ id: string }>();
+
+  const isArticleRatingEnadled = getFeatureFlags('isArticleRatingEnabled');
 
   if (!id) {
     return null;
@@ -44,7 +45,7 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
           max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          <ArticleRating articleId={id} />
+          {isArticleRatingEnadled && <ArticleRating articleId={id} />}
           <ArticleRecommendationsList />
           <ArticleDetailsComment id={id} />
         </VStack>

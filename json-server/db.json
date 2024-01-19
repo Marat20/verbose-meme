@@ -626,6 +626,10 @@
       "username": "admin",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg"
     },
     {
@@ -633,6 +637,10 @@
       "username": "user",
       "password": "123",
       "roles": ["USER"],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": true
+      },
       "avatar": "https://i.pinimg.com/originals/b0/7f/67/b07f67f9fd776addb7096edbe894ad71.png"
     },
     {
@@ -640,6 +648,10 @@
       "username": "manager",
       "password": "123",
       "roles": ["MANAGER"],
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://i.pinimg.com/originals/b0/7f/67/b07f67f9fd776addb7096edbe894ad71.png"
     },
     {
@@ -647,6 +659,10 @@
       "username": "testuser",
       "password": "123",
       "roles": ["ADMIN"],
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
       "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg"
     }
   ],
