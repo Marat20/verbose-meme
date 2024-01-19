@@ -24,7 +24,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/.storybook",
     "storybook:build": "storybook build -c ./config/.storybook",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "removeFeature": "npx ts-node .\\scripts\remove-features.ts"
   },
   "keywords": [],
   "author": "",
@@ -53,7 +54,7 @@
     "@testing-library/user-event": "^14.5.2",
     "@types/circular-dependency-plugin": "^5.0.8",
     "@types/jest": "^29.5.10",
-    "@types/node": "^20.9.0",
+    "@types/node": "^20.11.5",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@types/react-router-dom": "^5.3.3",
