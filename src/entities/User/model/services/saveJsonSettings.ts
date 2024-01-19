@@ -1,6 +1,6 @@
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { usetJsonSettingsMutation } from '../../api/userApi';
+import { useJsonSettingsMutation } from '../../api/userApi';
 import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
 import { getJsonSettings } from '../selectors/jsonSettings';
 import { JsonSettings } from '../types/jsonSettings';
@@ -21,7 +21,7 @@ export const saveJsonSettings = createAsyncThunk<
 
   try {
     const response = await dispatch(
-      usetJsonSettingsMutation({
+      useJsonSettingsMutation({
         userId: userData.id,
         jsonSettings: {
           ...currentSettings,

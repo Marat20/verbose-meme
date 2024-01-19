@@ -1,8 +1,7 @@
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { setFeatureFlags } from '@/shared/lib/features';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { saveJsonSettings } from '../services/saveJsonSettings';
-import { JsonSettings } from '../types/jsonSettings';
+import { initAuthData } from '../services/initAuthData';
 import { User, UserSchema } from '../types/user';
 
 const initialState: UserSchema = {
@@ -16,18 +15,9 @@ export const userSlice = createSlice({
     setAuthData: (state, action: PayloadAction<User>) => {
       state.authData = action.payload;
       setFeatureFlags(action.payload.features);
+      localStorage.setItem(USER_LOCALSTORAGE_KEY, action.payload.id);
     },
-    initAuthData: (state) => {
-      const user = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
-      if (user) {
-        const parsedUser = JSON.parse(user) as User;
-        state.authData = parsedUser;
-        setFeatureFlags(parsedUser.features);
-      }
-
-      state._inited = true;
-    },
     logout: (state) => {
       state.authData = undefined;
       localStorage.removeItem(USER_LOCALSTORAGE_KEY);
@@ -35,13 +25,16 @@ export const userSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(
-      saveJsonSettings.fulfilled,
-      (state, action: PayloadAction<JsonSettings>) => {
-        if (state.authData) {
-          state.authData.jsonSettings = action.payload;
-        }
+      initAuthData.fulfilled,
+      (state, action: PayloadAction<User>) => {
+        state.authData = action.payload;
+        setFeatureFlags(action.payload.features);
+        state._inited = true;
       },
     );
+    builder.addCase(initAuthData.rejected, (state) => {
+      state._inited = true;
+    });
   },
 });
 
