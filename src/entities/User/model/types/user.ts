@@ -6,7 +6,7 @@ export interface User {
   username: string;
   avatar?: string;
   roles?: UserRole[];
-  features?: FeatureFlags
+  features?: FeatureFlags;
 }
 
 export interface UserSchema {
