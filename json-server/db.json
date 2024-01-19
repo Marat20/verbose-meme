@@ -630,7 +630,10 @@
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
       },
-      "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg"
+      "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg",
+      "jsonSettings": {
+        "theme": "app_light_theme"
+      }
     },
     {
       "id": "2",
