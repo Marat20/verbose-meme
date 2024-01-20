@@ -6,9 +6,11 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, getFeatureFlags } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
+import { t } from 'i18next';
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slice';
@@ -35,12 +37,6 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
   const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating articleId={id} />,
-    off: () => null,
-  });
-
   return (
     <DynamicModuleLoader
       reducers={reducers}
@@ -53,7 +49,11 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         >
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingCard}
+          <ToggleFeatures
+            feature={'isArticleRatingEnabled'}
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('Comming soom')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComment id={id} />
         </VStack>
