@@ -6,7 +6,7 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ToggleFeatures, getFeatureFlags } from '@/shared/lib/features';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -34,8 +34,6 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   if (!id) {
     return null;
   }
-
-  const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
 
   return (
     <DynamicModuleLoader

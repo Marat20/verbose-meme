@@ -1,6 +1,7 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getUISCrollByPath, uiActions } from '@/features/UI';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
@@ -57,7 +58,15 @@ export const Page: FC<PageProps> = memo((props) => {
       onScroll={onScroll}
       ref={wrapperRef}
       data-testid={props['data-testid'] ?? 'Page'}
-      className={classNames(cls.Page, {}, [className])}
+      className={classNames(
+        toggleFeaturesFunc({
+          name: 'isAppRedesigned',
+          on: () => cls.PageRedesigned,
+          off: () => cls.Page,
+        }),
+        {},
+        [className],
+      )}
     >
       {children}
       {onScollEnd ? (

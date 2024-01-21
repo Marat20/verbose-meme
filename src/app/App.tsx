@@ -1,5 +1,7 @@
 import { getUserInited, initAuthData } from '@/entities/User';
+import { MainLayout } from '@/shared/layouts/MainLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
@@ -22,14 +24,31 @@ export const App = () => {
   }
 
   return (
-    <div className={classNames('app', {}, [])}>
-      <Suspense fallback="">
-        <Navbar />
-        <div className="content-page">
-          <Sidebar />
-          {inited && <AppRouter />}
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      off={
+        <div className={classNames('app', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
+          </Suspense>
         </div>
-      </Suspense>
-    </div>
+      }
+      on={
+        <div className={classNames('app_redesigned', {}, [])}>
+          <Suspense fallback="">
+            <MainLayout
+              header={<Navbar />}
+              sidebar={<Sidebar />}
+              content={<AppRouter />}
+              toolbar={<div>a23123</div>}
+            />
+          </Suspense>
+        </div>
+      }
+    />
   );
 };
