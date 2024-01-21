@@ -1,3 +1,4 @@
+import { ArticleView } from '@/entities/Article';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -6,7 +7,6 @@ import { Icon } from '@/shared/ui/Icon';
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleViewSelector.module.scss';
-import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSelectorProps {
   className?: string;
@@ -44,6 +44,8 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
               onClick={onClick(viewType.view)}
             >
               <Icon
+                width={24}
+                height={24}
                 className={classNames('', {
                   [cls.notSelected]: viewType.view !== view,
                 })}
