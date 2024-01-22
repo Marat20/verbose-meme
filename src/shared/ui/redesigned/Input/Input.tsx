@@ -9,6 +9,8 @@ import {
   useRef,
   useState,
 } from 'react';
+import { HStack } from '../Stack';
+import { Text } from '../Text';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -19,6 +21,7 @@ type HTMLInputProps = Omit<
 interface InputProps extends HTMLInputProps {
   className?: string;
   value?: string | number;
+  label?: string;
   autofocus?: boolean;
   readonly?: boolean;
   addonLeft?: ReactNode;
@@ -35,6 +38,7 @@ export const Input: FC<InputProps> = memo((props) => {
     placeholder,
     autofocus,
     readonly,
+    label,
     addonLeft,
     addonRight,
     ...otherProps
@@ -69,7 +73,7 @@ export const Input: FC<InputProps> = memo((props) => {
     [cls.withAddonRight]: Boolean(addonRight),
   };
 
-  return (
+  const input = (
     <div className={classNames(cls.InputWrapper, mods, [className])}>
       <div className={cls.addonLeft}>{addonLeft}</div>
       <input
@@ -87,4 +91,17 @@ export const Input: FC<InputProps> = memo((props) => {
       <div className={cls.addonRight}>{addonRight}</div>
     </div>
   );
+
+  if (label) {
+    return (
+      <HStack
+        gap="8"
+        max
+      >
+        <Text text={label} />
+      </HStack>
+    );
+  }
+
+  return input;
 });
