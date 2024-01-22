@@ -1,9 +1,11 @@
 import { ArticleSortFiels, ArticleType } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import SearchIcon from '@/shared/assets/icons/search.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SortOrder } from '@/shared/types/sort';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { FC, memo } from 'react';
@@ -14,11 +16,11 @@ interface ArticlesFiltersProps {
   className?: string;
   sort: ArticleSortFiels;
   order: SortOrder;
+  type: ArticleType;
+  search: string;
   onChangeOrder: (newOrder: SortOrder) => void;
   onChangeSort: (newSort: ArticleSortFiels) => void;
-  type: ArticleType;
   onChangeType: (type: ArticleType) => void;
-  search: string;
   onChangeSearch: (value: string) => void;
 }
 
@@ -47,6 +49,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = memo((props) => {
           value={search}
           onChange={onChangeSearch}
           placeholder={t('Search')}
+          addonLeft={<Icon Svg={SearchIcon} />}
         />
         <ArticleTypeTabs
           className={cls.tabs}

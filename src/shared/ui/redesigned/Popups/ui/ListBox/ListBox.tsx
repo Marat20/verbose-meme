@@ -1,8 +1,10 @@
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode, useMemo } from 'react';
 import { Button } from '../../../Button/Button';
+import { Icon } from '../../../Icon';
 import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -55,6 +57,7 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
       >
         <HListBox.Button className={cls.trigger}>
           <Button
+            addonRight={<Icon Svg={ArrowIcon} />}
             variant="filled"
             disabled={readonly}
           >
