@@ -90,26 +90,10 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
           height={200}
           border="50%"
         />
-        <Skeleton
-          className={cls.title}
-          width={300}
-          height={32}
-        />
-        <Skeleton
-          className={cls.skeleton}
-          width={600}
-          height={24}
-        />
-        <Skeleton
-          className={cls.skeleton}
-          width={'100%'}
-          height={200}
-        />
-        <Skeleton
-          className={cls.skeleton}
-          width={'100%'}
-          height={200}
-        />
+        <Skeleton className={cls.title} width={300} height={32} />
+        <Skeleton className={cls.skeleton} width={600} height={24} />
+        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
+        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
       </>
     );
   } else if (error) {
@@ -122,46 +106,22 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else {
     content = (
       <>
-        <HStack
-          justify="center"
-          max
-          className={cls.avatarWrapper}
-        >
-          <Avatar
-            size={200}
-            src={article?.img}
-            className={cls.avatar}
-          />
+        <HStack justify="center" max className={cls.avatarWrapper}>
+          <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
-        <VStack
-          gap="4"
-          max
-          data-testid="ArticleDetails.title"
-        >
+        <VStack gap="4" max data-testid="ArticleDetails.title">
           <Text
             size={TextSize.L}
             className={cls.title}
             title={article?.title}
             text={article?.subtitle}
           />
-          <HStack
-            gap="8"
-            className={cls.articleInfo}
-          >
-            <Icon
-              className={cls.icon}
-              Svg={EyeIcon}
-            />
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon className={cls.icon} Svg={EyeIcon} />
             <Text text={String(article?.views)} />
           </HStack>
-          <HStack
-            gap="8"
-            className={cls.articleInfo}
-          >
-            <Icon
-              className={cls.icon}
-              Svg={CalendarIcon}
-            />
+          <HStack gap="8" className={cls.articleInfo}>
+            <Icon className={cls.icon} Svg={CalendarIcon} />
             <Text text={article?.createdAt} />
           </HStack>
         </VStack>

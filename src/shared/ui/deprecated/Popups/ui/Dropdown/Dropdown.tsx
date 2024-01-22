@@ -67,11 +67,7 @@ export const Dropdown: FC<DropdownProps> = (props) => {
           }
 
           return (
-            <Menu.Item
-              key={index}
-              as={Fragment}
-              disabled={item.disabled}
-            >
+            <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

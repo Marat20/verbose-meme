@@ -40,22 +40,12 @@ export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
     });
 
     return (
-      <VStack
-        gap="16"
-        max
-        className={classNames('', {}, [className])}
-      >
-        <Text
-          size={TextSize.L}
-          title={t('Comments')}
-        />
+      <VStack gap="16" max className={classNames('', {}, [className])}>
+        <Text size={TextSize.L} title={t('Comments')} />
         <Suspense fallback={<Loader />}>
           <AddCommentForm onSendComment={onSendComment} />
         </Suspense>
-        <CommentList
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
+        <CommentList isLoading={commentsIsLoading} comments={comments} />
       </VStack>
     );
   },

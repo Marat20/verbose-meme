@@ -23,20 +23,8 @@ export const Avatar: FC<AvatarProps> = (props) => {
     };
   }, [size]);
 
-  const errorFallback = (
-    <Icon
-      width={size}
-      height={size}
-      Svg={UserIcon}
-    />
-  );
-  const fallback = (
-    <Skeleton
-      width={size}
-      height={size}
-      border="50%"
-    />
-  );
+  const errorFallback = <Icon width={size} height={size} Svg={UserIcon} />;
+  const fallback = <Skeleton width={size} height={size} border="50%" />;
 
   return (
     <AppImage

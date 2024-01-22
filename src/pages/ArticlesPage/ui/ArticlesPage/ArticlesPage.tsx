@@ -76,10 +76,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
   );
 
   return (
-    <DynamicModuleLoader
-      reducers={reducers}
-      removeAfterUnmount={false}
-    >
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       {content}
     </DynamicModuleLoader>
   );

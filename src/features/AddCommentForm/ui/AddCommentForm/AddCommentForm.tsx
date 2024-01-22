@@ -59,10 +59,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
           onChange={onCommentTextChange}
           placeholder={t('Enter comment text')}
         />
-        <Button
-          data-testid="AddCommentForm.Button"
-          onClick={onSendHandler}
-        >
+        <Button data-testid="AddCommentForm.Button" onClick={onSendHandler}>
           {t('Send')}
         </Button>
       </HStack>

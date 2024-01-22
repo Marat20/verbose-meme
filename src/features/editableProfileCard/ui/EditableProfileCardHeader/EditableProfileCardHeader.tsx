@@ -44,11 +44,7 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
     }, [dispatch]);
 
     return (
-      <HStack
-        max
-        justify="between"
-        className={classNames('', {}, [className])}
-      >
+      <HStack max justify="between" className={classNames('', {}, [className])}>
         <Text title={t('Profile')} />
         {canEdit && (
           <>

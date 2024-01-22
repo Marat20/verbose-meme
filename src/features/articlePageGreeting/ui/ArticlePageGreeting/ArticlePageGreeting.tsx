@@ -34,19 +34,12 @@ export const ArticlePageGreeting = memo(() => {
   return (
     <>
       <BrowserView>
-        <Modal
-          isOpen={isOpened}
-          onClose={onClose}
-          lazy
-        >
+        <Modal isOpen={isOpened} onClose={onClose} lazy>
           {text}
         </Modal>
       </BrowserView>
       <MobileView>
-        <Drawer
-          isOpen={isOpened}
-          onClose={onClose}
-        >
+        <Drawer isOpen={isOpened} onClose={onClose}>
           {text}
         </Drawer>
       </MobileView>

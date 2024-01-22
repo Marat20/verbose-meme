@@ -53,12 +53,5 @@ export const AppImage: FC<AppImageProps> = memo((props) => {
     return errorFallback;
   }
 
-  return (
-    <img
-      src={src}
-      alt={alt}
-      className={className}
-      {...otherProps}
-    />
-  );
+  return <img src={src} alt={alt} className={className} {...otherProps} />;
 });

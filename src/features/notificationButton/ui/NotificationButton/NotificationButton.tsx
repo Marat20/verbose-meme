@@ -35,22 +35,13 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
   const trigger = (
     <ToggleFeatures
       feature={'isAppRedesigned'}
-      on={
-        <Icon
-          clickable
-          onClick={onOpenDrawer}
-          Svg={NotificationIcon}
-        />
-      }
+      on={<Icon clickable onClick={onOpenDrawer} Svg={NotificationIcon} />}
       off={
         <ButtonDeprecated
           onClick={onOpenDrawer}
           theme={ButtonThemeDeprecated.CLEAR}
         >
-          <IconDeprecated
-            Svg={NotificationIconDeprecated}
-            inverted
-          />
+          <IconDeprecated Svg={NotificationIconDeprecated} inverted />
         </ButtonDeprecated>
       }
     />
@@ -83,10 +74,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer
-          isOpen={isOpen}
-          onClose={onCloseDrawer}
-        >
+        <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
           <NotificationList />
         </Drawer>
       </MobileView>

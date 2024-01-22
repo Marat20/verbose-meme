@@ -31,11 +31,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   const itemsList = useMemo(
     () =>
       sidebarItemsList.map((item) => (
-        <SidebarItem
-          item={item}
-          collapsed={collapsed}
-          key={item.path}
-        />
+        <SidebarItem item={item} collapsed={collapsed} key={item.path} />
       )),
     [collapsed, sidebarItemsList],
   );
@@ -52,15 +48,8 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
             [className],
           )}
         >
-          <AppLogo
-            size={collapsed ? 30 : 50}
-            className={cls.appLogo}
-          />
-          <VStack
-            role="navigation"
-            gap="8"
-            className={cls.items}
-          >
+          <AppLogo size={collapsed ? 30 : 50} className={cls.appLogo} />
+          <VStack role="navigation" gap="8" className={cls.items}>
             {itemsList}
           </VStack>
           <Icon
@@ -72,10 +61,7 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
           />
           <div className={cls.switchers}>
             <ThemeSwitcher />
-            <LangSwitcher
-              short={collapsed}
-              className={cls.lang}
-            />
+            <LangSwitcher short={collapsed} className={cls.lang} />
           </div>
         </aside>
       }
@@ -97,19 +83,12 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
           >
             {collapsed ? '>' : '<'}
           </ButtonDeprecated>
-          <VStack
-            role="navigation"
-            gap="8"
-            className={cls.items}
-          >
+          <VStack role="navigation" gap="8" className={cls.items}>
             {itemsList}
           </VStack>
           <div className={cls.switchers}>
             <ThemeSwitcher />
-            <LangSwitcher
-              short={collapsed}
-              className={cls.lang}
-            />
+            <LangSwitcher short={collapsed} className={cls.lang} />
           </div>
         </aside>
       }

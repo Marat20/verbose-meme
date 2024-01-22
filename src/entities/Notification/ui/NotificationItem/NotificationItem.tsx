@@ -27,10 +27,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
           variant="outlined"
           className={classNames(cls.NotificationItem, {}, [className])}
         >
-          <Text
-            title={item.title}
-            text={item.description}
-          />
+          <Text title={item.title} text={item.description} />
         </Card>
       }
       off={
@@ -38,10 +35,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
           theme={CardThemeDeprecated.OUTLINED}
           className={classNames(cls.NotificationItem, {}, [className])}
         >
-          <TextDeprecated
-            title={item.title}
-            text={item.description}
-          />
+          <TextDeprecated title={item.title} text={item.description} />
         </CardDeprecated>
       }
     />
@@ -49,11 +43,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
 
   if (item.href) {
     return (
-      <a
-        className={cls.link}
-        href={item.href}
-        target="_blank"
-      >
+      <a className={cls.link} href={item.href} target="_blank">
         {content}
       </a>
     );

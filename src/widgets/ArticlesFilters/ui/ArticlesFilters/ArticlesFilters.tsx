@@ -47,6 +47,7 @@ export const ArticlesFilters: FC<ArticlesFiltersProps> = memo((props) => {
       <VStack gap="32">
         <Input
           value={search}
+          size="size_s"
           onChange={onChangeSearch}
           placeholder={t('Search')}
           addonLeft={<Icon Svg={SearchIcon} />}

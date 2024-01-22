@@ -19,19 +19,10 @@ export const ArticleTextBlockComponent: FC<ArticleTextBlockComponentProps> =
       <div
         className={classNames(cls.ArticleTextBlockComponent, {}, [className])}
       >
-        {block.title && (
-          <Text
-            title={block.title}
-            className={cls.title}
-          />
-        )}
+        {block.title && <Text title={block.title} className={cls.title} />}
         {block.paragraphs.map((paragraph) => {
           return (
-            <Text
-              text={paragraph}
-              key={paragraph}
-              className={cls.paragraph}
-            />
+            <Text text={paragraph} key={paragraph} className={cls.paragraph} />
           );
         })}
       </div>

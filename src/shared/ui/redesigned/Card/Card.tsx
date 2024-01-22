@@ -45,10 +45,7 @@ export const Card: FC<CardProps> = memo((props) => {
   ];
 
   return (
-    <div
-      className={classNames(cls.Card, mods, optionsClasses)}
-      {...otherProps}
-    >
+    <div className={classNames(cls.Card, mods, optionsClasses)} {...otherProps}>
       {children}
     </div>
   );

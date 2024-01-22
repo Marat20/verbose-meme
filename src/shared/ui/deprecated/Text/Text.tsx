@@ -81,18 +81,12 @@ export const Text: FC<TextProps> = memo((props) => {
       ])}
     >
       {title && (
-        <HeaderTag
-          data-testid={`${dataTestId}.Header`}
-          className={cls.title}
-        >
+        <HeaderTag data-testid={`${dataTestId}.Header`} className={cls.title}>
           {title}
         </HeaderTag>
       )}
       {text && (
-        <p
-          data-testid={`${dataTestId}.Pa ragraph`}
-          className={cls.text}
-        >
+        <p data-testid={`${dataTestId}.Pa ragraph`} className={cls.text}>
           {text}
         </p>
       )}

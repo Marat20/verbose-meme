@@ -64,12 +64,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
           className={classNames('', {}, [className])}
           direction="bottom left"
           items={items}
-          trigger={
-            <Avatar
-              size={40}
-              src={authData.avatar}
-            />
-          }
+          trigger={<Avatar size={40} src={authData.avatar} />}
         />
       }
       off={
