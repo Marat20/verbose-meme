@@ -32,5 +32,5 @@ export const useTheme = (): UseThemeResult => {
     saveAction?.(newTheme);
   };
 
-  return { theme: theme || Theme.LIGHT, toggleTheme };
+  return { theme: theme || Theme.DARK, toggleTheme };
 };

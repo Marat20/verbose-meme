@@ -2,17 +2,32 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, memo } from 'react';
 import cls from './Text.module.scss';
 
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
+
 export enum TextTheme {
   PRIMARY = 'primary',
   INVERTED = 'inverted',
   ERROR = 'error',
 }
 
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
+
 export enum TextAlign {
   RIGHT = 'right',
   LEFT = 'left',
   CENTER = 'center',
 }
+
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
 
 export enum TextSize {
   S = 'size_s',

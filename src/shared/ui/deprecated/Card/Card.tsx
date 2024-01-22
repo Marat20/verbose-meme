@@ -2,6 +2,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, HTMLAttributes, ReactNode, memo } from 'react';
 import cls from './Card.module.scss';
 
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
+
 export enum CardTheme {
   NORMAL = 'normal',
   OUTLINED = 'outlined',

@@ -5,10 +5,13 @@ import { NotificationButton } from '@/features/notificationButton';
 import { getRouteArticleCreate } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
+import {
+  AppLink as AppLinkDeprecated,
+  AppLinkTheme as AppLinkThemeDeprecated,
+} from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -37,20 +40,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <ToggleFeatures
         feature={'isAppRedesigned'}
-        off={
-          <header className={classNames(cls.Navbar, {}, [className])}>
-            <Text
-              theme={TextTheme.INVERTED}
-              className={cls.appName}
-              title={'Marat'}
-            />
-            <AppLink
-              className={cls.createBtn}
-              theme={AppLinkTheme.SECONDARY}
-              to={getRouteArticleCreate()}
-            >
-              {t('Create an article')}
-            </AppLink>
+        on={
+          <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
             <HStack
               gap="16"
               className={cls.actions}
@@ -60,8 +51,20 @@ export const Navbar = memo(({ className }: NavbarProps) => {
             </HStack>
           </header>
         }
-        on={
-          <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+        off={
+          <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+              theme={TextTheme.INVERTED}
+              className={cls.appName}
+              title={'Marat'}
+            />
+            <AppLinkDeprecated
+              className={cls.createBtn}
+              theme={AppLinkThemeDeprecated.SECONDARY}
+              to={getRouteArticleCreate()}
+            >
+              {t('Create an article')}
+            </AppLinkDeprecated>
             <HStack
               gap="16"
               className={cls.actions}

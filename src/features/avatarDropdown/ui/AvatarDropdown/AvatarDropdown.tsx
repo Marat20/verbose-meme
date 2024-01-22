@@ -6,8 +6,11 @@ import {
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
-import { Dropdown } from '@/shared/ui/deprecated/Popups';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
+import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Avatar } from '@/shared/ui/redesigned/Avatar';
+import { Dropdown } from '@/shared/ui/redesigned/Popups';
 import { t } from 'i18next';
 import { FC, memo, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -34,33 +37,53 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
     return null;
   }
 
+  const items = [
+    ...(isAdminPanelAvailable
+      ? [
+          {
+            content: t('Admin'),
+            href: getRouteAdmin(),
+          },
+        ]
+      : []),
+    {
+      content: t('Profile'),
+      href: getRouteProfile(authData.id),
+    },
+    {
+      content: t('Logout'),
+      onClick: onLogout,
+    },
+  ];
+
   return (
-    <Dropdown
-      className={classNames('', {}, [className])}
-      direction="bottom left"
-      items={[
-        ...(isAdminPanelAvailable
-          ? [
-              {
-                content: t('Admin'),
-                href: getRouteAdmin(),
-              },
-            ]
-          : []),
-        {
-          content: t('Profile'),
-          href: getRouteProfile(authData.id),
-        },
-        {
-          content: t('Logout'),
-          onClick: onLogout,
-        },
-      ]}
-      trigger={
-        <Avatar
-          fallbackInverted
-          size={30}
-          src={authData.avatar}
+    <ToggleFeatures
+      feature={'isAppRedesigned'}
+      on={
+        <Dropdown
+          className={classNames('', {}, [className])}
+          direction="bottom left"
+          items={items}
+          trigger={
+            <Avatar
+              size={40}
+              src={authData.avatar}
+            />
+          }
+        />
+      }
+      off={
+        <DropdownDeprecated
+          className={classNames('', {}, [className])}
+          direction="bottom left"
+          items={items}
+          trigger={
+            <AvatarDeprecated
+              fallbackInverted
+              size={30}
+              src={authData.avatar}
+            />
+          }
         />
       }
     />
