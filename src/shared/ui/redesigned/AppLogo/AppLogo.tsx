@@ -17,15 +17,15 @@ export const AppLogo: FC<AppLogoProps> = memo((props) => {
       justify="center"
       max
       className={classNames(cls.AppLogoWrapper, {}, [className])}
-    >
-      <div className={cls.gradientBig}></div>
-      <div className={cls.gradientSmall}></div>
+      >
       <AppIcon
         color="black"
         width={size}
         height={size}
         className={cls.appLogo}
       />
+      <div className={cls.gradientBig}></div>
+      <div className={cls.gradientSmall}></div>
     </HStack>
   );
 });
