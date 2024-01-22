@@ -17,7 +17,7 @@ export const AppLogo: FC<AppLogoProps> = memo((props) => {
       justify="center"
       max
       className={classNames(cls.AppLogoWrapper, {}, [className])}
-      >
+    >
       <AppIcon
         color="black"
         width={size}
