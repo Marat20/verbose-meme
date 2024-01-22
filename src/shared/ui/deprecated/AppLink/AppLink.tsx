@@ -3,6 +3,10 @@ import { FC, HTMLAttributeAnchorTarget, ReactNode, memo } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import cls from './AppLink.module.scss';
 
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
 export enum AppLinkTheme {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',

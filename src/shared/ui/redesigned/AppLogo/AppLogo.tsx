@@ -1,32 +1,31 @@
 import AppIcon from '@/shared/assets/icons/app-image.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
+import { HStack } from '../../deprecated/Stack';
 import cls from './AppLogo.module.scss';
-import { HStack } from '../Stack';
 
 interface AppLogoProps {
   className?: string;
+  size?: number;
 }
 
-/**
- * Устарел, используются новые компоненты из папки redesigned
- * @deprecated
- */
-
 export const AppLogo: FC<AppLogoProps> = memo((props) => {
-  const { className } = props;
-  const { t } = useTranslation();
+  const { className, size = 50 } = props;
 
   return (
     <HStack
       justify="center"
       max
-      className={classNames(cls.AppLogo, {}, [className])}
+      className={classNames(cls.AppLogoWrapper, {}, [className])}
     >
       <div className={cls.gradientBig}></div>
       <div className={cls.gradientSmall}></div>
-      <AppIcon />
+      <AppIcon
+        color="black"
+        width={size}
+        height={size}
+        className={cls.appLogo}
+      />
     </HStack>
   );
 });
