@@ -1,10 +1,12 @@
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { VStack } from '@/shared/ui/deprecated/Stack';
 import { AppLogo } from '@/shared/ui/redesigned/AppLogo';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 import { FC, memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
@@ -37,6 +39,42 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
   return (
     <ToggleFeatures
       feature={'isAppRedesigned'}
+      on={
+        <aside
+          data-testid="sidebar"
+          className={classNames(
+            cls.SidebarRedesigned,
+            { [cls.collapsedRedesigned]: collapsed },
+            [className],
+          )}
+        >
+          <AppLogo
+            size={collapsed ? 30 : 50}
+            className={cls.appLogo}
+          />
+          <VStack
+            role="navigation"
+            gap="8"
+            className={cls.items}
+          >
+            {itemsList}
+          </VStack>
+          <Icon
+            Svg={ArrowIcon}
+            clickable
+            className={cls.collapsedBtn}
+            data-testid="sidebar-toggle"
+            onClick={onToggle}
+          />
+          <div className={cls.switchers}>
+            <ThemeSwitcher />
+            <LangSwitcher
+              short={collapsed}
+              className={cls.lang}
+            />
+          </div>
+        </aside>
+      }
       off={
         <aside
           data-testid="sidebar"
@@ -69,25 +107,6 @@ export const Sidebar: FC<SidebarProps> = memo(({ className }) => {
               className={cls.lang}
             />
           </div>
-        </aside>
-      }
-      on={
-        <aside
-          data-testid="sidebar"
-          className={classNames(
-            cls.SidebarRedesigned,
-            { [cls.collapsed]: collapsed },
-            [className],
-          )}
-        >
-          <AppLogo className={cls.appLogo} />
-          <VStack
-            role="navigation"
-            gap="8"
-            className={cls.items}
-          >
-            {itemsList}
-          </VStack>
         </aside>
       }
     />

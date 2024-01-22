@@ -1,5 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { ToggleFeatures } from '@/shared/lib/features';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme as ButtonThemeDeprecated,
+} from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
@@ -16,13 +21,27 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
       i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
     };
     return (
-      <Button
-        theme={ButtonTheme.CLEAR}
-        className={classNames('', {}, [className])}
-        onClick={toggle}
-      >
-        {t(short ? 'Short translate' : 'Translate')}
-      </Button>
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Button
+            variant="clear"
+            onClick={toggle}
+            className={classNames('', {}, [className])}
+          >
+            {t(short ? 'Short translate' : 'Translate')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            theme={ButtonThemeDeprecated.CLEAR}
+            className={classNames('', {}, [className])}
+            onClick={toggle}
+          >
+            {t(short ? 'Short translate' : 'Translate')}
+          </ButtonDeprecated>
+        }
+      />
     );
   },
 );

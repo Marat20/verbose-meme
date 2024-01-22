@@ -22,10 +22,5 @@
       "module": "CommonJS",
     },
   },
-  "exclude": [
-    "./cypress.config.ts",
-    "node_modules",
-    "cypress",
-    "**/*.cy.tsx"
-  ]
+  "exclude": ["./cypress.config.ts", "node_modules", "cypress", "**/*.cy.tsx"],
 }

@@ -2,19 +2,56 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import React, { FC, memo } from 'react';
 import cls from './Icon.module.scss';
 
-interface IconProps extends React.SVGProps<SVGSVGElement> {
+type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
+
+interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: React.FC<React.SVGProps<SVGSVGElement>>;
-  inverted?: boolean;
 }
 
-export const Icon: FC<IconProps> = memo((props) => {
-  const { className, Svg, inverted, ...otherProps } = props;
+interface NonClickableIconProps extends IconBaseProps {
+  clickable?: false;
+}
 
-  return (
+interface ClickableIconProps extends IconBaseProps {
+  clickable: true;
+  onClick: () => void;
+}
+
+type IconProps = NonClickableIconProps | ClickableIconProps;
+
+export const Icon: FC<IconProps> = memo((props) => {
+  const {
+    className,
+    Svg,
+    width = 32,
+    height = 32,
+    clickable,
+    ...otherProps
+  } = props;
+
+  const icon = (
     <Svg
+      width={width}
+      height={height}
+      onClick={undefined}
       className={classNames(cls.Icon, {}, [className])}
       {...otherProps}
     />
   );
+
+  if (clickable) {
+    return (
+      <button
+        type="button"
+        className={cls.button}
+        onClick={props.onClick}
+        style={{ height, width }}
+      >
+        {icon}
+      </button>
+    );
+  }
+
+  return icon;
 });

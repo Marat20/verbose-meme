@@ -1,14 +1,18 @@
 import { getUserAuthData } from '@/entities/User';
-import AboutIcon from '@/shared/assets/icons/about-20-20.svg';
-import ArticleIcon from '@/shared/assets/icons/article-20-20.svg';
-import MainIcon from '@/shared/assets/icons/main-20-20.svg';
-import ProfileIcon from '@/shared/assets/icons/profile-20-20.svg';
+import AboutIcon from '@/shared/assets/icons/Info.svg';
+import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
+import ArticleIcon from '@/shared/assets/icons/article.svg';
+import ProfileIcon from '@/shared/assets/icons/avatar.svg';
+import MainIcon from '@/shared/assets/icons/home.svg';
+import MainIconDeprecated from '@/shared/assets/icons/main-20-20.svg';
+import ProfileIconDeprecated from '@/shared/assets/icons/profile-20-20.svg';
 import {
   getRouteAbout,
   getRouteArticles,
   getRouteMain,
   getRouteProfile,
 } from '@/shared/const/route';
+import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { createSelector } from '@reduxjs/toolkit';
 import { SidebarItemType } from '../types/sidebar';
 
@@ -17,13 +21,21 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
     {
       path: getRouteMain(),
       text: 'Main',
-      Icon: MainIcon,
+      Icon: toggleFeaturesFunc({
+        name: 'isAppRedesigned',
+        on: () => MainIcon,
+        off: () => MainIconDeprecated,
+      }),
     },
 
     {
       path: getRouteAbout(),
       text: 'About us',
-      Icon: AboutIcon,
+      Icon: toggleFeaturesFunc({
+        name: 'isAppRedesigned',
+        on: () => AboutIcon,
+        off: () => AboutIconDeprecated,
+      }),
     },
   ];
 
@@ -32,14 +44,22 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         path: getRouteProfile(userData.id),
         text: 'Profile',
-        Icon: ProfileIcon,
+        Icon: toggleFeaturesFunc({
+          name: 'isAppRedesigned',
+          on: () => ProfileIcon,
+          off: () => ProfileIconDeprecated,
+        }),
         authOnly: true,
       },
 
       {
         path: getRouteArticles(),
         text: 'Articles',
-        Icon: ArticleIcon,
+        Icon: toggleFeaturesFunc({
+          name: 'isAppRedesigned',
+          on: () => ArticleIcon,
+          off: () => AboutIconDeprecated,
+        }),
         authOnly: true,
       },
     );

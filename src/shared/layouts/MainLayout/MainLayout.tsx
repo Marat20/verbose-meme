@@ -1,6 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, ReactElement, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import cls from './MainLayout.module.scss';
 
 interface MainLayoutProps {
@@ -13,7 +12,6 @@ interface MainLayoutProps {
 
 export const MainLayout: FC<MainLayoutProps> = memo((props) => {
   const { className, header, content, sidebar, toolbar } = props;
-  const { t } = useTranslation();
 
   return (
     <div className={classNames(cls.MainLayout, {}, [className])}>

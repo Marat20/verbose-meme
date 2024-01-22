@@ -2,6 +2,11 @@ import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { ButtonHTMLAttributes, FC, ReactNode, memo } from 'react';
 import cls from './Button.module.scss';
 
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
+
 export enum ButtonTheme {
   CLEAR = 'clear',
   CLEAR_INVERTED = 'clearInverted',
@@ -10,6 +15,11 @@ export enum ButtonTheme {
   BACKGROUND = 'background',
   BACKGROUND_INVERTED = 'backgroundInverted',
 }
+
+/**
+ * Устарел, используются новые компоненты из папки redesigned
+ * @deprecated
+ */
 
 export enum ButtonSize {
   M = 'size_m',
