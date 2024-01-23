@@ -1,4 +1,3 @@
-import { useJsonSettings } from '@/entities/User';
 import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 import { Theme } from '@/shared/const/theme';
 import { FC, ReactNode, useEffect, useMemo, useState } from 'react';
@@ -16,17 +15,16 @@ export const ThemeProvider: FC<ThemeProviderProps> = (props) => {
 
   const [isThemeInited, setIsThemeInited] = useState(false);
 
-  const { theme: defaultTheme } = useJsonSettings();
   const [theme, setTheme] = useState<Theme>(
     initialTheme || fallbackTheme || Theme.DARK,
   );
 
   useEffect(() => {
-    if (!isThemeInited && defaultTheme) {
-      setTheme(defaultTheme);
+    if (!isThemeInited && initialTheme) {
+      setTheme(initialTheme);
       setIsThemeInited(true);
     }
-  }, [defaultTheme, isThemeInited]);
+  }, [initialTheme, isThemeInited]);
 
   useEffect(() => {
     document.body.className = theme;

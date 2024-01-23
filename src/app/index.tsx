@@ -4,7 +4,7 @@ import { ForceUpdateProvider } from '@/shared/lib/render/forceUpdate';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { App } from './App';
+import App from './App';
 import { ErrorBoundary } from './providers/ErrorBoundary';
 import { StoreProvider } from './providers/StoreProvider';
 import { ThemeProvider } from './providers/ThemeProvider/ui/ThemeProvider';

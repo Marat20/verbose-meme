@@ -1,5 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { Meta, StoryFn } from '@storybook/react';
 import { CommentCard } from './CommentCard';
 
 export default {
@@ -14,8 +15,7 @@ const Template: StoryFn<typeof CommentCard> = (args) => (
   <CommentCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const args = {
   comment: {
     id: '1',
     text: 'hello world',
@@ -25,6 +25,13 @@ Primary.args = {
     },
   },
 };
+
+export const Primary = Template.bind({});
+Primary.args = args;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = args;
+PrimaryRedesigned.decorators = [NewDesignDecorator];
 
 export const Loading = Template.bind({});
 Loading.args = {

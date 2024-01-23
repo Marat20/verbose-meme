@@ -1,8 +1,9 @@
-import { Meta, StoryFn } from '@storybook/react';
 import '@/app/styles/index.scss';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { Meta, StoryFn } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -17,8 +18,7 @@ const Template: StoryFn<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-Primary.args = {
+const args = {
   data: {
     username: 'Admin',
     firstname: 'First',
@@ -29,6 +29,13 @@ Primary.args = {
     avatar: AvatarImg,
   },
 };
+
+export const Primary = Template.bind({});
+Primary.args = args;
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = args;
+PrimaryRedesigned.decorators = [NewDesignDecorator];
 
 export const withError = Template.bind({});
 withError.args = {
