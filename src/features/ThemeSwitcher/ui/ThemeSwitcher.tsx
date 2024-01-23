@@ -5,7 +5,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme as ButtonThemeDeprecated,
+} from '@/shared/ui/deprecated/Button';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { FC, memo, useCallback } from 'react';
@@ -15,7 +18,7 @@ export interface ThemeSwitcherProps {
 }
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
 
   const dispatch = useAppDispatch();
 
@@ -30,8 +33,8 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
       feature={'isAppRedesigned'}
       on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
       off={
-        <Button
-          theme={ButtonTheme.CLEAR}
+        <ButtonDeprecated
+          theme={ButtonThemeDeprecated.CLEAR}
           className={classNames('', {}, [className])}
           onClick={onToggleHandler}
         >
@@ -41,7 +44,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
             height={40}
             inverted
           />
-        </Button>
+        </ButtonDeprecated>
       }
     />
   );
