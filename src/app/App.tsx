@@ -26,19 +26,8 @@ export const App = () => {
   return (
     <ToggleFeatures
       feature={'isAppRedesigned'}
-      off={
-        <div className={classNames('app', {}, [])}>
-          <Suspense fallback="">
-            <Navbar />
-            <div className="content-page">
-              <Sidebar />
-              {inited && <AppRouter />}
-            </div>
-          </Suspense>
-        </div>
-      }
       on={
-        <div className={classNames('app_redesigned', {}, [])}>
+        <div id="app" className={classNames('app_redesigned', {}, [])}>
           <Suspense fallback="">
             <MainLayout
               header={<Navbar />}
@@ -46,6 +35,17 @@ export const App = () => {
               content={<AppRouter />}
               toolbar={<div>a23123</div>}
             />
+          </Suspense>
+        </div>
+      }
+      off={
+        <div id="app" className={classNames('app', {}, [])}>
+          <Suspense fallback="">
+            <Navbar />
+            <div className="content-page">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </div>
           </Suspense>
         </div>
       }

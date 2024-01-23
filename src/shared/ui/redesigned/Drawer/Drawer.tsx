@@ -3,6 +3,7 @@ import {
   AnimationProvider,
   useAnimationLibs,
 } from '@/shared/lib/components/AnimationProvider';
+import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { Overlay } from '../../redesigned/Overlay/Overlay';
@@ -18,11 +19,6 @@ interface DrawerProps {
 }
 
 const height = window.innerHeight - 100;
-
-/**
- * Устарел, используются новые компоненты из папки redesigned
- * @deprecated
- */
 
 const DrawerContent: FC<DrawerProps> = memo((props) => {
   const { className, children, isOpen, onClose, lazy } = props;
@@ -87,9 +83,18 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
   const display = y.to((py) => (py < height ? 'block' : 'none'));
 
   return (
-    <Portal>
+    <Portal element={document.getElementById('app') ?? document.body}>
       <div
-        className={classNames(cls.Drawer, {}, [className, theme, 'app_drawer'])}
+        className={classNames(cls.Drawer, {}, [
+          className,
+          theme,
+          'app_drawer',
+          toggleFeaturesFunc({
+            name: 'isAppRedesigned',
+            on: () => cls.DrawerRedesigned,
+            off: () => cls.DrawerDeprecated,
+          }),
+        ])}
       >
         <Overlay onClick={close} />
         <Spring.a.div
@@ -108,11 +113,6 @@ const DrawerContent: FC<DrawerProps> = memo((props) => {
   );
 });
 
-/**
- * Устарел, используются новые компоненты из папки redesigned
- * @deprecated
- */
-
 const DrawerAsync: FC<DrawerProps> = (props) => {
   const { isLoaded } = useAnimationLibs();
 
@@ -122,11 +122,6 @@ const DrawerAsync: FC<DrawerProps> = (props) => {
 
   return <DrawerContent {...props} />;
 };
-
-/**
- * Устарел, используются новые компоненты из папки redesigned
- * @deprecated
- */
 
 export const Drawer: FC<DrawerProps> = (props) => {
   return (

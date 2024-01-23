@@ -4,13 +4,9 @@
 @import './themes/orange';
 @import './reset';
 
-body,
-.app_drawer {
+.app {
   font: var(--font-m);
   color: var(--primary-color);
-}
-
-.app {
   background-color: var(--bg-color);
   min-height: 100vh;
 }
@@ -18,7 +14,7 @@ body,
 .app_redesigned {
   background-color: var(--bg-redesigned);
   min-height: 100vh;
-  font: var(--font-m-redesigned );
+  font: var(--font-m-redesigned);
   color: var(--text-redesigned);
 }
 
