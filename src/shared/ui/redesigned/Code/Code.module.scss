@@ -6,12 +6,21 @@
   overflow: auto;
 }
 
+.CodeRedesigned {
+  border: 1px solid var(--accent-redesigned);
+  padding: 20px;
+  position: relative;
+  background: var(--light-bg-redesigned);
+  overflow: auto;
+  border-radius: 16px;
+}
+
 .copyBtn {
   position: absolute;
   right: 20px;
   top: 20px;
 }
- 
+
 .copyIcon path {
   stroke: var(--primary-color);
 }
