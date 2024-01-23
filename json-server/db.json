@@ -633,7 +633,7 @@
       },
       "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg",
       "jsonSettings": {
-        "theme": "app_light_theme"
+        "theme": "app_orange_theme"
       }
     },
     {
@@ -676,7 +676,7 @@
       "firstname": "Marat",
       "lastname": "Shakirov",
       "age": 29,
-      "currency": "RUB",
+      "currency": "USD",
       "country": "France",
       "city": "Moscow",
       "username": "admin213",

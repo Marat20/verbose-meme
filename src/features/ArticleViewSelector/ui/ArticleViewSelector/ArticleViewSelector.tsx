@@ -63,6 +63,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
               {viewType.map((viewType) => {
                 return (
                   <Icon
+                    key={viewType.view}
                     clickable
                     onClick={onClick(viewType.view)}
                     className={classNames('', {
