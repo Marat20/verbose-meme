@@ -37,10 +37,6 @@
     max-height: 200px;
     overflow-y: hidden;
   }
-
-  .card {
-    margin-bottom: 30px;
-  }
 }
 
 .SMALL {
@@ -49,10 +45,10 @@
   cursor: pointer;
 
   .date {
-    display: none;
     position: absolute;
     right: 0;
     top: 0;
+    display: none;
   }
 
   &:hover {
@@ -106,13 +102,15 @@
   }
 }
 
-.ArticleListItemSkeletonRedesigned {
+.ArticleListItemRedesigned {
   &.BIG {
     width: 100%;
   }
 
   &.SMALL {
-    width: 240px;
-    height: 350px;
+    .card {
+      height: 350px;
+      width: 240px;
+    }
   }
 }
