@@ -5,12 +5,15 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { ToggleFeatures, toggleFeaturesFunc } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
-import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import {
+  Skeleton,
+  Skeleton as SkeletonDeprecated,
+} from '@/shared/ui/deprecated/Skeleton';
 import {
   TextAlign as TextAlignDeprecated,
   Text as TextDeprecated,
@@ -18,7 +21,7 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { AppImage } from '@/shared/ui/redesigned/AppImage';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { FC, memo } from 'react';
@@ -53,7 +56,9 @@ const Redesigned = () => {
       <AppImage
         src={article?.img}
         className={cls.img}
-        fallback={<Skeleton width={'100%'} height={420} border="16" />}
+        fallback={
+          <SkeletonRedesigned width={'100%'} height={420} border="16" />
+        }
       />
       {article?.blocks.map(renderBlock)}
     </>
@@ -104,34 +109,43 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
 
   let content;
 
+  const Skeleton = toggleFeaturesFunc({
+    name: 'isAppRedesigned',
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  });
+
   if (isLoading) {
     content = (
-      <>
-        <SkeletonDeprecated
+      <VStack gap="16" max>
+        <Skeleton
           className={cls.avatar}
           width={200}
           height={200}
           border="50%"
         />
-        <SkeletonDeprecated className={cls.title} width={300} height={32} />
-        <SkeletonDeprecated className={cls.skeleton} width={600} height={24} />
-        <SkeletonDeprecated
-          className={cls.skeleton}
-          width={'100%'}
-          height={200}
-        />
-        <SkeletonDeprecated
-          className={cls.skeleton}
-          width={'100%'}
-          height={200}
-        />
-      </>
+        <Skeleton className={cls.title} width={300} height={32} />
+        <Skeleton className={cls.skeleton} width={600} height={24} />
+        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
+        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
+      </VStack>
     );
   } else if (error) {
     content = (
-      <TextDeprecated
-        title={t('There was an error loading the page')}
-        align={TextAlignDeprecated.CENTER}
+      <ToggleFeatures
+        feature={'isAppRedesigned'}
+        on={
+          <Text
+            title={t('There was an error loading the page')}
+            align="center"
+          />
+        }
+        off={
+          <TextDeprecated
+            title={t('There was an error loading the page')}
+            align={TextAlignDeprecated.CENTER}
+          />
+        }
       />
     );
   } else {

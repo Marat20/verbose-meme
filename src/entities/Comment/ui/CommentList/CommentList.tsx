@@ -1,6 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Comment } from '../../model/types/comment';
@@ -37,7 +39,11 @@ export const CommentList: FC<CommentListProps> = memo((props) => {
           />
         ))
       ) : (
-        <Text text={t('No comments')} />
+        <ToggleFeatures
+          feature={'isAppRedesigned'}
+          on={<Text text={t('No comments')} />}
+          off={<TextDeprecated text={t('No comments')} />}
+        />
       )}
     </VStack>
   );
