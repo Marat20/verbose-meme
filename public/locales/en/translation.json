@@ -1,12 +1,13 @@
 {
   "Translate": "Translate",
-  "Short translate": "En",
+  "Short translate": "EN",
   "Main": "Main",
   "About us": "About us",
   "Profile": "Profile",
   "Articles": "Articles",
   "Settings": "Settings",
   "Language": "English",
+  "Admin": "Admin",
   "Toggle": "Toggle",
   "Page not found": "Page not found",
   "Something went wrong": "Something went wrong",
@@ -22,6 +23,7 @@
   "No comments": "No comments",
   "Enter comment text": "Enter comment text",
   "Send": "Send",
+  "Edit": "Edit",
   "Read more": "Read more",
   "Sort by": "Sort by",
   "Search": "Search",
@@ -39,5 +41,8 @@
   "Create new article": "Create new article",
   "Edit article with id": "Edit article with id = ",
   "Create an article": "Create an article",
-  "You do not have access to this page": "You do not have access to this page"
+  "You do not have access to this page": "You do not have access to this page",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

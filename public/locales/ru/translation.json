@@ -1,6 +1,6 @@
 {
   "Translate": "Перевод",
-  "Short translate": "Ru",
+  "Short translate": "RU",
   "Main": "Главная",
   "About us": "О сайте",
   "Language": "Русский",
@@ -8,6 +8,7 @@
   "Profile": "Профиль",
   "Articles": "Статьи",
   "Settings": "Настройки",
+  "Admin": "Админ",
   "Toggle": "Toggle",
   "Something went wrong": "Что-то пошло не так",
   "Reload": "Перезагрузить",
@@ -19,6 +20,7 @@
   "Logout": "Выйти",
   "Currency": "Валюта",
   "Country": "Страна",
+  "Edit": "Редактировать",
   "No comments": "Без комментариев",
   "Enter comment text": "Введите текст комментария",
   "Send": "Отправить",
@@ -39,5 +41,9 @@
   "Create new article": "Создать новую статью",
   "Edit article with id": "Редактирование статьи с id = ",
   "Create an article": "Создать статью",
-  "You do not have access to this page": "У вас нет доступа к этой странице"
+  "You do not have access to this page": "У вас нет доступа к этой странице",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотра",
+  "{{count}} views_many": "{{count}} просмотров"
 }
