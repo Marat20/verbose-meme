@@ -189,7 +189,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
     <ToggleFeatures
       feature={'isAppRedesigned'}
       on={
-        <Card padding="24" border="round" data-testid="RatingCard" fullWidth>
+        <Card padding="24" border="partial" data-testid="RatingCard" fullWidth>
           {content}
         </Card>
       }

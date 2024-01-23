@@ -53,7 +53,7 @@ const AddCommentForm: FC<AddCommentFormProps> = memo((props) => {
       <ToggleFeatures
         feature={'isAppRedesigned'}
         on={
-          <Card padding="24" border="round" fullWidth>
+          <Card padding="24" border="partial" fullWidth>
             <HStack
               gap="16"
               data-testid="AddCommentForm"

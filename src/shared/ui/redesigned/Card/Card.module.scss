@@ -2,22 +2,11 @@
   padding: 24px;
 }
 
-.withoutPaddings {
-  padding: 0;
-}
-
-.fullWidth {
-  width: 100%;
-}
-
 .fullHeight {
   height: 100%;
 }
 
-.normal {
-  background: var(--dark-bg-redesigned);
-  border-radius: 12px;
-}
+// variant
 
 .light {
   background: var(--light-bg-redesigned);
@@ -27,13 +16,28 @@
   border: 1px solid var(--accent-redesigned);
 }
 
+// border-radius
+
+.normal {
+  background: var(--dark-bg-redesigned);
+  border-radius: 12px;
+}
+
 .round {
   border-radius: 40px;
 }
 
-.max {
+.parial {
+  border-radius: 20px;
+}
+
+// width
+
+.fullWidth {
   width: 100%;
 }
+
+// padding
 
 .gap_0 {
   padding: 0;

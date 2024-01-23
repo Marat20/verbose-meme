@@ -90,7 +90,7 @@ export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
     <ToggleFeatures
       feature={'isAppRedesigned'}
       on={
-        <Card padding="24" fullWidth className={className}>
+        <Card padding="24" fullWidth className={className} border="partial">
           <VStack gap="32">
             {data?.avatar && (
               <HStack justify="center" max>
