@@ -9,11 +9,12 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
   const inited = useSelector(getUserInited);
-
+  const toolbar = useAppToolbar();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export const App = () => {
               header={<Navbar />}
               sidebar={<Sidebar />}
               content={<AppRouter />}
-              toolbar={<div>a23123</div>}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>

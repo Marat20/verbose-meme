@@ -618,12 +618,6 @@
       "userId": "1",
       "text": "BeAR",
       "id": "73Z4rw_"
-    },
-    {
-      "articleId": "6",
-      "userId": "1",
-      "text": " Hello",
-      "id": "bIpWN14"
     }
   ],
   "users": [
@@ -639,7 +633,7 @@
       },
       "avatar": "https://logowik.com/content/uploads/images/529_ysl.jpg",
       "jsonSettings": {
-        "theme": "app_dark_theme"
+        "theme": "app_light_theme"
       }
     },
     {
@@ -755,13 +749,6 @@
       "articleId": "18",
       "rate": 4,
       "id": "uwAm_dA"
-    },
-    {
-      "userId": "1",
-      "articleId": "6",
-      "rate": 4,
-      "feedback": "asdasd",
-      "id": "zoKgL1m"
     }
   ],
   "profile-ratings": [
