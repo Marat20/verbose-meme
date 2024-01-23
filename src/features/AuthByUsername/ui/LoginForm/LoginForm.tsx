@@ -5,6 +5,7 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import {
   Button as ButtonDeprecated,
   ButtonTheme as ButtonThemeDeprecated,
@@ -45,6 +46,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
+  const forceUpdate = useForceUpdate();
 
   const onChangePassword = useCallback(
     (value: string) => {
@@ -64,8 +66,9 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
 
     if (result.meta.requestStatus === 'fulfilled') {
       onSuccess();
+      forceUpdate();
     }
-  }, [dispatch, password, username, onSuccess]);
+  }, [dispatch, password, username, onSuccess, forceUpdate]);
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>

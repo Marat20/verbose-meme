@@ -1,6 +1,7 @@
 import { getUserAuthData } from '@/entities/User';
 import { getFeatureFlags, updateFeatureFlags } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
@@ -19,6 +20,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
+  const forceUpdate = useForceUpdate();
 
   const userData = useSelector(getUserAuthData);
 
@@ -47,6 +49,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
         }),
       ).unwrap();
       setIsLoading(false);
+      forceUpdate();
     }
   };
 
