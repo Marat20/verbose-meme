@@ -17,10 +17,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 const mapPaddingToClass: Record<CardPadding, string> = {
-  '0': 'gap_0',
-  '8': 'gap_8',
-  '16': 'gap_16',
-  '24': 'gap_24',
+  '0': 'gap0',
+  '8': 'gap8',
+  '16': 'gap16',
+  '24': 'gap24',
 };
 
 export const Card: FC<CardProps> = memo((props) => {
@@ -40,10 +40,12 @@ export const Card: FC<CardProps> = memo((props) => {
     [cls.fullHeight]: fullHeight,
   };
 
+  const paddingClass = mapPaddingToClass[padding];
+
   const optionsClasses = [
     className,
     cls[variant],
-    mapPaddingToClass[padding],
+    cls[paddingClass],
     cls[border],
   ];
 

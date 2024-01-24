@@ -2,7 +2,6 @@ import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
 import {
   ProfileCardDeprecated,
@@ -16,7 +15,6 @@ import {
 } from '../ProfileCardRedesigned/ProfileCardRedesigned';
 
 interface ProfileCardProps {
-  className?: string;
   data?: Profile;
   isLoading?: boolean;
   readonly?: boolean;
@@ -32,8 +30,7 @@ interface ProfileCardProps {
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-  const { isLoading, error, className } = props;
-  const { t } = useTranslation('profile');
+  const { isLoading, error } = props;
 
   if (isLoading) {
     return (

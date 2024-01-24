@@ -1,6 +1,5 @@
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Input } from '@/shared/ui/redesigned/Input';
@@ -10,7 +9,6 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
-import { ProfileCardDeprecated } from '../ProfileCardDeprecated/ProfileCardDeprecated';
 
 interface ProfileCardProps {
   className?: string;
@@ -87,75 +85,69 @@ export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
   const { t } = useTranslation('profile');
 
   return (
-    <ToggleFeatures
-      feature={'isAppRedesigned'}
-      on={
-        <Card padding="24" fullWidth className={className} border="partial">
-          <VStack gap="32">
-            {data?.avatar && (
-              <HStack justify="center" max>
-                <Avatar size={128} src={data.avatar} />
-              </HStack>
-            )}
-            <HStack gap="24" max>
-              <VStack gap="16" max>
-                <Input
-                  value={data?.firstname}
-                  label={t('First name')}
-                  onChange={onChangeFirstname}
-                  readonly={readonly}
-                  data-testid="ProfileCard.firstname"
-                />
-                <Input
-                  value={data?.lastname}
-                  label={t('Last name')}
-                  onChange={onChangeLastname}
-                  readonly={readonly}
-                  data-testid="ProfileCard.lastname"
-                />
-                <Input
-                  value={data?.age}
-                  label={t('Age')}
-                  onChange={onChangeAge}
-                  readonly={readonly}
-                />
-                <Input
-                  value={data?.city}
-                  label={t('City')}
-                  onChange={onChangeCity}
-                  readonly={readonly}
-                />
-              </VStack>
-              <VStack gap="16" max>
-                <Input
-                  value={data?.username}
-                  label={t('Username')}
-                  onChange={onChangeUsername}
-                  readonly={readonly}
-                />
-                <Input
-                  value={data?.avatar}
-                  label={t('Avatar')}
-                  onChange={onChangeAvatar}
-                  readonly={readonly}
-                />
-                <CurrencySelect
-                  value={data?.currency}
-                  onChange={onChangeCurrency}
-                  readonly={readonly}
-                />
-
-                <CountrySelect
-                  value={data?.country}
-                  onChange={onChangeCountry}
-                  readonly={readonly}
-                />
-              </VStack>
-            </HStack>
+    <Card padding="24" fullWidth className={className} border="partial">
+      <VStack gap="32">
+        {data?.avatar && (
+          <HStack justify="center" max>
+            <Avatar size={128} src={data.avatar} />
+          </HStack>
+        )}
+        <HStack gap="24" max>
+          <VStack gap="16" max>
+            <Input
+              value={data?.firstname}
+              label={t('First name')}
+              onChange={onChangeFirstname}
+              readonly={readonly}
+              data-testid="ProfileCard.firstname"
+            />
+            <Input
+              value={data?.lastname}
+              label={t('Last name')}
+              onChange={onChangeLastname}
+              readonly={readonly}
+              data-testid="ProfileCard.lastname"
+            />
+            <Input
+              value={data?.age}
+              label={t('Age')}
+              onChange={onChangeAge}
+              readonly={readonly}
+            />
+            <Input
+              value={data?.city}
+              label={t('City')}
+              onChange={onChangeCity}
+              readonly={readonly}
+            />
           </VStack>
-        </Card>
-      }
-      off={<ProfileCardDeprecated />}
-    />
+          <VStack gap="16" max>
+            <Input
+              value={data?.username}
+              label={t('Username')}
+              onChange={onChangeUsername}
+              readonly={readonly}
+            />
+            <Input
+              value={data?.avatar}
+              label={t('Avatar')}
+              onChange={onChangeAvatar}
+              readonly={readonly}
+            />
+            <CurrencySelect
+              value={data?.currency}
+              onChange={onChangeCurrency}
+              readonly={readonly}
+            />
+
+            <CountrySelect
+              value={data?.country}
+              onChange={onChangeCountry}
+              readonly={readonly}
+            />
+          </VStack>
+        </HStack>
+      </VStack>
+    </Card>
   );
 };

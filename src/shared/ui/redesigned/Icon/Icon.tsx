@@ -36,7 +36,6 @@ export const Icon: FC<IconProps> = memo((props) => {
       height={height}
       onClick={undefined}
       className={classNames(cls.Icon, {}, [className])}
-      {...otherProps}
     />
   );
 

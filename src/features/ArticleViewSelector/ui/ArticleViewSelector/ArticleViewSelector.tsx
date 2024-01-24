@@ -55,6 +55,7 @@ export const ArticleViewSelector: FC<ArticleViewSelectorProps> = memo(
         on={
           <Card
             border="round"
+            padding="8"
             className={classNames(cls.ArticleViewSelectorRedesigned, {}, [
               className,
             ])}

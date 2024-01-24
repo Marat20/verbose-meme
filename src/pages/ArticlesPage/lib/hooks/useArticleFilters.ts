@@ -30,11 +30,13 @@ export const useArticleFilters = () => {
 
   const onChangeView = useCallback(
     (newView: ArticleView) => {
-      dispatch(articlesPageActions.setView(newView));
-      dispatch(articlesPageActions.setPage(1));
-      fetchData();
+      if (newView !== view) {
+        dispatch(articlesPageActions.setView(newView));
+        dispatch(articlesPageActions.setPage(1));
+        fetchData();
+      }
     },
-    [dispatch, fetchData],
+    [view, dispatch, fetchData],
   );
 
   const onChangeOrder = useCallback(

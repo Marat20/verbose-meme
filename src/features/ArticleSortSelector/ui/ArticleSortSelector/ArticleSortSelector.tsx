@@ -78,7 +78,6 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
                 items={orderOptions}
                 value={order}
                 onChange={onChangeOrder}
-                className={cls.order}
               />
             </VStack>
           </div>

@@ -36,12 +36,9 @@ export const Dropdown: FC<DropdownProps> = (props) => {
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             <button
+              type="button"
               disabled={item.disabled}
-              className={classNames(
-                cls.item,
-                { [popupCls.active]: active },
-                [],
-              )}
+              className={classNames(cls.item, { [popupCls.active]: active })}
               onClick={item.onClick}
             >
               {item.content}

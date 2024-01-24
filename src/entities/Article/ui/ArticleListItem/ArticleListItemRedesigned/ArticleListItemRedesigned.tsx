@@ -31,8 +31,8 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
 
     const views = (
       <HStack gap="8">
-        <Text text={String(article.views)} className={cls.views} />
         <Icon Svg={EyeIcon} />
+        <Text text={String(article.views)} className={cls.views} />
       </HStack>
     );
 
@@ -45,18 +45,19 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
         <Card
           padding="24"
           fullWidth
+          data-testid="ArticleListItem"
           className={classNames(cls.ArticleListItem, {}, [
             className,
             cls[view],
           ])}
         >
           <VStack gap="16" max>
-            <HStack gap="8">
+            <HStack gap="8" max>
               {userInfo}
               <Text text={article.createdAt} />
             </HStack>
             <Text bold title={article.title} />
-            <Text bold title={article.subtitle} size="size_s" />
+            <Text title={article.subtitle} size="size_s" />
             <AppImage
               fallback={<Skeleton width={'100%'} height={250} />}
               src={article.img}
