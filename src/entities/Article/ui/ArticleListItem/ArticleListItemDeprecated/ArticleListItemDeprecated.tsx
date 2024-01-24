@@ -1,3 +1,5 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { getRouteArticleDetails } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -9,8 +11,6 @@ import { Card } from '@/shared/ui/deprecated/Card';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/deprecated/Text';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ArticleBlockType, ArticleView } from '../../../model/consts/consts';
 import { ArticleTextBlock } from '../../../model/types/article';
 import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -32,7 +32,7 @@ export const ArticleListItemDeprecated: FC<ArticleListItemProps> = memo(
     );
 
     if (view === ArticleView.BIG) {
-      let textBlock = article.blocks.find(
+      const textBlock = article.blocks.find(
         (block) => block.type === ArticleBlockType.TEXT,
       ) as ArticleTextBlock;
 
@@ -53,7 +53,7 @@ export const ArticleListItemDeprecated: FC<ArticleListItemProps> = memo(
             <Text title={article.title} className={cls.title} />
             {types}
             <AppImage
-              fallback={<Skeleton width={'100%'} height={250} />}
+              fallback={<Skeleton width="100%" height={250} />}
               src={article.img}
               className={cls.img}
               alt={article.title}

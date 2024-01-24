@@ -1,7 +1,7 @@
+import { FC, memo, useState } from 'react';
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures, toggleFeaturesFunc } from '@/shared/lib/features';
-import { FC, memo, useState } from 'react';
 import { Icon } from '../../redesigned/Icon';
 import { Icon as IconDeprecated } from '../Icon';
 import cls from './StarRating.module.scss';
@@ -70,7 +70,7 @@ export const StarRating: FC<StarRatingProps> = memo((props) => {
         };
         return (
           <ToggleFeatures
-            feature={'isAppRedesigned'}
+            feature="isAppRedesigned"
             on={<Icon clickable={!isSelected} {...commonProps} />}
             off={<IconDeprecated {...commonProps} />}
           />

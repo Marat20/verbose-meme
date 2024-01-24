@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { testAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {
@@ -24,7 +24,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('success', async () => {
-    const thunk = new testAsyncThunk(fetchProfileData);
+    const thunk = new TestAsyncThunk(fetchProfileData);
 
     thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
@@ -36,7 +36,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('failed', async () => {
-    const thunk = new testAsyncThunk(fetchProfileData);
+    const thunk = new TestAsyncThunk(fetchProfileData);
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
 
     const result = await thunk.callThunk('1');

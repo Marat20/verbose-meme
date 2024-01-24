@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type SidebarItemType = {
   path: string;
   text: string;

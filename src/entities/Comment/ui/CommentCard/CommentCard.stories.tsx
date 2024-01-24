@@ -1,6 +1,5 @@
-import '@/app/styles/index.scss';
-import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { Meta, StoryFn } from '@storybook/react';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { CommentCard } from './CommentCard';
 
 export default {

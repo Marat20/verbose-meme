@@ -1,6 +1,5 @@
-import '@/app/styles/index.scss';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { Meta, StoryFn } from '@storybook/react';
+import { Text } from '../Text';
 import { Card } from './Card';
 
 export default {

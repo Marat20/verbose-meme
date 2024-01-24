@@ -1,9 +1,8 @@
-import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
-import { Meta, StoryFn } from '@storybook/react';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -37,12 +36,12 @@ export const PrimaryRedesigned = Template.bind({});
 PrimaryRedesigned.args = args;
 PrimaryRedesigned.decorators = [NewDesignDecorator];
 
-export const withError = Template.bind({});
-withError.args = {
+export const WithError = Template.bind({});
+WithError.args = {
   error: 'true',
 };
 
-export const isLoading = Template.bind({});
-isLoading.args = {
+export const IsLoading = Template.bind({});
+IsLoading.args = {
   isLoading: true,
 };

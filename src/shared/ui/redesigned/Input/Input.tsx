@@ -1,4 +1,3 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import {
   ChangeEvent,
   FC,
@@ -9,6 +8,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '../Stack';
 import { Text } from '../Text';
 import cls from './Input.module.scss';
@@ -49,6 +49,7 @@ export const Input: FC<InputProps> = memo((props) => {
   } = props;
 
   const [isFocused, setIsFocused] = useState(false);
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (autofocus) {
@@ -56,8 +57,6 @@ export const Input: FC<InputProps> = memo((props) => {
       ref.current?.focus();
     }
   }, [autofocus]);
-
-  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);

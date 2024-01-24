@@ -1,3 +1,5 @@
+import { FC, memo, useCallback } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -9,8 +11,6 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
-import { FC, memo, useCallback } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice';
@@ -44,7 +44,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
   const content = (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <StickyContentLayout
           left={<ViewSelectorContainer />}

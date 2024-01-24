@@ -1,7 +1,7 @@
+import { FC } from 'react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { FC } from 'react';
 import { Profile } from '../../model/types/profile';
 import {
   ProfileCardDeprecated,
@@ -35,7 +35,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (isLoading) {
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={<ProfileCardRedesignedSkeleton />}
         off={<ProfileCardDeprecatedLoader />}
       />
@@ -45,7 +45,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
   if (error) {
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={<ProfileCardRedesignedError />}
         off={<ProfileCardDeprecatedError />}
       />
@@ -54,7 +54,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={<ProfileCardRedesigned {...props} />}
       off={<ProfileCardDeprecated {...props} />}
     />

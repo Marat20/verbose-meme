@@ -1,3 +1,4 @@
+import { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
@@ -7,7 +8,6 @@ import {
 import { Text as TextDeprecated } from '@/shared/ui/deprecated/Text';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo } from 'react';
 import { Notification } from '../../model/types/notification';
 import cls from './NotificationItem.module.scss';
 
@@ -21,7 +21,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
 
   const content = (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <Card
           variant="outlined"
@@ -43,7 +43,7 @@ export const NotificationItem: FC<NotificationItemProps> = memo((props) => {
 
   if (item.href) {
     return (
-      <a className={cls.link} href={item.href} target="_blank">
+      <a className={cls.link} href={item.href} target="_blank" rel="noreferrer">
         {content}
       </a>
     );

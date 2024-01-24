@@ -1,7 +1,7 @@
-import { ArticleDetails } from '@/entities/Article';
-import { Card } from '@/shared/ui/redesigned/Card';
 import { FC, memo } from 'react';
 import { useParams } from 'react-router-dom';
+import { ArticleDetails } from '@/entities/Article';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 interface DetailsContainerProps {
   className?: string;

@@ -1,3 +1,6 @@
+import { t } from 'i18next';
+import { FC, memo } from 'react';
+import { useParams } from 'react-router-dom';
 import { ArticleDetails } from '@/entities/Article';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
@@ -11,9 +14,6 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
-import { t } from 'i18next';
-import { FC, memo } from 'react';
-import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
 import { ArticleDetailsComment } from '../ArticleDetailsComment/ArticleDetailsComment';
@@ -41,7 +41,7 @@ export const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <StickyContentLayout
             content={

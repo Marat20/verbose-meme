@@ -1,5 +1,5 @@
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { render, screen } from '@testing-library/react';
+import { Button, ButtonTheme } from '../../deprecated/Button';
 
 describe('Button', () => {
   test('first', () => {

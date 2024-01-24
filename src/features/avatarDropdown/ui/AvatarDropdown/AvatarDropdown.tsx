@@ -1,3 +1,6 @@
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getUserAuthData,
   isUserAdmin,
@@ -15,9 +18,6 @@ import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Dropdown as DropdownDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Dropdown } from '@/shared/ui/redesigned/Popups';
-import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
 
 interface AvatarDropdownProps {
   className?: string;
@@ -67,7 +67,7 @@ export const AvatarDropdown: FC<AvatarDropdownProps> = memo((props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <Dropdown
           className={classNames('', {}, [className])}

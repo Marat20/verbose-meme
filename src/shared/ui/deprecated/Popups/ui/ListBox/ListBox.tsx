@@ -1,8 +1,8 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropdownDirection } from '@/shared/types/ui';
-import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Listbox as HListBox } from '@headlessui/react';
 import { FC, Fragment, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
+import { HStack } from '../../../../redesigned/Stack';
 import { Button } from '../../../Button';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -46,10 +46,10 @@ export const ListBox: FC<ListBoxProps> = (props) => {
 
   return (
     <HStack gap="4">
-      {label && <span>{label + '>'}</span>}
+      {label && <span>{`${label}>`}</span>}
       <HListBox
         disabled={readonly}
-        as={'div'}
+        as="div"
         className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}

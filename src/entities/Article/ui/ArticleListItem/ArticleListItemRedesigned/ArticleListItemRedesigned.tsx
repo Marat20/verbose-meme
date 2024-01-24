@@ -1,3 +1,5 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { getRouteArticleDetails } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -10,8 +12,6 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ArticleBlockType, ArticleView } from '../../../model/consts/consts';
 import { ArticleTextBlock } from '../../../model/types/article';
 import { ArticleListItemProps } from '../ArticleListItem';
@@ -37,7 +37,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
     );
 
     if (view === ArticleView.BIG) {
-      let textBlock = article.blocks.find(
+      const textBlock = article.blocks.find(
         (block) => block.type === ArticleBlockType.TEXT,
       ) as ArticleTextBlock;
 
@@ -59,7 +59,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
             <Text bold title={article.title} />
             <Text title={article.subtitle} size="size_s" />
             <AppImage
-              fallback={<Skeleton width={'100%'} height={250} />}
+              fallback={<Skeleton width="100%" height={250} />}
               src={article.img}
               className={cls.img}
               alt={article.title}
@@ -90,7 +90,7 @@ export const ArticleListItemRedesigned: FC<ArticleListItemProps> = memo(
       >
         <Card className={cls.card} border="partial" padding="0">
           <AppImage
-            fallback={<Skeleton width={'100%'} height={200} />}
+            fallback={<Skeleton width="100%" height={200} />}
             src={article.img}
             className={cls.img}
             alt={article.title}

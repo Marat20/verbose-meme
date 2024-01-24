@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { Popover } from './Popover';
 
 export default {

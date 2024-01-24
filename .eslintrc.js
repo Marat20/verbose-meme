@@ -65,5 +65,43 @@ module.exports = {
     'import/extensions': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
+    'react/jsx-props-no-spreading': 'off',
+    'react/prop-types': 'off',
+    'react/no-array-index-key': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
+    'ulbi-tv-plugin/path-checker': [
+      'error',
+      {
+        alias: '@',
+      },
+    ],
+    'ulbi-tv-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: [
+          '**/StoreProvider',
+          '**/testing',
+          '**/*.stories.*',
+        ],
+      },
+    ],
+    'ulbi-tv-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: [
+          '**/*.test.*',
+          '**/*.story.*',
+          '**/StoreDecorator.tsx',
+        ],
+      },
+    ],
+    'no-undef': 'off',
+    'no-param-reassign': 'off',
+    'consistent-return': 'off',
+    'i18next/no-literal-string': 'off',
+    'no-console': 'off',
   },
 };

@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, ReactElement, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './MainLayout.module.scss';
 
 interface MainLayoutProps {

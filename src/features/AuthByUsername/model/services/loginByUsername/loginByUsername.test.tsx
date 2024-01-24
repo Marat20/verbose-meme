@@ -1,7 +1,7 @@
+import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { userActions } from '@/entities/User';
-import { testAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
-import { Dispatch } from '@reduxjs/toolkit';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername.test', () => {
@@ -15,7 +15,7 @@ describe('loginByUsername.test', () => {
 
   test('success login', async () => {
     const userValue = { username: '123', id: '1' };
-    const thunk = new testAsyncThunk(loginByUsername);
+    const thunk = new TestAsyncThunk(loginByUsername);
 
     thunk.api.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
@@ -34,7 +34,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('failed login', async () => {
-    const thunk = new testAsyncThunk(loginByUsername);
+    const thunk = new TestAsyncThunk(loginByUsername);
     thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }));
 
     const result = await thunk.callThunk({

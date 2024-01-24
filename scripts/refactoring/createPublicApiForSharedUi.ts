@@ -20,7 +20,7 @@ function isAbsolute(value: string) {
 }
 
 componentsDirs?.forEach((dir) => {
-  const indexFilePath = dir.getPath() + '/index.ts';
+  const indexFilePath = `${dir.getPath()}/index.ts`;
 
   const indexFile = dir.getSourceFile(indexFilePath);
 

@@ -1,9 +1,9 @@
+import { FC, ReactNode } from 'react';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { Overlay } from '@/shared/ui/redesigned/Overlay';
-import { Portal } from '@/shared/ui/redesigned/Portal';
-import { FC, ReactNode } from 'react';
+import { Overlay } from '../../Overlay';
+import { Portal } from '../../Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {

@@ -37,7 +37,7 @@ export function createReduxStore(
       }).concat(rtkApi.middleware),
   });
 
-  //@ts-ignore
+  // @ts-ignore
   store.reducerManager = reducerManager;
 
   return store;

@@ -1,3 +1,4 @@
+import { FC, memo } from 'react';
 import { getRouteProfile } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures, toggleFeaturesFunc } from '@/shared/lib/features';
@@ -11,7 +12,6 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo } from 'react';
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 
@@ -46,14 +46,14 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
           <Skeleton width={30} height={30} border="50%" />
           <Skeleton width={100} height={16} className={cls.username} />
         </div>
-        <Skeleton className={cls.text} width={'100%'} height={50} />
+        <Skeleton className={cls.text} width="100%" height={50} />
       </VStack>
     );
   }
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <Card padding="24" border="partial" fullWidth>
           <VStack

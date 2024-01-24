@@ -1,6 +1,6 @@
-import { ArticlesFilters } from '@/widgets/ArticlesFilters';
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { ArticlesFilters } from '@/widgets/ArticlesFilters';
 import { useArticleFilters } from '../../lib/hooks/useArticleFilters';
 
 interface FiltersContainerProps {

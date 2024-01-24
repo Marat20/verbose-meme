@@ -1,3 +1,5 @@
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -6,16 +8,12 @@ import { Input } from '@/shared/ui/redesigned/Input';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
   className?: string;
   data?: Profile;
-  isLoading?: boolean;
   readonly?: boolean;
-  error?: string;
   onChangeLastname?: (value?: string) => void;
   onChangeFirstname?: (value?: string) => void;
   onChangeCity?: (value?: string) => void;
@@ -41,31 +39,29 @@ export const ProfileCardRedesignedError = () => {
   );
 };
 
-export const ProfileCardRedesignedSkeleton = () => {
-  return (
-    <Card padding="24" fullWidth>
-      <VStack gap="32">
-        <HStack max justify="center">
-          <Skeleton border="100%" width={128} height={128} />
-        </HStack>
-        <HStack gap="32" max>
-          <VStack gap="16" max>
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-          </VStack>
-          <VStack gap="16" max>
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-            <Skeleton width={'100%'} height={38} />
-          </VStack>
-        </HStack>
-      </VStack>
-    </Card>
-  );
-};
+export const ProfileCardRedesignedSkeleton = () => (
+  <Card padding="24" fullWidth>
+    <VStack gap="32">
+      <HStack max justify="center">
+        <Skeleton border="100%" width={128} height={128} />
+      </HStack>
+      <HStack gap="32" max>
+        <VStack gap="16" max>
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+        </VStack>
+        <VStack gap="16" max>
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+          <Skeleton width="100%" height={38} />
+        </VStack>
+      </HStack>
+    </VStack>
+  </Card>
+);
 
 export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
   const {

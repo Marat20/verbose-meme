@@ -14,6 +14,6 @@ export const Overlay: FC<OverlayProps> = memo((props) => {
     <div
       onClick={onClick}
       className={classNames(cls.Overlay, {}, [className])}
-    ></div>
+    />
   );
 });

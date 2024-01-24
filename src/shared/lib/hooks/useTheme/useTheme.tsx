@@ -1,5 +1,5 @@
-import { Theme } from '@/shared/const/theme';
 import { useContext } from 'react';
+import { Theme } from '@/shared/const/theme';
 import { ThemeContext } from '../../../context/ThemeContext';
 
 interface UseThemeResult {

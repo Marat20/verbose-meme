@@ -1,9 +1,9 @@
+import { selectByTestId } from 'cypress/helpers/selectByTestId';
 import { User } from '@/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
-import { selectByTestId } from 'cypress/helpers/selectByTestId';
 
-export const login = (username: string = 'admin', password: string = '123') => {
-  return cy
+export const login = (username: string = 'admin', password: string = '123') =>
+  cy
     .request({
       method: 'POST',
       url: `http://localhost:8000/login`,
@@ -17,11 +17,8 @@ export const login = (username: string = 'admin', password: string = '123') => {
 
       return body;
     });
-};
 
-export const getByTestId = (testId: string) => {
-  return cy.get(selectByTestId(testId));
-};
+export const getByTestId = (testId: string) => cy.get(selectByTestId(testId));
 
 declare global {
   namespace Cypress {

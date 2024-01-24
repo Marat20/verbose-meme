@@ -5,6 +5,4 @@ import './Loader.scss';
  * @deprecated
  */
 
-export const Loader = () => {
-  return <span className="loader"></span>;
-};
+export const Loader = () => <span className="loader" />;

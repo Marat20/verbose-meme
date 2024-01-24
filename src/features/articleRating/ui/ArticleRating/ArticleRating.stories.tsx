@@ -1,6 +1,5 @@
-import '@/app/styles/index.scss';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Meta, StoryFn } from '@storybook/react';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleRating from './ArticleRating';
 
 export default {

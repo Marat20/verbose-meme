@@ -1,8 +1,8 @@
+import { Listbox as HListBox } from '@headlessui/react';
+import { Fragment, ReactNode, useMemo } from 'react';
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
-import { Listbox as HListBox } from '@headlessui/react';
-import { Fragment, ReactNode, useMemo } from 'react';
 import { Button } from '../../../Button/Button';
 import { Icon } from '../../../Icon';
 import { HStack } from '../../../Stack';
@@ -41,21 +41,22 @@ export const ListBox = <T extends string>(props: ListBoxProps<T>) => {
 
   const optionsClasses = [mapDirectionClass[direction], popupCls.menu];
 
-  const selectedItem = useMemo(() => {
-    return items?.find((item) => item.value === value);
-  }, [value, items]);
+  const selectedItem = useMemo(
+    () => items?.find((item) => item.value === value),
+    [value, items],
+  );
 
   return (
     <HStack gap="4">
-      {label && <span>{label + '>'}</span>}
+      {label && <span>{`${label}>`}</span>}
       <HListBox
         disabled={readonly}
-        as={'div'}
+        as="div"
         className={classNames(cls.ListBox, {}, [className, popupCls.popup])}
         value={value}
         onChange={onChange}
       >
-        <HListBox.Button as={'div'} className={cls.trigger}>
+        <HListBox.Button as="div" className={cls.trigger}>
           <Button
             addonRight={<Icon Svg={ArrowIcon} />}
             variant="filled"

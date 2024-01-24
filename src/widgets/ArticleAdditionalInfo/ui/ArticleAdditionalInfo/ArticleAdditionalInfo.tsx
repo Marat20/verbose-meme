@@ -1,11 +1,11 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { User } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface ArticleAdditionalInfoProps {
   className?: string;

@@ -1,10 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import '@/app/styles/index.scss';
-import { Article } from '@/entities/Article';
-import {
-  ArticleBlockType,
-  ArticleType,
-} from '@/entities/Article/model/consts/consts';
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
 

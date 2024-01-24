@@ -1,3 +1,5 @@
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
@@ -10,17 +12,13 @@ import {
   TextTheme as TextThemeDeprecated,
 } from '@/shared/ui/deprecated/Text';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCardDeprecated.module.scss';
 
 interface ProfileCardProps {
   className?: string;
   data?: Profile;
-  isLoading?: boolean;
   readonly?: boolean;
-  error?: string;
   onChangeLastname?: (value?: string) => void;
   onChangeFirstname?: (value?: string) => void;
   onChangeCity?: (value?: string) => void;
@@ -31,17 +29,15 @@ interface ProfileCardProps {
   onChangeCountry?: (country?: Country) => void;
 }
 
-export const ProfileCardDeprecatedLoader = () => {
-  return (
-    <HStack
-      justify="center"
-      max
-      className={classNames(cls.ProfileCard, {}, [cls.loading])}
-    >
-      <LoaderDeprecated />
-    </HStack>
-  );
-};
+export const ProfileCardDeprecatedLoader = () => (
+  <HStack
+    justify="center"
+    max
+    className={classNames(cls.ProfileCard, {}, [cls.loading])}
+  >
+    <LoaderDeprecated />
+  </HStack>
+);
 
 export const ProfileCardDeprecatedError = () => {
   const { t } = useTranslation('profile');

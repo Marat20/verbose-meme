@@ -1,8 +1,7 @@
-import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import { Meta, StoryFn } from '@storybook/react';
 import NotFoundPage from './NotFoundPage';
 
 export default {

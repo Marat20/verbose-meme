@@ -1,10 +1,10 @@
+import { FC, memo, useCallback, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArticleType } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
 import { TabItem, Tabs } from '@/shared/ui/redesigned/Tabs';
-import { FC, memo, useCallback, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface ArticleTypeTabsProps {
   className?: string;
@@ -16,8 +16,8 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
   const { className, value, onChangeType } = props;
   const { t } = useTranslation();
 
-  const typeTabs = useMemo<TabItem[]>(() => {
-    return [
+  const typeTabs = useMemo<TabItem[]>(
+    () => [
       {
         value: ArticleType.ALL,
         content: t('All'),
@@ -34,8 +34,9 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
         value: ArticleType.SCIENCE,
         content: t('Science'),
       },
-    ];
-  }, []);
+    ],
+    [],
+  );
 
   const onTabClick = useCallback(
     (tab: TabItem) => {
@@ -46,7 +47,7 @@ export const ArticleTypeTabs: FC<ArticleTypeTabsProps> = memo((props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <Tabs
           flexDirection="column"

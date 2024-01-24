@@ -1,3 +1,6 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import CalendarIcon from '@/shared/assets/icons/calendar-20-20.svg';
 import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -10,10 +13,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Avatar as AvatarDeprecated } from '@/shared/ui/deprecated/Avatar';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
-import {
-  Skeleton,
-  Skeleton as SkeletonDeprecated,
-} from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import {
   TextAlign as TextAlignDeprecated,
   Text as TextDeprecated,
@@ -24,9 +24,6 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import {
   getArticleDetailsData,
   getArticleDetailsError,
@@ -56,9 +53,7 @@ const Redesigned = () => {
       <AppImage
         src={article?.img}
         className={cls.img}
-        fallback={
-          <SkeletonRedesigned width={'100%'} height={420} border="16" />
-        }
+        fallback={<SkeletonRedesigned width="100%" height={420} border="16" />}
       />
       {article?.blocks.map(renderBlock)}
     </>
@@ -126,14 +121,14 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
         />
         <Skeleton className={cls.title} width={300} height={32} />
         <Skeleton className={cls.skeleton} width={600} height={24} />
-        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
-        <Skeleton className={cls.skeleton} width={'100%'} height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
+        <Skeleton className={cls.skeleton} width="100%" height={200} />
       </VStack>
     );
   } else if (error) {
     content = (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <Text
             title={t('There was an error loading the page')}
@@ -151,7 +146,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props) => {
   } else {
     content = (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={<Redesigned />}
         off={<Deprecated />}
       />

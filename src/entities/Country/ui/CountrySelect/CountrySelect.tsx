@@ -1,9 +1,9 @@
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ListBox as ListBoxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { ListBox } from '@/shared/ui/redesigned/Popups';
-import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -36,16 +36,16 @@ export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
     className: classNames('', {}, [className]),
     defaultValue: t('Country'),
     label: t('Country'),
-    value: value,
+    value,
     items: options,
     onChange: onChangeHandler,
-    readonly: readonly,
+    readonly,
     direction: 'top right' as const,
   };
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={<ListBox {...countrySelectProps} />}
       off={<ListBoxDeprecated {...countrySelectProps} />}
     />

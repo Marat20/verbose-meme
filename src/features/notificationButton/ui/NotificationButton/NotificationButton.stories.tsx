@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { NotificationButton } from './NotificationButton';
 
 export default {

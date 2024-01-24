@@ -1,4 +1,3 @@
-import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import {
   ChangeEvent,
   FC,
@@ -8,6 +7,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { Mods, classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -44,6 +44,7 @@ export const Input: FC<InputProps> = memo((props) => {
   const [caretPostion, setCaretPostion] = useState(0);
 
   const isCaretVisible = focused && !readonly;
+  const ref = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (autofocus) {
@@ -51,8 +52,6 @@ export const Input: FC<InputProps> = memo((props) => {
       ref.current?.focus();
     }
   }, [autofocus]);
-
-  const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
@@ -96,7 +95,7 @@ export const Input: FC<InputProps> = memo((props) => {
           <span
             style={{ left: `${caretPostion * 7}px` }}
             className={cls.caret}
-          ></span>
+          />
         )}
       </div>
     </div>

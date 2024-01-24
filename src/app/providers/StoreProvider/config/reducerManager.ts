@@ -29,9 +29,9 @@ export function createReducerManager(
     reduce: (state: StateSchema, action: AnyAction) => {
       if (keysToRemove.length > 0) {
         state = { ...state };
-        for (let key of keysToRemove) {
+        keysToRemove.forEach((key) => {
           delete state[key];
-        }
+        });
         keysToRemove = [];
       }
 
@@ -50,7 +50,6 @@ export function createReducerManager(
       combinedReducer = combineReducers(reducers);
     },
 
-    // Removes a reducer with the specified key
     remove: (key: StateSchemaKey) => {
       if (!key || !reducers[key]) {
         return;

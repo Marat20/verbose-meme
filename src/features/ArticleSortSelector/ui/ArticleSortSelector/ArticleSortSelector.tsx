@@ -1,3 +1,5 @@
+import { FC, memo, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArticleSortFiels } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -9,8 +11,6 @@ import {
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {
@@ -26,8 +26,8 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
     const { sort, order, onChangeOrder, onChangeSort, className } = props;
     const { t } = useTranslation();
 
-    const orderOptions = useMemo<SelectOptionDeprecated<SortOrder>[]>(() => {
-      return [
+    const orderOptions = useMemo<SelectOptionDeprecated<SortOrder>[]>(
+      () => [
         {
           value: 'asc',
           content: t('Ascending'),
@@ -36,13 +36,14 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
           value: 'desc',
           content: t('Descending'),
         },
-      ];
-    }, [t]);
+      ],
+      [t],
+    );
 
     const sortFieldOptions = useMemo<
       SelectOptionDeprecated<ArticleSortFiels>[]
-    >(() => {
-      return [
+    >(
+      () => [
         {
           value: ArticleSortFiels.CREATED,
           content: t('Date of creation'),
@@ -55,12 +56,13 @@ export const ArticleSortSelector: FC<ArticleSortSelectorProps> = memo(
           value: ArticleSortFiels.VIEWS,
           content: t('Views'),
         },
-      ];
-    }, [t]);
+      ],
+      [t],
+    );
 
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <div
             className={classNames(cls.ArticleSortSelectorRedesigned, {}, [

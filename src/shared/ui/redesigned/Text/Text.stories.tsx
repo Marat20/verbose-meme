@@ -1,8 +1,7 @@
-import '@/app/styles/index.scss';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Meta, StoryFn } from '@storybook/react';
-import { Text } from './Text';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+import { Text } from './Text';
 
 export default {
   title: 'shared/Text',
@@ -27,13 +26,13 @@ Error.args = {
   variant: 'error',
 };
 
-export const onlyTitle = Template.bind({});
-onlyTitle.args = {
+export const OnlyTitle = Template.bind({});
+OnlyTitle.args = {
   title: 'Title title',
 };
 
-export const onlyText = Template.bind({});
-onlyText.args = {
+export const OnlyText = Template.bind({});
+OnlyText.args = {
   text: 'text text text text text text text text',
 };
 
@@ -52,17 +51,17 @@ ErrorDark.args = {
 };
 ErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTitleDark = Template.bind({});
-onlyTitleDark.args = {
+export const OnlyTitleDark = Template.bind({});
+OnlyTitleDark.args = {
   title: 'Title title',
 };
-onlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTitleDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const onlyTextDark = Template.bind({});
-onlyTextDark.args = {
+export const OnlyTextDark = Template.bind({});
+OnlyTextDark.args = {
   text: 'text text text text text text text text',
 };
-onlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const SizeL = Template.bind({});
 SizeL.args = {

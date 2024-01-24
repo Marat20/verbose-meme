@@ -1,6 +1,6 @@
+import { FC, memo } from 'react';
 import CircleUpIcon from '@/shared/assets/icons/circle-up.svg';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { FC, memo } from 'react';
 
 interface ScrollToTopButtonProps {
   className?: string;

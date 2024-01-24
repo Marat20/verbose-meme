@@ -1,13 +1,16 @@
-import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { ThemeProvider } from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line ulbi-tv-plugin/layer-imports
 import '@/app/styles/index.scss';
-import i18nForTests from '@/shared/config/i18n/i18n';
-import { Theme } from '@/shared/const/theme';
 import { ReducersMapObject } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import { ReactNode } from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
+// eslint-disable-next-line ulbi-tv-plugin/layer-imports
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+import i18nForTests from '@/shared/config/i18n/i18n';
+import { Theme } from '@/shared/const/theme';
+// eslint-disable-next-line ulbi-tv-plugin/layer-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
 
 export interface ComponentRenderOptions {
   route?: string;
@@ -47,6 +50,4 @@ export const TestProvider = (props: TestProviderProps) => {
 export const ComponentRender = (
   component: ReactNode,
   options: ComponentRenderOptions = {},
-) => {
-  return render(<TestProvider options={options}>{component}</TestProvider>);
-};
+) => render(<TestProvider options={options}>{component}</TestProvider>);

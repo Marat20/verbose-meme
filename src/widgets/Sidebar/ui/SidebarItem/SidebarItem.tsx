@@ -1,3 +1,6 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -7,9 +10,6 @@ import {
 } from '@/shared/ui/deprecated/AppLink';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cls from './SidebarItem.module.scss';
 
@@ -29,7 +29,7 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <AppLink
           className={classNames(cls.itemRedesigned, {

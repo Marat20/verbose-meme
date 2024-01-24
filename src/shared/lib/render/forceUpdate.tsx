@@ -21,9 +21,7 @@ export const ForceUpdateProvider = ({ children }: { children: ReactNode }) => {
     }, 0);
   };
 
-  const valueContext = useMemo(() => {
-    return { value, forceUpdate };
-  }, [value]);
+  const valueContext = useMemo(() => ({ value, forceUpdate }), [value]);
 
   if (!value) {
     return null;

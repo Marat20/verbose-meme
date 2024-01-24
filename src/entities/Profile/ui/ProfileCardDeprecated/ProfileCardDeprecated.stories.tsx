@@ -1,8 +1,7 @@
-import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
-import { Meta, StoryFn } from '@storybook/react';
 import { ProfileCardDeprecated } from './ProfileCardDeprecated';
 
 export default {
@@ -30,12 +29,12 @@ Primary.args = {
   },
 };
 
-export const withError = Template.bind({});
-withError.args = {
-  error: 'true',
+export const WithError = Template.bind({});
+WithError.args = {
+  // error: 'true',
 };
 
-export const isLoading = Template.bind({});
-isLoading.args = {
-  isLoading: true,
+export const IsLoading = Template.bind({});
+IsLoading.args = {
+  // isLoading: true,
 };

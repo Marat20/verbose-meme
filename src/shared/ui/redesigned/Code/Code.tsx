@@ -1,8 +1,8 @@
+import { FC, memo, useCallback } from 'react';
 import CopyIconDeprecated from '@/shared/assets/icons/copy-20-20.svg';
 import CopyIcon from '@/shared/assets/icons/copy.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { FC, memo, useCallback } from 'react';
 import {
   Button as ButtonDeprecated,
   ButtonTheme as ButtonThemeDeprecated,
@@ -24,7 +24,7 @@ export const Code: FC<CodeProps> = memo((props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <pre className={classNames(cls.CodeRedesigned, {}, [className])}>
           <Icon

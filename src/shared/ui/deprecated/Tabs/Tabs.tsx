@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, ReactNode, memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card, CardTheme } from '../Card/Card';
 import cls from './Tabs.module.scss';
 
@@ -29,28 +29,24 @@ export const Tabs: FC<TabsProps> = memo((props) => {
   const { className, tabs, value, onTabClick } = props;
 
   const clickHandle = useCallback(
-    (tab: TabItem) => {
-      return () => {
-        onTabClick(tab);
-      };
+    (tab: TabItem) => () => {
+      onTabClick(tab);
     },
     [onTabClick],
   );
 
   return (
     <div className={classNames(cls.Tabs, {}, [className])}>
-      {tabs.map((tab) => {
-        return (
-          <Card
-            theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
-            className={cls.tab}
-            onClick={clickHandle(tab)}
-            key={tab.value}
-          >
-            {tab.content}
-          </Card>
-        );
-      })}
+      {tabs.map((tab) => (
+        <Card
+          theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
+          className={cls.tab}
+          onClick={clickHandle(tab)}
+          key={tab.value}
+        >
+          {tab.content}
+        </Card>
+      ))}
     </div>
   );
 });

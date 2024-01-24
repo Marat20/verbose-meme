@@ -2,7 +2,7 @@ import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { testAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 
@@ -25,7 +25,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('success', async () => {
-    const thunk = new testAsyncThunk(updateProfileData, {
+    const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
         form: data,
       },
@@ -41,7 +41,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('failed', async () => {
-    const thunk = new testAsyncThunk(updateProfileData, {
+    const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
         form: data,
       },
@@ -54,7 +54,7 @@ describe('loginByUsername.test', () => {
   });
 
   test('validate error', async () => {
-    const thunk = new testAsyncThunk(updateProfileData, {
+    const thunk = new TestAsyncThunk(updateProfileData, {
       profile: {
         form: { ...data, lastname: '' },
       },

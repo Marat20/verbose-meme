@@ -1,4 +1,3 @@
-import '@/app/styles/index.scss';
 import { action } from '@storybook/addon-actions';
 import { Meta, StoryFn } from '@storybook/react';
 import { Dropdown } from './Dropdown';

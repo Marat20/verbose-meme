@@ -1,3 +1,6 @@
+import { FC, Suspense, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/AddCommentForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -11,9 +14,6 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, Suspense, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -47,7 +47,7 @@ export const ArticleDetailsComment: FC<ArticleDetailsCommentProps> = memo(
     return (
       <VStack gap="16" max className={classNames('', {}, [className])}>
         <ToggleFeatures
-          feature={'isAppRedesigned'}
+          feature="isAppRedesigned"
           on={<Text size="size_l" title={t('Comments')} />}
           off={
             <TextDeprecated size={TextSizeDeprecated.L} title={t('Comments')} />

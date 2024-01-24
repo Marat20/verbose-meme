@@ -1,3 +1,4 @@
+import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   AnimationProvider,
@@ -5,7 +6,6 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
 import { Overlay } from '../../redesigned/Overlay/Overlay';
 import { Portal } from '../../redesigned/Portal/Portal';
 import cls from './Drawer.module.scss';
@@ -123,10 +123,8 @@ const DrawerAsync: FC<DrawerProps> = (props) => {
   return <DrawerContent {...props} />;
 };
 
-export const Drawer: FC<DrawerProps> = (props) => {
-  return (
-    <AnimationProvider>
-      <DrawerAsync {...props} />
-    </AnimationProvider>
-  );
-};
+export const Drawer: FC<DrawerProps> = (props) => (
+  <AnimationProvider>
+    <DrawerAsync {...props} />
+  </AnimationProvider>
+);

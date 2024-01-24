@@ -1,3 +1,6 @@
+import { FC, memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -11,9 +14,6 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, memo, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
@@ -51,7 +51,7 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
 
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <Card padding="24" fullWidth border="partial">
             <HStack
@@ -61,10 +61,10 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
             >
               <Text title={t('Profile')} />
               {canEdit && (
-                <>
+                <div>
                   {readonly ? (
                     <Button
-                      data-testid={'EditableProfileCardHeader.EditButton'}
+                      data-testid="EditableProfileCardHeader.EditButton"
                       onClick={onEdit}
                     >
                       {t('Edit')}
@@ -72,14 +72,14 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
                   ) : (
                     <HStack gap="8">
                       <Button
-                        data-testid={'EditableProfileCardHeader.CancelButton'}
+                        data-testid="EditableProfileCardHeader.CancelButton"
                         onClick={onCancelEdit}
                         color="error"
                       >
                         {t('Cancel')}
                       </Button>
                       <Button
-                        data-testid={'EditableProfileCardHeader.SaveButton'}
+                        data-testid="EditableProfileCardHeader.SaveButton"
                         onClick={onSave}
                         color="success"
                       >
@@ -87,7 +87,7 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
                       </Button>
                     </HStack>
                   )}
-                </>
+                </div>
               )}
             </HStack>
           </Card>
@@ -100,10 +100,10 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
           >
             <TextDeprecated title={t('Profile')} />
             {canEdit && (
-              <>
+              <div>
                 {readonly ? (
                   <ButtonDeprecated
-                    data-testid={'EditableProfileCardHeader.EditButton'}
+                    data-testid="EditableProfileCardHeader.EditButton"
                     theme={ButtonThemeDeprecated.OUTLINE}
                     onClick={onEdit}
                   >
@@ -112,14 +112,14 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
                 ) : (
                   <HStack gap="8">
                     <ButtonDeprecated
-                      data-testid={'EditableProfileCardHeader.CancelButton'}
+                      data-testid="EditableProfileCardHeader.CancelButton"
                       theme={ButtonThemeDeprecated.OUTLINE_RED}
                       onClick={onCancelEdit}
                     >
                       {t('Cancel')}
                     </ButtonDeprecated>
                     <ButtonDeprecated
-                      data-testid={'EditableProfileCardHeader.SaveButton'}
+                      data-testid="EditableProfileCardHeader.SaveButton"
                       theme={ButtonThemeDeprecated.OUTLINE}
                       onClick={onSave}
                     >
@@ -127,7 +127,7 @@ export const EditableProfileCardHeader: FC<EditableProfileCardHeaderProps> =
                     </ButtonDeprecated>
                   </HStack>
                 )}
-              </>
+              </div>
             )}
           </HStack>
         }

@@ -1,11 +1,11 @@
 import { Reducer } from '@reduxjs/toolkit';
+import { FC, ReactNode, useEffect } from 'react';
+import { useDispatch, useStore } from 'react-redux';
 import {
   ReduxStoreWithManager,
   StateSchema,
   StateSchemaKey,
 } from '@/app/providers/StoreProvider';
-import { FC, ReactNode, useEffect } from 'react';
-import { useDispatch, useStore } from 'react-redux';
 
 export type ReducersList = {
   [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
@@ -45,5 +45,5 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     };
   }, []);
 
-  return <>{children}</>;
+  return children;
 };

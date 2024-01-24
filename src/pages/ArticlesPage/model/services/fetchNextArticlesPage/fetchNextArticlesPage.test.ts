@@ -1,11 +1,7 @@
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleView } from '@/entities/Article';
-import {
-  ArticleSortFiels,
-  ArticleType,
-} from '@/entities/Article/model/consts/consts';
-import { testAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+import { ArticleView, ArticleSortFiels, ArticleType } from '@/entities/Article';
+import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 
@@ -21,7 +17,7 @@ describe('fetchNextArticlesPage.test', () => {
   });
 
   test('success', async () => {
-    const thunk = new testAsyncThunk(fetchNextArticlesPage, {
+    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
         view: ArticleView.SMALL,
@@ -44,7 +40,7 @@ describe('fetchNextArticlesPage.test', () => {
   });
 
   test('fetchArticlesList not called', async () => {
-    const thunk = new testAsyncThunk(fetchNextArticlesPage, {
+    const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
       articlesPage: {
         page: 2,
         view: ArticleView.SMALL,

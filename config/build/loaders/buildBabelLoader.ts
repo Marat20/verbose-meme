@@ -5,8 +5,7 @@ interface BuildBabelLoaderProps extends BuildOptions {
   isTsx?: boolean;
 }
 
-export const buildBabelLoader = ({ isDev, isTsx }: BuildBabelLoaderProps) => {
-  return {
+export const buildBabelLoader = ({ isDev, isTsx }: BuildBabelLoaderProps) => ({
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
     exclude: /node_modules/,
     use: {
@@ -33,5 +32,4 @@ export const buildBabelLoader = ({ isDev, isTsx }: BuildBabelLoaderProps) => {
         ].filter(Boolean),
       },
     },
-  };
-};
+  });

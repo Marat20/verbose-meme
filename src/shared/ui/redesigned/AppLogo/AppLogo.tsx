@@ -1,6 +1,6 @@
+import { FC, memo } from 'react';
 import AppIcon from '@/shared/assets/icons/app-image.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { FC, memo } from 'react';
 import { HStack } from '../Stack';
 import cls from './AppLogo.module.scss';
 
@@ -24,8 +24,8 @@ export const AppLogo: FC<AppLogoProps> = memo((props) => {
         height={size}
         className={cls.appLogo}
       />
-      <div className={cls.gradientBig}></div>
-      <div className={cls.gradientSmall}></div>
+      <div className={cls.gradientBig} />
+      <div className={cls.gradientSmall} />
     </HStack>
   );
 });

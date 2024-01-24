@@ -1,4 +1,3 @@
-import '@/app/styles/index.scss';
 import { Meta, StoryFn } from '@storybook/react';
 import { AvatarDropdown } from './AvatarDropdown';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';

@@ -1,3 +1,5 @@
+import { FC, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
@@ -5,8 +7,6 @@ import {
   ButtonTheme as ButtonThemeDeprecated,
 } from '@/shared/ui/deprecated/Button';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { FC, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface LangSwitcherProps {
   className?: string;
@@ -22,7 +22,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = memo(
     };
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <Button
             variant="clear"

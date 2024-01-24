@@ -1,7 +1,7 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { DropdownDirection } from '@/shared/types/ui';
 import { Menu } from '@headlessui/react';
 import { FC, Fragment, ReactNode } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { AppLink } from '../../../AppLink/AppLink';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
@@ -28,7 +28,7 @@ export const Dropdown: FC<DropdownProps> = (props) => {
 
   return (
     <Menu
-      as={'div'}
+      as="div"
       className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}
     >
       <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>

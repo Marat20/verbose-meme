@@ -5,8 +5,8 @@ export const updateProfile = (firstname: string, lastname: string) => {
   cy.getByTestId('EditableProfileCardHeader.SaveButton').click();
 };
 
-export const resetProfile = (profileId: string) => {
-  return cy.request({
+export const resetProfile = (profileId: string) =>
+  cy.request({
     method: 'PUT',
     url: `http://localhost:8000/profile/${profileId}`,
     headers: { Authorization: 'asdasd' },
@@ -22,7 +22,6 @@ export const resetProfile = (profileId: string) => {
       avatar: 'https://logowik.com/content/uploads/images/529_ysl.jpg',
     },
   });
-};
 
 declare global {
   namespace Cypress {

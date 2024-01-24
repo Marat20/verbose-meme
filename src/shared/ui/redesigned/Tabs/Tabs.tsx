@@ -1,5 +1,5 @@
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { FC, ReactNode, memo, useCallback } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '../Card/Card';
 import { Flex, FlexDirection } from '../Stack/Flex/Flex';
 import cls from './Tabs.module.scss';
@@ -21,10 +21,8 @@ export const Tabs: FC<TabsProps> = memo((props) => {
   const { className, tabs, value, onTabClick, flexDirection = 'row' } = props;
 
   const clickHandle = useCallback(
-    (tab: TabItem) => {
-      return () => {
-        onTabClick(tab);
-      };
+    (tab: TabItem) => () => {
+      onTabClick(tab);
     },
     [onTabClick],
   );

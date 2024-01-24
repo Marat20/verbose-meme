@@ -1,7 +1,6 @@
-import '@/app/styles/index.scss';
+import { Meta, StoryFn } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
-import { Meta, StoryFn } from '@storybook/react';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
 export default {

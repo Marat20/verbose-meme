@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import AboutIcon from '@/shared/assets/icons/Info.svg';
 import AboutIconDeprecated from '@/shared/assets/icons/about-20-20.svg';
@@ -13,7 +14,6 @@ import {
   getRouteProfile,
 } from '@/shared/const/route';
 import { toggleFeaturesFunc } from '@/shared/lib/features';
-import { useSelector } from 'react-redux';
 import { SidebarItemType } from '../types/sidebar';
 
 export const useSidebarItems = () => {

@@ -1,3 +1,5 @@
+import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
@@ -6,8 +8,6 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -23,11 +23,11 @@ interface ArticleListProps {
 }
 
 const getSkeleton = (view: ArticleView) =>
-  new Array(view === ArticleView.BIG ? 3 : 9).fill(0).map((_, index) => {
-    return (
+  new Array(view === ArticleView.BIG ? 3 : 9)
+    .fill(0)
+    .map((_, index) => (
       <ArticleListItemSkeleton className={cls.card} view={view} key={index} />
-    );
-  });
+    ));
 
 export const ArticleList: FC<ArticleListProps> = memo((props) => {
   const {
@@ -44,7 +44,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
     return (
       <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
         <ToggleFeatures
-          feature={'isAppRedesigned'}
+          feature="isAppRedesigned"
           on={<Text size="size_l" title={t('Articles not found')} />}
           off={
             <TextDeprecated
@@ -59,7 +59,7 @@ export const ArticleList: FC<ArticleListProps> = memo((props) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <HStack
           wrap="wrap"

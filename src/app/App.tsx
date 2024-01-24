@@ -1,3 +1,5 @@
+import { Suspense, memo, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { getUserInited, initAuthData } from '@/entities/User';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 import { MainLayout } from '@/shared/layouts/MainLayout';
@@ -7,8 +9,6 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Suspense, memo, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { withTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
@@ -27,7 +27,7 @@ const App = memo(() => {
   if (!inited) {
     return (
       <ToggleFeatures
-        feature={'isAppRedesigned'}
+        feature="isAppRedesigned"
         on={
           <div id="app" className={classNames('app', {}, [])}>
             <AppLoaderLayout />
@@ -40,7 +40,7 @@ const App = memo(() => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={
         <div id="app" className={classNames('app_redesigned', {}, [])}>
           <Suspense fallback="">

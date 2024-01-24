@@ -1,6 +1,6 @@
-import { AppRouteByPathPattern, AppRoutes } from '@/shared/const/route';
 import { useEffect, useState } from 'react';
 import { matchPath, useLocation } from 'react-router-dom';
+import { AppRouteByPathPattern, AppRoutes } from '@/shared/const/route';
 
 export const useRouteChange = () => {
   const location = useLocation();

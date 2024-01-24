@@ -1,3 +1,5 @@
+import { FC, memo, useCallback, useState } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { NotificationList } from '@/entities/Notification';
 import NotificationIconDeprecated from '@/shared/assets/icons/notification-20-20.svg';
 import NotificationIcon from '@/shared/assets/icons/notification.svg';
@@ -12,8 +14,6 @@ import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Icon } from '@/shared/ui/redesigned/Icon';
 import { Popover } from '@/shared/ui/redesigned/Popups';
-import { FC, memo, useCallback, useState } from 'react';
-import { BrowserView, MobileView } from 'react-device-detect';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -34,7 +34,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
 
   const trigger = (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={<Icon clickable onClick={onOpenDrawer} Svg={NotificationIcon} />}
       off={
         <ButtonDeprecated
@@ -51,7 +51,7 @@ export const NotificationButton: FC<NotificationButtonProps> = memo((props) => {
     <div>
       <BrowserView>
         <ToggleFeatures
-          feature={'isAppRedesigned'}
+          feature="isAppRedesigned"
           on={
             <Popover
               className={classNames(cls.NotificationButton, {}, [className])}

@@ -1,5 +1,4 @@
 import { Meta, StoryFn } from '@storybook/react';
-import '@/app/styles/index.scss';
 import { Page } from './Page';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 

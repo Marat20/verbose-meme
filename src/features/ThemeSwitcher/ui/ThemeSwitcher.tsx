@@ -1,3 +1,4 @@
+import { FC, memo, useCallback } from 'react';
 import { saveJsonSettings } from '@/entities/User';
 import ThemeIconDeprecated from '@/shared/assets/icons/theme-light.svg';
 import ThemeIcon from '@/shared/assets/icons/theme.svg';
@@ -11,7 +12,6 @@ import {
 } from '@/shared/ui/deprecated/Button';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { Icon } from '@/shared/ui/redesigned/Icon';
-import { FC, memo, useCallback } from 'react';
 
 export interface ThemeSwitcherProps {
   className?: string;
@@ -30,7 +30,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(({ className }) => {
 
   return (
     <ToggleFeatures
-      feature={'isAppRedesigned'}
+      feature="isAppRedesigned"
       on={<Icon Svg={ThemeIcon} clickable onClick={onToggleHandler} />}
       off={
         <ButtonDeprecated
