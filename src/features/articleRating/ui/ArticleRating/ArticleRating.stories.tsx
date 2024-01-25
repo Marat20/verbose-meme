@@ -1,5 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import ArticleRating from './ArticleRating';
 
 export default {
@@ -8,6 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof ArticleRating>;
 
 const Template: StoryFn<typeof ArticleRating> = (args) => (

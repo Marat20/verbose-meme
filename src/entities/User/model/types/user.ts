@@ -1,4 +1,5 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
+
 import { UserRole } from '../consts/consts';
 import { JsonSettings } from './jsonSettings';
 

@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
+
 import { Article } from '@/entities/Article';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
 export default {
@@ -9,7 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
+  decorators: [StoreDecorator({}), NewDesignDecorator],
 } as Meta<typeof ArticleRecommendationsList>;
 
 const Template: StoryFn<typeof ArticleRecommendationsList> = (args) => (
@@ -30,7 +33,15 @@ const article: Article = {
 
 export const Normal = Template.bind({});
 Normal.args = {};
-Normal.decorators = [StoreDecorator({})];
+Normal.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+      },
+    },
+  }),
+];
 Normal.parameters = {
   mockData: [
     {
@@ -41,7 +52,6 @@ Normal.parameters = {
         { ...article, id: '1' },
         { ...article, id: '2' },
         { ...article, id: '3' },
-        { ...article, id: '4' },
       ],
     },
   ],

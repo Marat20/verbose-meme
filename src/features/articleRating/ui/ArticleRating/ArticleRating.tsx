@@ -1,21 +1,24 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { toggleFeaturesFunc } from '@/shared/lib/features';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
+
 import {
   useGetArticleRating,
   useRateArticle,
 } from '../../api/articleRatingApi';
 
 export interface ArticleRatingProps {
-  className?: string;
   articleId: string;
 }
 
 const ArticleRating: FC<ArticleRatingProps> = memo((props) => {
-  const { className, articleId } = props;
+  const { articleId } = props;
   const { t } = useTranslation();
 
   const userData = useSelector(getUserAuthData);
@@ -56,6 +59,12 @@ const ArticleRating: FC<ArticleRatingProps> = memo((props) => {
     },
     [handleRateArticle],
   );
+
+  const Skeleton = toggleFeaturesFunc({
+    name: 'isAppRedesigned',
+    on: () => SkeletonRedesigned,
+    off: () => SkeletonDeprecated,
+  });
 
   if (isLoading) {
     return <Skeleton width="100%" height={120} />;

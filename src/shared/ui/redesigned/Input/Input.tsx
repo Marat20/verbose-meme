@@ -8,7 +8,9 @@ import {
   useRef,
   useState,
 } from 'react';
+
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import { HStack } from '../Stack';
 import { Text } from '../Text';
 import cls from './Input.module.scss';

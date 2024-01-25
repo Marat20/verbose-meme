@@ -1,5 +1,6 @@
 import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { User } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';

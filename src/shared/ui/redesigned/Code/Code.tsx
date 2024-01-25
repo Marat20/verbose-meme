@@ -1,8 +1,10 @@
 import { FC, memo, useCallback } from 'react';
+
 import CopyIconDeprecated from '@/shared/assets/icons/copy-20-20.svg';
 import CopyIcon from '@/shared/assets/icons/copy.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
+
 import {
   Button as ButtonDeprecated,
   ButtonTheme as ButtonThemeDeprecated,

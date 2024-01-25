@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+
 import { Text } from './Text';
 
 export default {
@@ -9,6 +12,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof Text>;
 
 const Template: StoryFn<typeof Text> = (args) => <Text {...args} />;

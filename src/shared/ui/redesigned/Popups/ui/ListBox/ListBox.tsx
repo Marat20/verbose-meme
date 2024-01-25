@@ -1,8 +1,10 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode, useMemo } from 'react';
+
 import ArrowIcon from '@/shared/assets/icons/arrow-bottom.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
+
 import { Button } from '../../../Button/Button';
 import { Icon } from '../../../Icon';
 import { HStack } from '../../../Stack';

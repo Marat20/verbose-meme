@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+
 import { Popover } from './Popover';
 
 export default {
@@ -12,4 +13,14 @@ export default {
 const Template: StoryFn<typeof Popover> = (args) => <Popover {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  trigger: <div>132</div>,
+  children: (
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis,
+      excepturi reprehenderit culpa ipsa minima dolor, sequi perspiciatis
+      voluptate, explicabo distinctio deserunt. Tempora enim sint incidunt
+      aliquid quisquam facere, est nam.
+    </div>
+  ),
+};

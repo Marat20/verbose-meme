@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+
 import { AppLink } from './AppLink';
 
 export default {
@@ -12,21 +15,16 @@ export default {
   args: {
     to: '/',
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof AppLink>;
 
 const Template: StoryFn<typeof AppLink> = (args) => <AppLink {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  variant: 'primary',
   children: 'Text',
+  variant: 'primary',
 };
-
-// export const Secondary = Template.bind({});
-// Secondary.args = {
-//   children: 'Text',
-//   variant: AppLinkTheme.SECONDARY,
-// };
 
 export const Red = Template.bind({});
 Red.args = {
@@ -41,13 +39,6 @@ PrimaryDark.args = {
 };
 
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-// export const SecondaryDark = Template.bind({});
-// SecondaryDark.args = {
-//   children: 'Text',
-//   variant: AppLinkTheme.SECONDARY,
-// };
-// SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const RedDark = Template.bind({});
 RedDark.args = {

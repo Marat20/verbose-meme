@@ -1,6 +1,8 @@
 import { FC, memo } from 'react';
+
 import AppIcon from '@/shared/assets/icons/app-image.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { HStack } from '../Stack';
 import cls from './AppLogo.module.scss';
 

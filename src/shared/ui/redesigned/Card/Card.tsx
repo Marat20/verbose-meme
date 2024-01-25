@@ -1,5 +1,7 @@
 import { FC, HTMLAttributes, ReactNode, memo } from 'react';
+
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
+
 import cls from './Card.module.scss';
 
 export type CardVariant = 'normal' | 'outlined' | 'light';

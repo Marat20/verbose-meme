@@ -1,8 +1,11 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Sidebar } from './Sidebar';
 import { Theme } from '@/shared/const/theme';
+
+import { Sidebar } from './Sidebar';
 
 export default {
   title: 'widgets/Sidebar',
@@ -10,6 +13,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof Sidebar>;
 
 const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />;

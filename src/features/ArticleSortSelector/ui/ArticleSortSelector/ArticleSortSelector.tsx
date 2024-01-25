@@ -1,5 +1,6 @@
 import { FC, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ArticleSortFiels } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -11,6 +12,7 @@ import {
 import { ListBox } from '@/shared/ui/redesigned/Popups';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+
 import cls from './ArticleSortSelector.module.scss';
 
 interface ArticleSortSelectorProps {

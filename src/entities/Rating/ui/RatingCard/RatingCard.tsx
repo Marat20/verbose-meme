@@ -1,6 +1,7 @@
 import { FC, memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
@@ -149,7 +150,7 @@ export const RatingCard: FC<RatingCardProps> = memo((props) => {
         </Modal>
       </BrowserView>
       <MobileView>
-        <Drawer isOpen={isModalOpen} lazy onClose={cancelHandle}>
+        <Drawer isOpen={isModalOpen} onClose={cancelHandle}>
           <VStack gap="32">
             {modalContent}
             <ToggleFeatures

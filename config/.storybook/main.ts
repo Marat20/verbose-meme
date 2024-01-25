@@ -14,6 +14,7 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     'storybook-addon-mock',
     '@storybook/addon-themes',
+    'storybook-addon-paddings',
   ],
   framework: {
     name: '@storybook/react-webpack5',

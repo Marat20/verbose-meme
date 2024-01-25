@@ -1,6 +1,7 @@
 import { FC, MutableRefObject, ReactNode, UIEvent, memo, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getUISCrollByPath, uiActions } from '@/features/UI';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -10,6 +11,7 @@ import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfin
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { TestProps } from '@/shared/types/tests';
+
 import cls from './Page.module.scss';
 
 interface PageProps extends TestProps {

@@ -1,5 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { NotificationList } from './NotificationList';
 
 export default {
@@ -8,7 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
+  decorators: [StoreDecorator({}), NewDesignDecorator],
 } as Meta<typeof NotificationList>;
 
 const Template: StoryFn<typeof NotificationList> = (args) => (

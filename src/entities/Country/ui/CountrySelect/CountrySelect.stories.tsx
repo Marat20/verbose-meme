@@ -1,4 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
+import { Country } from '../../model/types/country';
 import { CountrySelect } from './CountrySelect';
 
 export default {
@@ -7,6 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof CountrySelect>;
 
 const Template: StoryFn<typeof CountrySelect> = (args) => (
@@ -14,4 +19,12 @@ const Template: StoryFn<typeof CountrySelect> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  value: Country.FRANCE,
+};
+
+export const Readonly = Template.bind({});
+Readonly.args = {
+  value: Country.FRANCE,
+  readonly: true,
+};

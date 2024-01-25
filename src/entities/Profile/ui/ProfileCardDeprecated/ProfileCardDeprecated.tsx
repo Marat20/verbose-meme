@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Mods, classNames } from '@/shared/lib/classNames/classNames';
@@ -12,6 +13,7 @@ import {
   TextTheme as TextThemeDeprecated,
 } from '@/shared/ui/deprecated/Text';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+
 import { Profile } from '../../model/types/profile';
 import cls from './ProfileCardDeprecated.module.scss';
 

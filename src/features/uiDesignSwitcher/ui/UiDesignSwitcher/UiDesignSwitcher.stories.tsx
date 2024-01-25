@@ -1,5 +1,6 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
+
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { UiDesignSwitcher } from './UiDesignSwitcher';
 
@@ -9,9 +10,10 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof UiDesignSwitcher>;
+  decorators: [StoreDecorator({})],
+} as Meta<typeof UiDesignSwitcher>;
 
-const Template: ComponentStory<typeof UiDesignSwitcher> = (args) => (
+const Template: StoryFn<typeof UiDesignSwitcher> = (args) => (
   <UiDesignSwitcher {...args} />
 );
 

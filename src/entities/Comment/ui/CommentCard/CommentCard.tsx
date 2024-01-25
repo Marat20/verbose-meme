@@ -1,4 +1,5 @@
 import { FC, memo } from 'react';
+
 import { getRouteProfile } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures, toggleFeaturesFunc } from '@/shared/lib/features';
@@ -12,6 +13,7 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+
 import { Comment } from '../../model/types/comment';
 import cls from './CommentCard.module.scss';
 
@@ -30,10 +32,6 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
     off: () => SkeletonDeprecated,
   });
 
-  if (!comment) {
-    return null;
-  }
-
   if (isLoading) {
     return (
       <VStack
@@ -49,6 +47,10 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
         <Skeleton className={cls.text} width="100%" height={50} />
       </VStack>
     );
+  }
+
+  if (!comment) {
+    return null;
   }
 
   return (

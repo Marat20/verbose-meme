@@ -1,5 +1,7 @@
 import { FC, HTMLAttributeAnchorTarget, memo } from 'react';
+
 import { ToggleFeatures } from '@/shared/lib/features';
+
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import { ArticleListItemDeprecated } from './ArticleListItemDeprecated/ArticleListItemDeprecated';

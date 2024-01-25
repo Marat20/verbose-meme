@@ -1,7 +1,9 @@
 import { FC, memo, useState } from 'react';
+
 import StarIcon from '@/shared/assets/icons/star.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures, toggleFeaturesFunc } from '@/shared/lib/features';
+
 import { Icon } from '../../redesigned/Icon';
 import { Icon as IconDeprecated } from '../Icon';
 import cls from './StarRating.module.scss';

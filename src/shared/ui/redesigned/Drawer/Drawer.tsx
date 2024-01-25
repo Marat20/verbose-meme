@@ -1,4 +1,5 @@
 import { FC, ReactNode, memo, useCallback, useEffect } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   AnimationProvider,
@@ -6,6 +7,7 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import { toggleFeaturesFunc } from '@/shared/lib/features';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+
 import { Overlay } from '../../redesigned/Overlay/Overlay';
 import { Portal } from '../../redesigned/Portal/Portal';
 import cls from './Drawer.module.scss';
@@ -15,13 +17,12 @@ interface DrawerProps {
   children: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
-  lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
 
 const DrawerContent: FC<DrawerProps> = memo((props) => {
-  const { className, children, isOpen, onClose, lazy } = props;
+  const { className, children, isOpen, onClose } = props;
   const { theme } = useTheme();
 
   const { Gesture, Spring } = useAnimationLibs();

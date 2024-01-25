@@ -1,4 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { CommentList } from './CommentList';
 
 export default {
@@ -7,6 +10,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof CommentList>;
 
 const Template: StoryFn<typeof CommentList> = (args) => (

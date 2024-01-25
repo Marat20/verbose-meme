@@ -1,5 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
@@ -8,7 +11,10 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
+  decorators: [
+    StoreDecorator({ user: { authData: { id: '1' } } }),
+    NewDesignDecorator,
+  ],
 } as Meta<typeof EditableProfileCard>;
 
 const Template: StoryFn<typeof EditableProfileCard> = (args) => (

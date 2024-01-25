@@ -1,4 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { StarRating } from './StarRating';
 
 export default {
@@ -7,11 +10,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  parameters: {
-    themes: {
-      themeOverride: 'dark', // component level override
-    },
-  },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof StarRating>;
 
 const Template: StoryFn<typeof StarRating> = (args) => <StarRating {...args} />;

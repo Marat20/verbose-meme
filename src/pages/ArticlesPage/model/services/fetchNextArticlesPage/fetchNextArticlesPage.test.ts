@@ -1,7 +1,9 @@
 import { Dispatch } from '@reduxjs/toolkit';
+
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleView, ArticleSortFiels, ArticleType } from '@/entities/Article';
+import { ArticleSortFiels, ArticleType, ArticleView } from '@/entities/Article';
 import { TestAsyncThunk } from '@/shared/lib/tests/testAsyncThunk/testAsyncThunk';
+
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { fetchNextArticlesPage } from './fetchNextArticlesPage';
 

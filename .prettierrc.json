@@ -1,4 +1,11 @@
 {
   "tabWidth": 2,
-  "singleQuote": true
+  "singleQuote": true,
+  "importOrder": [
+    "^@/(app|pages|widgets|features|entities|shared)/?(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

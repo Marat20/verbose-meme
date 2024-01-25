@@ -1,5 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
+
 import AvatarImg from '@/shared/assets/tests/storybook.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+
 import { Avatar } from './Avatar';
 
 export default {
@@ -8,6 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [NewDesignDecorator],
 } as Meta<typeof Avatar>;
 
 const Template: StoryFn<typeof Avatar> = (args) => <Avatar {...args} />;

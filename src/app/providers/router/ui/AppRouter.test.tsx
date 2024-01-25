@@ -1,4 +1,5 @@
 import { screen, waitFor } from '@testing-library/react';
+
 import { UserRole } from '@/entities/User';
 import {
   getRouteAbout,
@@ -6,6 +7,7 @@ import {
   getRouteProfile,
 } from '@/shared/const/route';
 import { ComponentRender } from '@/shared/lib/tests/componentRender/componentRender';
+
 import { AppRouter } from './AppRouter';
 
 describe('AppRouter.test', () => {

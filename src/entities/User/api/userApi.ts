@@ -1,4 +1,5 @@
 import { rtkApi } from '@/shared/api/rtkApi';
+
 import { JsonSettings } from '../model/types/jsonSettings';
 import { User } from '../model/types/user';
 

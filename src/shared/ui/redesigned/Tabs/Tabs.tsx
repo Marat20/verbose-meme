@@ -1,5 +1,7 @@
 import { FC, ReactNode, memo, useCallback } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+
 import { Card } from '../Card/Card';
 import { Flex, FlexDirection } from '../Stack/Flex/Flex';
 import cls from './Tabs.module.scss';

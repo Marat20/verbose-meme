@@ -1,6 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { AvatarDropdown } from './AvatarDropdown';
+
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+
+import { AvatarDropdown } from './AvatarDropdown';
 
 export default {
   title: 'features/AvatarDropdown',
@@ -8,7 +11,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-  decorators: [StoreDecorator({})],
+  decorators: [NewDesignDecorator],
 } as Meta<typeof AvatarDropdown>;
 
 const Template: StoryFn<typeof AvatarDropdown> = (args) => (
@@ -17,3 +20,4 @@ const Template: StoryFn<typeof AvatarDropdown> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {};
+Primary.decorators = [StoreDecorator({ user: { authData: { id: '1' } } })];

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/react';
+
 import { FeaturesFlagsDecorator } from '../../src/shared/config/storybook/FeaturesFlagsDecorator/FeaturesFlagsDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
@@ -15,7 +16,14 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-    layout: 'fullscreen',
+    paddings: {
+      values: [
+        { name: 'Small', value: '16px' },
+        { name: 'Medium', value: '32px' },
+        { name: 'Large', value: '64px' },
+      ],
+      default: 'Medium',
+    },
     themes: {
       default: 'light',
       list: [

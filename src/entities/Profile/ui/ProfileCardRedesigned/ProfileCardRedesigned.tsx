@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Avatar } from '@/shared/ui/redesigned/Avatar';
@@ -8,6 +9,7 @@ import { Input } from '@/shared/ui/redesigned/Input';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+
 import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {

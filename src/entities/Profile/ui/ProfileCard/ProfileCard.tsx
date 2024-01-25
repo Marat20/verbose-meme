@@ -1,7 +1,9 @@
 import { FC } from 'react';
+
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ToggleFeatures } from '@/shared/lib/features';
+
 import { Profile } from '../../model/types/profile';
 import {
   ProfileCardDeprecated,
