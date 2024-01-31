@@ -1,9 +1,12 @@
 .Button {
   cursor: pointer;
-  color: var(--text-redesigned);
-  padding: 6px 16px;
+
   display: flex;
   align-items: center;
+
+  padding: 6px 16px;
+
+  color: var(--text-redesigned);
 
   &:hover {
     color: var(--accent-redesigned);
@@ -17,9 +20,9 @@
 
 .clear {
   padding: 0;
+  background: none;
   border: none;
   outline: none;
-  background: none;
 }
 
 .outline {
@@ -46,8 +49,8 @@
 .filled {
   background: var(--light-bg-redesigned);
   border: none;
-  outline: none;
   border-radius: 34px;
+  outline: none;
 }
 
 .square {

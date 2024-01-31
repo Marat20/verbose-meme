@@ -1,27 +1,28 @@
 .MainLayout {
-  min-height: 100vh;
   display: grid;
   grid-template-areas: 'sidebar content rightbar';
   grid-template-columns: min-content 1fr 100px;
+  min-height: 100vh;
 }
 
 .sidebar {
   grid-area: sidebar;
-  padding: 32px;
   max-width: 284px;
+  padding: 32px;
 }
 
 .content {
   grid-area: content;
-  max-width: 1200px;
   justify-self: center;
-  padding: 32px;
+
   width: 100%;
+  max-width: 1200px;
+  padding: 32px;
 }
 
 .rightbar {
-  grid-area: rightbar;
   display: flex;
+  grid-area: rightbar;
   flex-direction: column;
   align-items: flex-end;
 }
@@ -34,6 +35,6 @@
 }
 
 .toolbar {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
